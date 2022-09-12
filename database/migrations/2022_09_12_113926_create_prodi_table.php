@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('ID_Prodi')->primary;
             $table->string('Nama_Prodi');
             $table->string('Jenjang');
+            $table->foreign('Jurusan_ID_JURUSAN')->references('ID_Jurusan')->on('Jurusan')->onDelete('cascade');
         });
     }
 
