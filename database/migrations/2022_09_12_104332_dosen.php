@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('mahasiswa', function (Blueprint $table) {
-            $table->string('name');
-            $table->string('nim');
-            $table->primary('nim');
-            $table->bigInteger('semester');
+        Schema::create('dosen', function (Blueprint $table) {
+            $table->string('nama');
+            $table->string('nidn');
+            $table->primary('nidn');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mahasiswa');
+        Schema::dropIfExists('dosen');
     }
 };
