@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('mahasiswa', function (Blueprint $table) {
             $table->integer('NIM')->primary;
             $table->string('Nama_mahasiswa');
-            $table->integer('Dosen_NIP')->nullable();
+            $table->unsignedBigInteger('Dosen_NIP')->nullable();
             $table->foreign('Dosen_NIP')->references('NIP')->on('dosen');
         });
         
