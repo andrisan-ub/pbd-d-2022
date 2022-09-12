@@ -22,22 +22,22 @@ class DatabaseSeeder extends Seeder
         // ]);
     DB::table('dosen_pengampu')->insert([
         'NIP' => '197209191997021001',
-        'Nama_Dosen' => 'Welly Purnomo, S.T., M.Kom.'
+        'Nama_Dosen' => 'Welly Purnomo, S.T., M.Kom.',
     ]);
 
     DB::table('dosen_pengampu')->insert([
         'NIP' => '197408052001121001',
-        'Nama_Dosen' => 'Agus Wahyu Widodo'
+        'Nama_Dosen' => 'Agus Wahyu Widodo',
     ]);
 
     DB::table('dosen_pengampu')->insert([
         'NIP' => '198309222012121003',
-        'Nama_Dosen' => 'Issa Arwani'
+        'Nama_Dosen' => 'Issa Arwani',
     ]);
 
     DB::table('dosen_pengampu')->insert([
         'NIP' => '197209191997021002',
-        'Nama_Dosen' => 'Andri Santoso '
+        'Nama_Dosen' => 'Andri Santoso'
     ]);
 
     }
