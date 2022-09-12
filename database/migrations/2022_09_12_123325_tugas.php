@@ -13,14 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('mahasiswamatkul', function (Blueprint $table) {
+        Schema::create('tugas', function (Blueprint $table) {
             $table->id();
-            $table->string('nim');
-            $table->foreignId('id_matkul');
+            $table->foreignId('id_mahasiswa');
+            $table->string('tipe_tugas');
+            $table->double('nilai');
             $table->timestamps();
 
-            $table->foreign('id_matkul')->references('id')->on('matakuliah');
-            $table->foreign('nim')->references('nim')->on('mahasiswa');
+            $table->foreign('tipe_tugas')->references('nama')->on('tipetugas');
+            $table->foreign('id_mahasiswa')->references('id')->on('mahasiswamatkul');
         });
     }
 
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mahasiswamatkul');
+        Schema::dropIfExists('tugas');
     }
 };

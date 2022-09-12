@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,5 +21,91 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        DB::table('mahasiswa')->insert([
+            'name' => 'Rafli Ardiansyah',
+            'nim' => '215150701111030',
+            'semester' => 3
+        ]);
+
+        DB::table('mahasiswa')->insert([
+            'name' => 'Muchammad Saifurrijaal',
+            'nim' => '215150701111006',
+            'semester' => 3
+        ]);
+
+        DB::table('mahasiswa')->insert([
+            'name' => 'Redo Meire',
+            'nim' => '215150701111032',
+            'semester' => 3
+        ]);
+
+        DB::table('dosen')->insert([
+            'nama' => 'Muhammad Herman',
+            'nidn' => '12345678'
+        ]);
+
+        DB::table('matakuliah')->insert([
+            'id' => 1,
+            'nama' => 'Pemrograman Basis Data',
+            'sks' => 3
+        ]);
+
+        DB::table('dosenmatkul')->insert([
+            'id' => 1,
+            'nidn' => '12345678',
+            'id_matkul' => 1
+        ]);
+
+        DB::table('mahasiswamatkul')->insert([
+            'id' => 1,
+            'nim' => '215150701111006',
+            'id_matkul' => 1
+        ]);
+
+        DB::table('mahasiswamatkul')->insert([
+            'id' => 2,
+            'nim' => '215150701111032',
+            'id_matkul' => 1
+        ]);
+
+        DB::table('tipetugas')->insert([
+            'nama' => 'LK1'
+        ]);
+
+        DB::table('tipetugas')->insert([
+            'nama' => 'LK2'
+        ]);
+
+        DB::table('tipetugas')->insert([
+            'nama' => 'LK3'
+        ]);
+
+        DB::table('tipetugas')->insert([
+            'nama' => 'LK4'
+        ]);
+
+        DB::table('tipetugas')->insert([
+            'nama' => 'UTS'
+        ]);
+        DB::table('tipetugas')->insert([
+            'nama' => 'UAS'
+        ]);
+
+        DB::table('tugas')->insert([
+            'id' => 1,
+            'id_mahasiswa' => 1,
+            'tipe_tugas' => 'LK1',
+            'nilai' => 90
+        ]);
+
+        DB::table('tugas')->insert([
+            'id' => 2,
+            'id_mahasiswa' => 2,
+            'tipe_tugas' => 'LK1',
+            'nilai' => 80
+        ]);
+
+
     }
 }
