@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('lembar_kerja', function (Blueprint $table) {
             $table->bigIncrements('ID_Lembar_Kerja')->primary;
+            $table->unsignedBigInteger('Sub_CPMK_ID_Sub_CPMK')->nullable();
+            $table->foreign('Sub_CPMK_ID_Sub_CPMK')->references('ID_sub_cpmk')->on('sub_cpmk');
         });
     }
 
