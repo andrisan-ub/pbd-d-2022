@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('mata_kuliah', function (Blueprint $table) {
-            $table->string('Kode_MK')->primary;
+            $table->bigIncrements('Kode_MK')->primary;
             $table->string('Jumlah_SKS');
             $table->string('Materi_Pembelajaran');
             $table->time('Estimasi_Waktu');
