@@ -14,11 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cpl', function (Blueprint $table) {
-            $table->integer('Kode_CPL')->primary;
-            $table->foreignId('Mata_Kuliah_Kode_MK');
+            $table->bigIncrements('Kode_CPL')->primary;
+            
             $table->string('Keterangan_CPL');
 
-            $table->foreignId('Mata_Kuliah_Kode_MK')->references('Kode')->on('Mata_Kuliah');
+            $table->unsignedBigInteger('Mata_Kuliah_Kode_MK')->nullable();
+            $table->foreignId('Mata_Kuliah_Kode_MK')->references('Kode_MK')->on('mata_kuliah');
 
 
 
