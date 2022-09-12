@@ -4,10 +4,6 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-Schema::dropIfExists('personal_access_tokens');
-Schema::dropIfExists('failed_jobs');
-Schema::dropIfExists('password_resets');
-Schema::dropIfExists('users');
 return new class extends Migration
 {
     /**
