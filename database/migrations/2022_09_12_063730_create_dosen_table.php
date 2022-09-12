@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('dosen', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->integer('NIP')->primary;
+            $table->string('Nama_Dosen');
+            $table->integer('NIDN');
         });
     }
 
