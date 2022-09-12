@@ -20,20 +20,8 @@ return new class extends Migration
             $table->integer('Jumlah_SKS');
             $table->year('Thn_MK');
             $table->boolean('IsWajib');
-
             $table->unsignedBigInteger('Mahasiswa_NIM')->nullable();
             $table->foreign('Mahasiswa_NIM')->references('NIM')->on('mahasiswa');
-
-            $table->unsignedBigInteger('Dosen_NIP')->nullable();
-            $table->foreign('Dosen_NIP')->references('NIP')->on('dosen');
-
-            $table->unsignedBigInteger('Prodi_ID_Prodi')->nullable();
-            $table->foreign('Prodi_ID_Prodi')->references('ID_Prodi')->on('prodi');
-
-            $table->unsignedBigInteger('Prodi_Jurusan_ID_Jurusan')->nullable();
-            $table->foreign('Prodi_Jurusan_ID_Jurusan')->references('ID_Jurusan')->on('jurusan');
-
-            
         });
     }
 
