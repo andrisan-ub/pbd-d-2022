@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('rps', function (Blueprint $table) {
-            $table->string('Kode_RPS')->primary;
+            $table->bigIncrements('Kode_RPS')->primary;
             $table->integer('Bobot_SKS');
             $table->integer('Semester');
             $table->date('Tanggal_Penyusunan');
