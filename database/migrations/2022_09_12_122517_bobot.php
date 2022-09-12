@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('bobot', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->integer('Bobot')->primary;
+            $table->integer('Persentase');
         });
     }
 
