@@ -17,6 +17,10 @@ return new class extends Migration
             $table->bigIncrements('ID_Prodi')->primary;
             $table->string('Nama_Prodi');
             $table->string('Jenjang');
+
+            $table->unsignedBigInteger('Jurusan_ID_Jurusan')->nullable();
+            $table->foreign('Jurusan_ID_Jurusan')->references('ID_Jurusan')->on('jurusan');
+
         });
     }
 
