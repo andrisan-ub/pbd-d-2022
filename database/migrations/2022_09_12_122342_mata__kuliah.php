@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('mata_kuliah', function (Blueprint $table) {
+        Schema::create('mata_kuliah'), function (Blueprint $table) {
             $table->varchar('Kode_MK')->primary;
             $table->varchar('Jumlah_SKS');
             $table->integer('Jumlah_SKS');
