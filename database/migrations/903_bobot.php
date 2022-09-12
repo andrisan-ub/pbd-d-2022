@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('Persentase');
 
             $table->unsignedBigInteger('Nilai_Sub_CPMK_ID_Nilai')->nullable();
-            $table->foreign('Nilai_Sub_CPMK_ID_Nilai')->references('Nilai')->on('nilai_sub_cpmk');
+            $table->foreign('Nilai_Sub_CPMK_ID_Nilai')->references('ID_Nilai')->on('nilai_sub_cpmk');
 
             $table->unsignedBigInteger('Nilai_Sub_CPMK_Lembar_Kerja_ID_Lembar_Kerja')->nullable();
             $table->foreign('Nilai_Sub_CPMK_Lembar_Kerja_ID_Lembar_Kerja')->references('ID_Lembar_Kerja')->on('lembar_kerja');

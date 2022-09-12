@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cpl', function (Blueprint $table) {
-            $table->string('ID_CPL')->primary;
+            $table->bigIncrements('ID_CPL')->primary;
             $table->string('Deskripsi_CPL');
 
             $table->unsignedBigInteger('Mata_Kuliah_ID_MK')->nullable();
