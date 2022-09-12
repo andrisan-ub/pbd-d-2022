@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('sub_cpmk', function (Blueprint $table) {
             $table->bigIncrements('Kode_Sub_CPMK')->primary;
 	        $table->integer('Bobot_Sub_CPMK');
-	        $table->integer('UAS');
+	        $table->integer('UAs');
 	        $table->integer('UTS');
 	        $table->integer('LK_1');
 	        $table->integer('LK_2');
