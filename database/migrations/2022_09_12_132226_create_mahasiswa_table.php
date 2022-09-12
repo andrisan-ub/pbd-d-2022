@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('mahasiswa', function (Blueprint $table) {
-            $table->string('NIM');
+            $table->string('NIM')->primary;
             $table->foreignId('Mata_Kuliah_Kode_MK');
             $table->foreignId('Dosen_Pengampu_NIP');
             $table->string('Nama_Mahasiswa');
