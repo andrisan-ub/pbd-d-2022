@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cpmk', function (Blueprint $table) {
-            $table->string('ID_CPMK')->primary;
-            $table->string('Deskripsi_CPMK');
+        Schema::create('prodi', function (Blueprint $table) {
+            $table->integer('ID_Prodi')->primary;
+            $table->string('Nama_Prodi');
+            $table->string('Jenjang');
         });
     }
 
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cpmk');
+        Schema::dropIfExists('prodi');
     }
 };
