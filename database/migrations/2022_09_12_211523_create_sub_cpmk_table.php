@@ -21,7 +21,7 @@ return new class extends Migration
 	        $table->integer('LK_3');
 	        $table->integer('LK_4');
             $table->integer('UAS');
-	        $table->integer('UTS');
+	        $table->integer('UTs');
 
 	        $table->unsignedBigInteger('Penilaian_Kode_Penilaian')->nullable();
 	        $table->foreign('Penilaian_Kode_Penilaian')->references('Kode_Penilaian')->on('penilaian');
