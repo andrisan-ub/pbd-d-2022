@@ -13,9 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('_c_p_l', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('mata_kuliah', function (Blueprint $table) {
+            $table->string('Kode_MK')->primary;
+            $table->string('Jumlah_SKS');
+            $table->integer('Jumlah_SKS');
+            $table->string('Materi_Pembelajaran');
+            $table->time('Estimasi_Waktu');
+            $table->year('Kurikulum');
         });
     }
 
@@ -26,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_c_p_l');
+        Schema::dropIfExists('mata_kuliah');
     }
 };
