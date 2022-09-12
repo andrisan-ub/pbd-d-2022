@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('nilai_sub_cpmk', function (Blueprint $table) {
-            $table->integer('Nilai')->primary;
+            $table->bigIncrements('Nilai')->primary;
             $table->double('Nilai_Sub_CPMK');
         });
     }
