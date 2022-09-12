@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('mata_kuliah', function (Blueprint $table) {
             $table->string('Kode_MK')->primary;
             $table->string('Jumlah_SKS');
-            $table->integer('Jumlah_SKS');
             $table->string('Materi_Pembelajaran');
             $table->time('Estimasi_Waktu');
             $table->year('Kurikulum');
