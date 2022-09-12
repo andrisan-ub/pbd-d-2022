@@ -14,8 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cpl', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->string('ID_CPL')->primary;
+            $table->string('Deskripsi_CPL');
+
+            $table->unsignedBigInteger('Mata_Kuliah_ID_MK')->nullable();
+            $table->foreign('Mata_Kuliah_ID_MK')->references('ID_MK')->on('mata_kuliah');
         });
     }
 
