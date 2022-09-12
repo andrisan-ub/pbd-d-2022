@@ -20,8 +20,9 @@ return new class extends Migration
             $table->string('Nama_Mahasiswa');
             $table->integer('Semester_MHS');
 
-            $table->foreign('Mata_Kuliah_Kode_MK')->references('Kode')->on('Mata_Kuliah');
-            $table->foreign('Dosen_Pengampu_NIP')->references('Kode')->on('Dosen_Pengampu');
+            $table->foreign('Dosen_Pengampu_NIP')->references('NIP')->on('dosen_pengampu');
+            $table->foreign('Mata_Kuliah_Kode_MK')->references('Kode_MK')->on('mata_kuliah');
+
         });
     }
 
