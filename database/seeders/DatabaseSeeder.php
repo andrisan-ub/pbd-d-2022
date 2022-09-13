@@ -151,6 +151,36 @@ class DatabaseSeeder extends Seeder
             'Sub_CPMK_ID_Sub_CPMK' => '0102',
     
             ]);
+        
+        DB::table('nilai_sub_cpmk')->insert([
+            'ID_Nilai' => '1211',
+            'Nilai_Sub_CPMK' => '80',
+            'Lembar_Kerja_ID_Lembar_Kerja' => '0808',
+            'Lembar_Kerja_Sub_CPMK_ID_Sub_CPMK' =>'0101',
+            ]);
+    
+        DB::table('nilai_sub_cpmk')->insert([
+            'ID_Nilai' => '1212',
+            'Nilai_Sub_CPMK' => '90',
+            'Lembar_Kerja_ID_Lembar_Kerja' => '0909',
+            'Lembar_Kerja_Sub_CPMK_ID_Sub_CPMK' =>'0102',
+            ]);
+    
+        DB::table('bobot')->insert([
+            'Bobot' => '1311',
+            'Persentase' => '25',
+            'Nilai_Sub_CPMK_ID_Nilai' => '1211',
+            'Nilai_Sub_CPMK_Lembar_Kerja_ID_Lembar_Kerja' =>'0808',
+            'Nilai_Sub_CPMK_Lembar_Kerja_Sub_CPMK_ID_Sub_CPMK' =>'0101',
+            ]);
+    
+        DB::table('bobot')->insert([
+            'Bobot' => '1312',
+            'Persentase' => '50',
+            'Nilai_Sub_CPMK_ID_Nilai' => '1212',
+            'Nilai_Sub_CPMK_Lembar_Kerja_ID_Lembar_Kerja' =>'0909',
+            'Nilai_Sub_CPMK_Lembar_Kerja_Sub_CPMK_ID_Sub_CPMK' =>'0102',
+            ]);
      
 
     }
