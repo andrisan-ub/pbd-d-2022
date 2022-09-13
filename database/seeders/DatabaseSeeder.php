@@ -50,7 +50,6 @@ class DatabaseSeeder extends Seeder
 
     DB:: table('mata_kuliah')->insert([
         'Kode_MK' => '60002',
-        'Nama_MK' => 'Pemrograman Basis Data',
         'Jumlah_SKS' => '3',
         'Materi_Pembelajaran' => 'Konsep Pemrograman Basis Data Dalam DBMS',
         'Estimasi_Waktu' => '150',
