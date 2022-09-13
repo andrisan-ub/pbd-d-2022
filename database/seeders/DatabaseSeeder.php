@@ -123,6 +123,34 @@ class DatabaseSeeder extends Seeder
             'CPL_ID_CPL' => '09',
             'CPL_MATA_KULIAH_ID_MK' =>'0011',
         ]);
+
+        DB::table('sub_cpmk')->insert([
+            'ID_sub_cpmk' => '0101',
+            'Deskripsi_Sub_CPMK' => 'Mampu Memahami Konsep Dasar Pemrograman Database dan Struktur STored Procedure',
+            'CPMK_ID_CPMK' => '111',
+            'CPMK_CPL_ID_CPL' => '02',
+            'CPMK_CPL_MATA_KULIAH_ID_MK' => '0011',
+            ]);
+            
+        DB::table('sub_cpmk')->insert([
+            'ID_sub_cpmk' => '0102',
+            'Deskripsi_Sub_CPMK' => 'Mampu Mengimplementasikan logika pemrograman dalam stored procedure',
+            'CPMK_ID_CPMK' => '222',
+            'CPMK_CPL_ID_CPL' => '09',
+            'CPMK_CPL_MATA_KULIAH_ID_MK' => '0011',
+            ]);
+
+        DB::table('lembar_kerja')->insert([
+            'ID_Lembar_Kerja' => '0808',
+            'Sub_CPMK_ID_Sub_CPMK' => '0101',
+
+            ]);
+        
+        DB::table('lembar_kerja')->insert([
+            'ID_Lembar_Kerja' => '0909',
+            'Sub_CPMK_ID_Sub_CPMK' => '0102',
+    
+            ]);
      
 
     }
