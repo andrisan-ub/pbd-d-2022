@@ -95,5 +95,11 @@ class DatabaseSeeder extends Seeder
         'Keterangan_CPL' => 'Lulusan memiliki kemampuan untuk bersikap ilmiah, bekerja secara kolaboratif, memiliki sikap profesionalisme, serta mampu beradaptasi dengan baik di dalam situasi kerja kelompok maupun individu',
         'Mata_Kuliah_Kode_MK' => '60002',
     ]);
+
+    DB::table('cpmk')->insert([
+        'Kode_cpmk' => '60004',
+        'Keterangan_cpmk' => 'Mampu memahami konsep pemrograman basis data untuk menunjang integrasi data dalam pengembangan aplikasi'
+    ]);
+    
     }
 }
