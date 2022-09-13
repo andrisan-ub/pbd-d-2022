@@ -41,5 +41,9 @@ class DatabaseSeeder extends Seeder
         'Nama_Dosen' => 'Andri Santoso'
     ]);
 
+    DB::table('rps')->insert([
+        
+    ]);
+
     }
 }
