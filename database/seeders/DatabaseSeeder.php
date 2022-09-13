@@ -48,6 +48,14 @@ class DatabaseSeeder extends Seeder
         'Tanggal_Penyusunan' => '2021-11-05'
     ]);
 
+    DB:: table('mata_kuliah')->insert([
+        'Kode_MK' => '60002',
+        'Nama_MK' => 'Pemrograman Basis Data',
+        'Jumlah_SKS' => '3',
+        'Materi_Pembelajaran' => 'Konsep Database dan SQL',
+        'Estimasi_Waktu' => '150',
+        'Kurikulum' => '2020'
+    ]);
 
     }
 }
