@@ -32,5 +32,36 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
+        DB::table('dosen')->insert([
+            'NIP' => '12344',
+            'Nama_Dosen' => 'Agus Budianto',
+            'NIDN' => '44321',
+        ]);
+
+        DB::table('dosen')->insert([
+            'NIP' => '12345',
+            'Nama_Dosen' => 'Siti Agustina',
+            'NIDN' => '54321',
+        ]);
+
+
+        DB::table('prodi')->insert([
+            'ID_Prodi' => '11',
+            'Nama_Prodi' => 'Teknik Informatika',
+            'Jenjang' => 'S1',
+            'Jurusan_ID_Jurusan' => '1',
+        ]);
+
+
+        DB::table('prodi')->insert([
+            'ID_Prodi' => '21',
+            'Nama_Prodi' => 'Sistem Informasi',
+            'Jenjang' => 'S1',
+            'Jurusan_ID_Jurusan' => '2',
+        ]);
+
+        
+
+
     }
 }
