@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('Keterangan_CPL');
 
             $table->unsignedBigInteger('Mata_Kuliah_Kode_MK')->nullable();
-            $table->foreignId('Mata_Kuliah_Kode_MK')->references('Kode_MK')->on('mata_kuliah');
+            $table->foreign('Mata_Kuliah_Kode_MK')->references('Kode_MK')->on('mata_kuliah');
 
 
 
