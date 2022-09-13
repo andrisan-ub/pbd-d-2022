@@ -98,5 +98,32 @@ class DatabaseSeeder extends Seeder
             'Prodi_Jurusan_ID_Jurusan' => '2',
         ]);
 
+        DB::table('cpl')->insert([
+            'ID_CPL' => '02',
+            'Deskripsi_CPL' => 'Mampu merancang dan mengimplementasikan solusi teknologi informasi yang diperlukan untuk mewujudkan sistem yang terpadu secara efektif pada suatu organisasi',
+            'Mata_Kuliah_ID_MK' =>'0011',
+        ]);
+
+        DB::table('cpl')->insert([
+            'ID_CPL' => '09',
+            'Deskripsi_CPL' => 'Lulusan memiliki kemampuan untuk bersikap ilmiah, bekerja secara kolaboratif, memiliki sikap profesionalisme, serta mampu beradaptasi dengan baik di dalam situasi kerja kelompok maupun individu',
+            'Mata_Kuliah_ID_MK' =>'0011',
+        ]);
+
+        DB::table('cpmk')->insert([
+            'ID_CPMK' => '111',
+            'CPL_ID_CPL' => '02',
+            'Deskripsi_CPMK' => 'Mampu memahami konsep pemrograman basis data untuk menunjang integrasi data dalam pengembangan aplikasi',
+            'CPL_MATA_KULIAH_ID_MK' =>'0011',
+        ]);
+
+        DB::table('cpmk')->insert([
+            'ID_CPMK' => '222',
+            'Deskripsi_CPMK' => 'Mampu merancang dan mengimplementasikan logika pemrograman dalam stored procedure, store function, cursor dan trigger',
+            'CPL_ID_CPL' => '09',
+            'CPL_MATA_KULIAH_ID_MK' =>'0011',
+        ]);
+     
+
     }
 }
