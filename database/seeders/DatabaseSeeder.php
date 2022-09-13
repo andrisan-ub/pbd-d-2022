@@ -38,14 +38,14 @@ class DatabaseSeeder extends Seeder
 
     DB::table('dosen_pengampu')->insert([
         'NIP' => '197209191997021002',
-        'Nama_Dosen' => 'Andri Santoso'
+        'Nama_Dosen' => 'Andri Santoso',
     ]);
 
     DB::table('rps')->insert([
         'Kode_RPS' => '60001',
         'Bobot_SKS' => '3',
         'Semester' => '3',
-        'Tanggal_Penyusunan' => '2021-11-05'
+        'Tanggal_Penyusunan' => '2021-11-05',
     ]);
 
     DB:: table('mata_kuliah')->([
@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
         'Jumlah_SKS' => '3',
         'Materi_Pembelajaran' => 'Konsep Pemrograman Basis Data Dalam DBMS',
         'Estimasi_Waktu' => '150',
-        'Kurikulum' => '2020'
+        'Kurikulum' => '2020',
     ]);
 
     DB:: table('pengesahan')->([
@@ -63,22 +63,22 @@ class DatabaseSeeder extends Seeder
         'KPS' => 'Widhy Hayuhardhika',
         'KKJFD' => 'Nanang Yudi Setiawan',
         'Mata_Kuliah_Kode_MK' => '60002',
-        'RPS_Kode_RPS' => '60001'
+        'RPS_Kode_RPS' => '60001',
     ]);
 
-    DB::table('Mahasiswa')->insert([
+    DB::table('mahasiswa')->insert([
         'NIM' => '215150701111031',
         'Nama_Mahasiswa' => 'Firda Kusuma',
         'Semester_MHS' => '3',
     ]);
        
-    DB::table('Mahasiswa')->insert([
+    DB::table('mahasiswa')->insert([
         'NIM' => '215150700111031',
         'Nama_Mahasiswa' => 'Putri Rais',
         'Semester_MHS' => '3',
     ]);
        
-    DB::table('Mahasiswa')->insert([
+    DB::table('mahasiswa')->insert([
         'NIM' => '215150700111051',
         'Nama_Mahasiswa' => 'Clarita Yung',
         'Semester_MHS' => '3',
