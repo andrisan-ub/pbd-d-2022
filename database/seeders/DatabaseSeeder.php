@@ -42,8 +42,12 @@ class DatabaseSeeder extends Seeder
     ]);
 
     DB::table('rps')->insert([
-        
+        'Kode_RPS' => '60001',
+        'Bobot_SKS' => '3',
+        'Semester' => '3',
+        'Tanggal_Penyusunan' => '2021-11-05'
     ]);
+
 
     }
 }
