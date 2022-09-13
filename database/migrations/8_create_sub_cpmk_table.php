@@ -18,13 +18,13 @@ return new class extends Migration
             $table->bigIncrements('sub_cpmk')->primary;
             $table->string('Deskripsi_Sub_CPMK');
             
-            $table->string('CPMK_ID_CPMK')->nullable();
+            $table->unsignedBigInteger('CPMK_ID_CPMK')->nullable();
             $table->foreign('CPMK_ID_CPMK')->references('ID_CPMK')->on('cpmk');
 
-            $table->string('CPMK_CPL_ID_CPL')->nullable();
+            $table->unsignedBigInteger('CPMK_CPL_ID_CPL')->nullable();
             $table->foreign('CPMK_CPL_ID_CPL')->references('ID_CPL')->on('cpl');
 
-            $table->string('CPMK_CPL_MATA_KULIAH_ID_MK')->nullable();
+            $table->unsignedBigInteger('CPMK_CPL_MATA_KULIAH_ID_MK')->nullable();
             $table->foreign('CPMK_CPL_MATA_KULIAH_ID_MK')->references('ID_MK')->  on('mata_kuliah');
 
 

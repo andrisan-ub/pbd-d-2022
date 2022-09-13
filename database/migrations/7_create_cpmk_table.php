@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('cpmk', function (Blueprint $table) {
             $table->bigIncrements('ID_CPMK')->primary;
             $table->string('Deskripsi_CPMK');
-            $table->string('CPL_ID_CPL')->nullable();
+            $table->unsignedBigInteger('CPL_ID_CPL')->nullable();
             $table->foreign('CPL_ID_CPL')->references('ID_CPL')->on('cpl');
-            $table->string('CPL_MATA_KULIAH_ID_MK')->nullable();
+            $table->unsignedBigInteger('CPL_MATA_KULIAH_ID_MK')->nullable();
             $table->foreign('CPL_MATA_KULIAH_ID_MK')->references('ID_MK')->  on('mata_kuliah');
         });
     }
