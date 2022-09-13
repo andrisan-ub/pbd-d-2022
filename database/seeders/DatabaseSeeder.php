@@ -58,7 +58,7 @@ class DatabaseSeeder extends Seeder
 
     DB:: table('pengesahan')->insert([
         'Dosen_Pengampu' => 'Issa Arwani',
-        'Status' => 'Terverifikasi',
+        'Status_2' => 'Terverifikasi',
         'KPS' => 'Widhy Hayuhardhika',
         'KKJFD' => 'Nanang Yudi Setiawan',
         'Mata_Kuliah_Kode_MK' => '60002',
@@ -121,23 +121,23 @@ class DatabaseSeeder extends Seeder
     DB::table('sub_cpmk')->insert([
         'Kode_SUB_CPMK' => '6000',
         'Bobot_SUB_CPMK' => '100',
-        'LK1' => '80',
-	  'LK2' => '75',
-	  'LK3' => '92',
-	  'LK4' => '83',
-	  'UTS' => '65',
-	  'UAS' => '50',
+        'LK_1' => '80',
+	    'LK_2' => '75',
+	    'LK_3' => '92',
+	    'LK_4' => '83',
+	    'UTS' => '65',
+	    'UAS' => '50',
     ]);
 
     DB::table('sub_cpmk')->insert([
         'Kode_SUB_CPMK' => '6000',
         'Bobot_SUB_CPMK' => '100',
-        'LK1' => '77',
-	  'LK2' => '92',
-	  'LK3' => '86',
-	  'LK4' => '53',
-	  'UTS' => '88',
-	  'UAS' => '60',
+        'LK_1' => '77',
+	    'LK_2' => '92',
+	    'LK_3' => '86',
+	    'LK_4' => '53',
+	    'UTS' => '88',
+	    'UAS' => '60',
     ]);
 
     DB::table('sub_cpmk')->insert([
