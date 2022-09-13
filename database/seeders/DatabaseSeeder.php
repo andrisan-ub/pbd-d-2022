@@ -90,7 +90,7 @@ class DatabaseSeeder extends Seeder
     ]);
 
     DB::table('cpl')->insert([
-        'Kode_CPL' => '60003',
+        'Kode_CPL' => '60006',
         'Keterangan_CPL' => 'Lulusan memiliki kemampuan untuk bersikap ilmiah, bekerja secara kolaboratif, memiliki sikap profesionalisme, serta mampu beradaptasi dengan baik di dalam situasi kerja kelompok maupun individu',
         'Mata_Kuliah_Kode_MK' => '60002',
     ]);
