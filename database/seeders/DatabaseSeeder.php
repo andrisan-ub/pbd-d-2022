@@ -48,23 +48,28 @@ class DatabaseSeeder extends Seeder
         'Tanggal_Penyusunan' => '2021-11-05'
     ]);
 
-    DB:: table('mata_kuliah')->insert([
-        'Kode_MK' => '60002',
-        'Nama_MK' => 'Pemrograman Basis Data',
-        'Jumlah_SKS' => '3',
-        'Materi_Pembelajaran' => 'Konsep Database dan SQL',
-        'Estimasi_Waktu' => '150',
-        'Kurikulum' => '2020'
+    DB::table('Mahasiswa')->insert([
+        'NIM' => '215150701111031',
+        'Nama_Mahasiswa' => 'Firda Kusuma',
+        'Semester_MHS' => '3',
     ]);
+       
+    DB::table('Mahasiswa')->insert([
+        'NIM' => '215150700111031',
+        'Nama_Mahasiswa' => 'Putri Rais',
+        'Semester_MHS' => '3',
+    ]);
+       
+    DB::table('Mahasiswa')->insert([
+        'NIM' => '215150700111051',
+        'Nama_Mahasiswa' => 'Clarita Yung',
+        'Semester_MHS' => '3',
+    ]);
+    
+       
 
-    DB:: table('pengesahan')->insert([
-        'Dosen_Pengampu' => 'Issa Arwani',
-        'Status' => 'Terverifikasi',
-        'KPS' => 'Widhy Hayuhardhika N.P',
-        'KKJFD' => 'Nanang Yudi Setiawan',
-        'Mata_Kuliah_Kode_MK' => '60002',
-        'RPS_Kode_RPS' => '60001', 
-    ]);
+
+
 
     }
 }
