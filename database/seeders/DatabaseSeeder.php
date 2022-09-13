@@ -143,12 +143,12 @@ class DatabaseSeeder extends Seeder
     DB::table('sub_cpmk')->insert([
         'Kode_SUB_CPMK' => '6000',
         'Bobot_SUB_CPMK' => '100',
-        'LK1' => '92',
-	  'LK2' => '88',
-	  'LK3' => '79',
-	  'LK4' => '90',
-	  'UTS' => '93',
-	  'UAS' => '92',
+        'LK_1' => '92',
+	    'LK_2' => '88',
+	    'LK_3' => '79',
+	    'LK_4' => '90',
+	    'UTS' => '93',
+	    'UAS' => '92',
     ]);
     }
 }
