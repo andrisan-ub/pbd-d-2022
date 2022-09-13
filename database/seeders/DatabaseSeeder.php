@@ -119,7 +119,8 @@ class DatabaseSeeder extends Seeder
     ]);
     
     DB::table('sub_cpmk')->insert([
-        'Kode_SUB_CPMK' => '6000',
+        'Kode_SUB_CPMK' => '6001',
+        'Penilaian_Kode_Penilaian'=>'6008',
         'Bobot_SUB_CPMK' => '100',
         'LK_1' => '80',
 	    'LK_2' => '75',
@@ -130,7 +131,8 @@ class DatabaseSeeder extends Seeder
     ]);
 
     DB::table('sub_cpmk')->insert([
-        'Kode_SUB_CPMK' => '6000',
+        'Kode_SUB_CPMK' => '6002',
+        'Penilaian_Kode_Penilaian'=>'6008',
         'Bobot_SUB_CPMK' => '100',
         'LK_1' => '77',
 	    'LK_2' => '92',
@@ -141,7 +143,8 @@ class DatabaseSeeder extends Seeder
     ]);
 
     DB::table('sub_cpmk')->insert([
-        'Kode_SUB_CPMK' => '6000',
+        'Kode_SUB_CPMK' => '6003',
+        'Penilaian_Kode_Penilaian'=>'6008',
         'Bobot_SUB_CPMK' => '100',
         'LK_1' => '92',
 	    'LK_2' => '88',
