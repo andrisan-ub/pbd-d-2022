@@ -48,6 +48,24 @@ class DatabaseSeeder extends Seeder
         'Tanggal_Penyusunan' => '2021-11-05'
     ]);
 
+    DB:: table('mata_kuliah')->([
+        'Kode_MK' => '60002',
+        'Nama_MK' => 'Pemrograman Basis Data',
+        'Jumlah_SKS' => '3',
+        'Materi_Pembelajaran' => 'Konsep Pemrograman Basis Data Dalam DBMS',
+        'Estimasi_Waktu' => '150',
+        'Kurikulum' => '2020'
+    ]);
+
+    DB:: table('pengesahan')->([
+        'Dosen_Pengampu' => 'Issa Arwani',
+        'Status' => 'Terverifikasi',
+        'KPS' => 'Widhy Hayuhardhika',
+        'KKJFD' => 'Nanang Yudi Setiawan',
+        'Mata_Kuliah_Kode_MK' => '60002',
+        'RPS_Kode_RPS' => '60001'
+    ]);
+
     DB::table('Mahasiswa')->insert([
         'NIM' => '215150701111031',
         'Nama_Mahasiswa' => 'Firda Kusuma',
