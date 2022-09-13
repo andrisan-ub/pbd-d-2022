@@ -57,5 +57,14 @@ class DatabaseSeeder extends Seeder
         'Kurikulum' => '2020'
     ]);
 
+    DB:: table('pengesahan')->insert([
+        'Dosen_Pengampu' => 'Issa Arwani',
+        'Status' => 'Terverifikasi',
+        'KPS' => 'Widhy Hayuhardhika N.P',
+        'KKJFD' => 'Nanang Yudi Setiawan',
+        'Mata_Kuliah_Kode_MK' => '60002',
+        'RPS_Kode_RPS' => '60001', 
+    ]);
+
     }
 }
