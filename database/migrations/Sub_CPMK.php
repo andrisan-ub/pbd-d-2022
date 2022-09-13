@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sub_cpmk', function (Blueprint $table) {
-            $table->bigIncrements('ID_SUB_CPMK')->primary;
-            $table->unsignedBigInteger('CPMK_ID_CPMK');
-            $table->foreign('CPMK_ID_CPMK')->references('ID_CPMK')->on('cpmk'); 
+        Schema::create('Sub_CPMK', function (Blueprint $table) {
+            $table->int('ID_SUB_CPMK')->primary;
+            $table->string('Desc');
+            $table->int('FK_ID_CPMK');
+            $table->foreign('FK_ID_CPMK')->references('ID_CPMK')->on('CPMK'); 
         });
     }
 
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_sub__c_p_m_k');
+        Schema::dropIfExists('Sub_CPMK');
     }
 };
