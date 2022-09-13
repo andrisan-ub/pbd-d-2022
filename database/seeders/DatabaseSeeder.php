@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
         'Tanggal_Penyusunan' => '2021-11-05',
     ]);
 
-    DB:: table('mata_kuliah')->([
+    DB:: table('mata_kuliah')->insert([
         'Kode_MK' => '60002',
         'Nama_MK' => 'Pemrograman Basis Data',
         'Jumlah_SKS' => '3',
@@ -57,7 +57,7 @@ class DatabaseSeeder extends Seeder
         'Kurikulum' => '2020',
     ]);
 
-    DB:: table('pengesahan')->([
+    DB:: table('pengesahan')->insert([
         'Dosen_Pengampu' => 'Issa Arwani',
         'Status' => 'Terverifikasi',
         'KPS' => 'Widhy Hayuhardhika',
