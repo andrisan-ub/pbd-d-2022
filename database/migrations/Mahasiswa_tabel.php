@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('Nama');
             $table->enum('Jenis_Kelamin', array('L','P'));
             $table->date('Tahun_Masuk');
-            $table->integer('Prodi_ID_Prodi');
+
+            $table->foreignId('Prodi_ID_Prodi');
             $table->foreign('Prodi_ID_Prodi')-> references ('ID_Prodi')-> on ('Prodi');
         });
     }
