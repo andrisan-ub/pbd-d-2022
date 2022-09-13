@@ -66,5 +66,23 @@ class DatabaseSeeder extends Seeder
         'RPS_Kode_RPS' => '60001', 
     ]);
 
+    DB::table('Mahasiswa')->insert([
+        'NIM' => '215150701111031',
+        'Nama_Mahasiswa' => 'Firda Kusuma',
+        'Semester_MHS' => '3',
+    ]);
+       
+    DB::table('Mahasiswa')->insert([
+        'NIM' => '215150700111031',
+        'Nama_Mahasiswa' => 'Putri Rais',
+        'Semester_MHS' => '3',
+    ]);
+       
+    DB::table('Mahasiswa')->insert([
+        'NIM' => '215150700111051',
+        'Nama_Mahasiswa' => 'Clarita Yung',
+        'Semester_MHS' => '3',
+    ]);
+    
     }
 }
