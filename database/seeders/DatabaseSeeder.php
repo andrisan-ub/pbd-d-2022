@@ -100,6 +100,22 @@ class DatabaseSeeder extends Seeder
         'Kode_cpmk' => '60004',
         'Keterangan_cpmk' => 'Mampu memahami konsep pemrograman basis data untuk menunjang integrasi data dalam pengembangan aplikasi'
     ]);
+
+    DB::table('penilaian')->insert([
+        'Kode_Penilaian' => '6001',
+        'Predikat' => 'B',
+        'Nilai' => '75',
+    ]);
+DB::table('penilaian')->insert([
+        'Kode_Penilaian' => '6001',
+        'Predikat' => 'B',
+        'Nilai' => '76',
+    ]);
+DB::table('penilaian')->insert([
+        'Kode_Penilaian' => '6001',
+        'Predikat' => 'A',
+        'Nilai' => '89',
+    ]);
     
     }
 }
