@@ -14,14 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('Mata_Kuliah', function (Blueprint $table) {
-            $table->int('ID_MK')-> primary();
+            $table->integer('ID_MK');
             $table->string('Nama_MK');
         });
     }
 
     /**
      * Reverse the migrations.
-     *2
+     *
      * @return void
      */
     public function down()
