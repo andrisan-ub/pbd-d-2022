@@ -54,14 +54,49 @@ class DatabaseSeeder extends Seeder
 
 
         DB::table('prodi')->insert([
-            'ID_Prodi' => '21',
+            'ID_Prodi' => '22',
             'Nama_Prodi' => 'Sistem Informasi',
             'Jenjang' => 'S1',
             'Jurusan_ID_Jurusan' => '2',
         ]);
 
-        
+        DB::table('mahasiswa')->insert([
+            'NIM' => '215150701111001',
+            'Nama_mahasiswa' => 'Dianty Annisa',
+            'Dosen_NIP' =>'12345',
+        ]);
 
+        DB::table('mahasiswa')->insert([
+            'NIM' => '215150701111002',
+            'Nama_mahasiswa' => 'Rhama Renaldi Jakfar',
+            'Dosen_NIP' =>'12344',
+        ]);
+
+        DB::table('mata_kuliah')->insert([
+            'ID_MK' => '0011',
+            'Nama_MK' => 'Pengembangan Aplikasi Web',
+            'Kode_MK' => '001111',
+            'Jumlah_SKS' => '3',
+            'Thn_MK' => '2022',
+            'IsWajib' => true,
+            'Mahasiswa_NIM' => '215150701111001',
+            'Dosen_NIP' =>'12345',
+            'Prodi_ID_Prodi' => '11',
+            'Prodi_Jurusan_ID_Jurusan' => '1',
+        ]);
+
+        DB::table('mata_kuliah')->insert([
+            'ID_MK' => '0022',
+            'Nama_MK' => 'Internet of Things',
+            'Kode_MK' => '002222',
+            'Jumlah_SKS' => '4',
+            'Thn_MK' => '2022',
+            'IsWajib' => true,
+            'Mahasiswa_NIM' => '215150701111002',
+            'Dosen_NIP' =>'12344',
+            'Prodi_ID_Prodi' => '22',
+            'Prodi_Jurusan_ID_Jurusan' => '2',
+        ]);
 
     }
 }
