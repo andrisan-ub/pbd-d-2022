@@ -106,16 +106,50 @@ class DatabaseSeeder extends Seeder
         'Predikat' => 'B',
         'Nilai' => '75',
     ]);
-DB::table('penilaian')->insert([
+    
+    DB::table('penilaian')->insert([
         'Kode_Penilaian' => '6001',
         'Predikat' => 'B',
         'Nilai' => '76',
     ]);
-DB::table('penilaian')->insert([
+
+    DB::table('penilaian')->insert([
         'Kode_Penilaian' => '6001',
         'Predikat' => 'A',
         'Nilai' => '89',
     ]);
     
+    DB::table('sub_cpmk')->insert([
+        'Kode_SUB_CPMK' => '6000',
+        'Bobot_SUB_CPMK' => '100',
+        'LK1' => '80',
+	  'LK2' => '75',
+	  'LK3' => '92',
+	  'LK4' => '83',
+	  'UTS' => '65',
+	  'UAS' => '50',
+    ]);
+
+    DB::table('sub_cpmk')->insert([
+        'Kode_SUB_CPMK' => '6000',
+        'Bobot_SUB_CPMK' => '100',
+        'LK1' => '77',
+	  'LK2' => '92',
+	  'LK3' => '86',
+	  'LK4' => '53',
+	  'UTS' => '88',
+	  'UAS' => '60',
+    ]);
+
+    DB::table('sub_cpmk')->insert([
+        'Kode_SUB_CPMK' => '6000',
+        'Bobot_SUB_CPMK' => '100',
+        'LK1' => '92',
+	  'LK2' => '88',
+	  'LK3' => '79',
+	  'LK4' => '90',
+	  'UTS' => '93',
+	  'UAS' => '92',
+    ]);
     }
 }
