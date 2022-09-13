@@ -83,6 +83,17 @@ class DatabaseSeeder extends Seeder
         'Nama_Mahasiswa' => 'Clarita Yung',
         'Semester_MHS' => '3',
     ]);
+    
+    DB::table('cpl')->insert([
+        'Kode_CPL' => '60003',
+        'Keterangan_CPL' => 'Mampu merancang dan mengimplementasikan solusi teknologi informasi terintegrasi yang diperlukan untuk mewujdkan sistem yang terpadu secara efektif pada suatu organisasi',
+        'Mata_Kuliah_Kode_MK' => '60002',
+    ]);
 
+    DB::table('cpl')->insert([
+        'Kode_CPL' => '60003',
+        'Keterangan_CPL' => 'Lulusan memiliki kemampuan untuk bersikap ilmiah, bekerja secara kolaboratif, memiliki sikap profesionalisme, serta mampu beradaptasi dengan baik di dalam situasi kerja kelompok maupun individu',
+        'Mata_Kuliah_Kode_MK' => '60002',
+    ]);
     }
 }
