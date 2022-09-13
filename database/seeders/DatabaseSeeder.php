@@ -107,13 +107,13 @@ class DatabaseSeeder extends Seeder
     ]);
     
     DB::table('penilaian')->insert([
-        'Kode_Penilaian' => '6001',
+        'Kode_Penilaian' => '6007',
         'Predikat' => 'B',
         'Nilai' => '76',
     ]);
 
     DB::table('penilaian')->insert([
-        'Kode_Penilaian' => '6001',
+        'Kode_Penilaian' => '6008',
         'Predikat' => 'A',
         'Nilai' => '89',
     ]);
