@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreign('Lembar_Kerja_ID_Lembar_Kerja')->references('ID_Lembar_Kerja')->on('lembar_kerja');
 
             $table->unsignedBigInteger('Lembar_Kerja_Sub_CPMK_ID_Sub_CPMK')->nullable();
-            $table->foreign('Lembar_Kerja_Sub_CPMK_ID_Sub_CPMK')->references('Sub_CPMK')->on('sub_cpmk');
+            $table->foreign('Lembar_Kerja_Sub_CPMK_ID_Sub_CPMK')->references('ID_sub_cpmk')->on('sub_cpmk');
         });
     }
 

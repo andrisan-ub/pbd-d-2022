@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('sub_cpmk', function (Blueprint $table) {
             
-            $table->bigIncrements('sub_cpmk')->primary;
+            $table->bigIncrements('ID_sub_cpmk')->primary;
             $table->string('Deskripsi_Sub_CPMK');
             
             $table->unsignedBigInteger('CPMK_ID_CPMK')->nullable();
