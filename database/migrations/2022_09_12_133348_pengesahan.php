@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pengesahan', function (Blueprint $table) {
-            $table->bigIncrements('Dosen_Pengampu')->primary;
+            $table->string('Dosen_Pengampu')->primary;
             $table->unsignedBigInteger('Mata_Kuliah_Kode_MK')->nullable();
             $table->unsignedBigInteger('RPS_Kode_RPS')->nullable();
             $table->string('Status_2');

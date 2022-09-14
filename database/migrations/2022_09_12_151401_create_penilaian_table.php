@@ -28,5 +28,8 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('penilaian');
+        $table->bigIncrements('Kode_Penilaian')->primary;
+        $table->string('Predikat');
+        $table->integer('Nilai');
     }
 };
