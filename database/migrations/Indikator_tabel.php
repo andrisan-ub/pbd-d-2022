@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('Indikator', function (Blueprint $table) {
-            $table->string('ID_Indikator')->primary();
-            $table->string('Desc_2');
+            $table->string('ID_Indikator', 10)->primary();
+            $table->string('Desc_2', 255);
         });
     }
 
