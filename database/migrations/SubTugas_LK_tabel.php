@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('SubTugas_LK', function (Blueprint $table) {
-            $table->string('ID_Sub_LK')->primary();
-            $table->string('Desc_2');
+            $table->string('ID_Sub_LK', 10)->primary();
+            $table->string('Desc_2', 255);
         });
     }
 
