@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tugas', function (Blueprint $table) {
+        Schema::create('tugas_ujian', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_mahasiswa');
-            $table->string('tipe_tugas');
+            $table->string('tipe_ujian');
             $table->double('nilai');
             $table->timestamps();
 
-            $table->foreign('tipe_tugas')->references('nama')->on('tipetugas');
+            $table->foreign('tipe_ujian')->references('nama')->on('tipe_ujian');
             $table->foreign('id_mahasiswa')->references('id')->on('mahasiswamatkul');
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tugas');
+        Schema::dropIfExists('tugas_ujian');
     }
 };
