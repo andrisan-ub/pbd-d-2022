@@ -58,7 +58,7 @@ class DatabaseSeeder extends Seeder
 
     DB:: table('pengesahan')->insert([
         'Dosen_Pengampu' => 'Issa Arwani',
-        'Status_2' => 'Terverifikasi',
+        'Status' => 'Terverifikasi',
         'KPS' => 'Widhy Hayuhardhika',
         'KKJFD' => 'Nanang Yudi Setiawan',
         'Mata_Kuliah_Kode_MK' => '60002',
