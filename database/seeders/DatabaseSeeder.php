@@ -6,6 +6,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
+use function Ramsey\Uuid\v1;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -145,5 +147,50 @@ class DatabaseSeeder extends Seeder
             'ID_Sub_LK' => 'LK-04.d',
             'Desc_2' => 'Masing-masing kelompok projek diminta untuk menyelesaikan final projeknya yang secara ilmiah...'
         ]);
+
+
+
+        DB::table('Indikator') -> insert([
+            'ID_Indikator' => 'N01-1',
+            'Desc_2' => 'Mampu menjelaskan konsep yang ditanyakan dengan benar dan terperinci. Sangat maenguasai materi.'
+        ]);
+        DB::table('Indikator') -> insert([
+            'ID_Indikator' => 'N01-2',
+            'Desc_2' => 'Mampu menjelaskan konsep yang ditanyakan dengan benar, tetapi masih ada bagian-bagian yang kurang dijabarkan.'
+        ]);
+        DB::table('Indikator') -> insert([
+            'ID_Indikator' => 'N01-3',
+            'Desc_2' => 'Hanya menjelaskan secara garis besar saja, masih belum menguasai materi tentang konsep yang ditanyakan.'
+        ]);
+        DB::table('Indikator') -> insert([
+            'ID_Indikator' => 'N01-4',
+            'Desc_2' => 'Berusaha menjawab pertanyaan yang ditanyakan dengan konsep yang tidak ada hubungannya dengan pertanyaan.'
+        ]);
+        DB::table('Indikator') -> insert([
+            'ID_Indikator' => 'N01-5',
+            'Desc_2' => 'Tidak menjawab dan terlihat sangat tidak menguasai konsep yang ditanyakan.'
+        ]);
+        DB::table('Indikator') -> insert([
+            'ID_Indikator' => 'N02-1',
+            'Desc_2' => 'Mampu mengimplementasikan tugas yang diberikan dengan sangat baik dan lancar. Sangat menguasai tools atau framework yang digunakan.'
+        ]);
+        DB::table('Indikator') -> insert([
+            'ID_Indikator' => 'N02-2',
+            'Desc_2' => 'Mampu mengimplementasikan tugas yang diberikan dengan baik walaupun ada yang sedikit belum tuntas. Pemahaman tentang tools dan framework yang digunakan masih bisa.'
+        ]);
+        DB::table('Indikator') -> insert([
+            'ID_Indikator' => 'N02-3',
+            'Desc_2' => 'Setengah jalan atau lebih dalam mengimplementasikan tugas yang diberikan. Menunjukkan arah pengerjaan yang benar.'
+        ]);
+        DB::table('Indikator') -> insert([
+            'ID_Indikator' => 'N02-4',
+            'Desc_2' => 'Belum selesai mengimplentasikan tugas yang diberikan, tetapi ada progress yang cukup. Menunjukkan pemahaman yang kurang.'
+        ]);
+        DB::table('Indikator') -> insert([
+            'ID_Indikator' => 'N02-5',
+            'Desc_2' => 'Hampir tidak ada progress sama sekali dalam mengerjakan tugas yang diberikan.'
+        ]);
+        
+        
     }
 }
