@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('CPL', function (Blueprint $table) {
-            $table->integer('ID_CPL') -> primary();
-            $table->string('Desc',255);
+            $table->string('ID_CPL', 10) -> primary();
+            $table->string('Desc', 255);
         });
     }
 
