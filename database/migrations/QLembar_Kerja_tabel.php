@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('Lembar_Kerja', function (Blueprint $table) {
-            $table->integer('ID_LK')->primary();
+            $table->string('ID_LK',4)->primary();
             $table->double('Bobot');
-            $table->integer('ID_SUB_CPMK');
-            $table->integer('ID_CPMK');
+            $table->string('ID_SUB_CPMK');
+            $table->string('ID_CPMK');
             $table->integer('ID_Penilaian');
             $table->string('ID_SUB_LK');
             $table->string('ID_Indikator');

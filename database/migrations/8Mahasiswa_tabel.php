@@ -23,7 +23,7 @@ return new class extends Migration
             $table->integer('Prodi_ID_Prodi');
             $table->integer('Matkul_ID_Prodi');
             $table->char('Matkul_Dosen_NIP',20);
-            $table->integer('Matkul_ID_CPL');
+            $table->string('Matkul_ID_CPL');
             $table->integer('Matkul_ID_MK');
             $table->integer('Matkul_ID_CPMK');
 
