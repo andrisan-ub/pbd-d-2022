@@ -119,7 +119,7 @@ class DatabaseSeeder extends Seeder
     ]);
     
     DB::table('sub_cpmk')->insert([
-        'Kode_SUB_CPMK' => '6001',
+        'Kode_SUB_CPMK' => 1',
         'Penilaian_Kode_Penilaian'=>'6008',
         'Bobot_SUB_CPMK' => '100',
         'LK_1' => '80',
