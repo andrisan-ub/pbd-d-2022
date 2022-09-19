@@ -18,16 +18,16 @@ return new class extends Migration
             $table->foreignId('id_mahasiswa');
             $table->string('tipe_tugas');
             $table->double('nilai');
-            $table->foreignId('id_cpl');
-            $table->foreignId('id_cpmk');
-            $table->foreignId('id_sub_cpmk');
+            $table->string('id_cpl');
+            $table->string('id_cpmk');
+            $table->string('id_sub_cpmk');
             $table->timestamps();
 
             $table->foreign('tipe_tugas')->references('nama')->on('tipetugas');
             $table->foreign('id_mahasiswa')->references('id')->on('mahasiswamatkul');
-            $table->foreign('id_cpl')->references('id')->on('cpl');
-            $table->foreign('id_cpmk')->references('id')->on('cpmk');
-            $table->foreign('id_sub_cpmk')->references('id')->on('subcpmk');
+            $table->foreign('id_cpl')->references('tipe_cpl')->on('cpl');
+            $table->foreign('id_cpmk')->references('tipe_cpmk')->on('cpmk');
+            $table->foreign('id_sub_cpmk')->references('tipe_sub_cpmk')->on('subcpmk');
         });
     }
 

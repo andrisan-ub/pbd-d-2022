@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cpmk', function (Blueprint $table) {
-            $table->id();
             $table->string('tipe_cpmk');
+            $table->primary('tipe_cpmk');
             $table->text('description');
             $table->timestamps();
         });

@@ -85,26 +85,8 @@ class DatabaseSeeder extends Seeder
             'nama' => 'LK4'
         ]);
 
-        DB::table('tipetugas')->insert([
-            'nama' => 'UTS'
-        ]);
-        DB::table('tipetugas')->insert([
-            'nama' => 'UAS'
-        ]);
 
-        DB::table('tugas')->insert([
-            'id' => 1,
-            'id_mahasiswa' => 1,
-            'tipe_tugas' => 'LK1',
-            'nilai' => 90
-        ]);
-
-        DB::table('tugas')->insert([
-            'id' => 2,
-            'id_mahasiswa' => 2,
-            'tipe_tugas' => 'LK1',
-            'nilai' => 80
-        ]);
+       
 
 
     }

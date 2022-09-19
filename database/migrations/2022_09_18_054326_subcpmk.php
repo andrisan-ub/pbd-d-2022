@@ -14,13 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('subcpmk', function (Blueprint $table) {
-            $table->id();
             $table->string('tipe_sub_cpmk');
+            $table->primary('tipe_sub_cpmk');
             $table->text('description');
-            $table->foreignId('id_cpmk');
+            $table->string('id_cpmk');
             $table->timestamps();
 
-            $table->foreign('id_cpmk')->references('id')->on('cpmk');
+            $table->foreign('id_cpmk')->references('tipe_cpmk')->on('cpmk');
         });
     }
 
