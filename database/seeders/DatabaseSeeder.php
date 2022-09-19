@@ -85,8 +85,13 @@ class DatabaseSeeder extends Seeder
             'nama' => 'LK4'
         ]);
 
+        DB::table('cpl')->insert([
+            'description' => 'IT-ILO-02: Mampu merancang dan menimplementasikan solusi teknologi informasi terintegrasi yang diperlukan untuk mewujudkan sistem yang terpadu secara efektif pada suatu organisasi'
+        ]);
 
-       
+        DB::table('cpl')-> insert([
+            'description' => 'IT-ILO-09: Lulusan memiliki kemampuan untuk bersikap ilmiah, bekerja secara kolaboratif, memiliki sikap profesionalisme, serta mampu beradaptasi dengan baik di dalam situasi kerja kelompok maupun individu'
+        ]);
 
 
     }
