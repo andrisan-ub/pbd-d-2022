@@ -17,13 +17,11 @@ return new class extends Migration
             $table->string('ID_LK',4)->primary();
             $table->double('Bobot');
             $table->string('ID_SUB_CPMK');
-            $table->string('ID_CPMK');
             $table->integer('ID_Penilaian');
             $table->string('ID_SUB_LK');
             $table->string('ID_Indikator');
             
             $table->foreign('ID_SUB_CPMK')->references('ID_SUB_CPMK')->on('penilaian');
-            $table->foreign('ID_CPMK')->references('ID_CPMK')->on('penilaian');
             $table->foreign('ID_Penilaian')->references('ID_Penilaian')->on('penilaian');
             $table->foreign('ID_SUB_LK')->references('ID_Sub_LK')->on('subtugas_lk');
             $table->foreign('ID_Indikator')->references('ID_Indikator')->on('indikator');

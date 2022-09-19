@@ -23,16 +23,12 @@ return new class extends Migration
             $table->integer('Prodi_ID_Prodi');
             $table->integer('Matkul_ID_Prodi');
             $table->char('Matkul_Dosen_NIP',20);
-            $table->string('Matkul_ID_CPL');
             $table->integer('Matkul_ID_MK');
-            $table->string('Matkul_ID_CPMK');
 
             $table->foreign('Prodi_ID_Prodi')-> references ('ID_Prodi')-> on ('prodi');
             $table->foreign('Matkul_ID_Prodi')-> references ('ID_Prodi')-> on ('mata_kuliah');
             $table->foreign('Matkul_Dosen_NIP')-> references ('Dosen_NIP')-> on ('mata_kuliah');
-            $table->foreign('Matkul_ID_CPL')-> references ('ID_CPL')-> on ('mata_kuliah');
             $table->foreign('Matkul_ID_MK')-> references ('ID_MK')-> on ('mata_kuliah');
-            $table->foreign('Matkul_ID_CPMK')-> references ('ID_CPMK')-> on ('mata_kuliah');
         });
     }
 
