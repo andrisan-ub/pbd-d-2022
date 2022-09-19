@@ -75,6 +75,16 @@ class DatabaseSeeder extends Seeder
             'ID_Prodi' => '5',
             'Nama_Prodi' => 'Pendidikan Teknologi informasi'
         ]);
-        
+
+
+        DB::table('CPL') -> insert([
+            'ID_CPL' => 'IT-ILO-02',
+            'Desc' => 'Mampu merancang dan mengimplementasikan solusi teknologi informasi terintegrasi yang diperlukan untuk mewujudkan sistem yang terpadu secara efektif pada suatu organisasi'
+        ]);
+
+        DB::table('CPL') -> insert([
+            'ID_CPL' => 'IT-ILO-09',
+            'Desc' => 'Lulusan memiliki kemampuan untuk bersikap ilmiah, bekerja secara kolaboratif, memiliki sikap profesionalisme, serta mampu beradaptasi dengan baik di dalam situasi kerja kelompok maupun individu'
+        ]);
     }
 }
