@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cpl', function (Blueprint $table) {
+            $table->id();
             $table->text('description');
-            $table->primary('descroption');
-            $table->text('description');
+            // $table->primary('description');
             $table->timestamps();
         });
     }
