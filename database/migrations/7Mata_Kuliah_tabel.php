@@ -18,8 +18,8 @@ return new class extends Migration
             $table->integer('ID_MK')-> primary();
             $table->string('Dosen_NIP', 20);
             $table->integer('ID_Prodi');
-            $table->Integer('ID_CPL');
-            $table->Integer('ID_CPMK');
+            $table->string('ID_CPL');
+            $table->string('ID_CPMK');
             $table->string('Nama_MK', 45);
             
             $table->foreign('Dosen_NIP')-> references ('NIP')-> on ('dosen');
