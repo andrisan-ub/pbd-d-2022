@@ -113,5 +113,12 @@ class DatabaseSeeder extends Seeder
             'description' => 'Mampu menyampaikan hasil rancangan dan implementasi projek secara ilmiah'
         ]);
 
+        DB::table('tipe_ujian')->insert([
+            'nama' => 'UTS'
+        ]);
+
+        DB::table('tipe_ujian')->insert([
+            'nama' => 'UAS'
+        ]);
     }
 }
