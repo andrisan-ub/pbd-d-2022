@@ -20,9 +20,6 @@ return new class extends Migration
 
             $table->unsignedBigInteger('Mata_Kuliah_Kode_MK')->nullable();
             $table->foreign('Mata_Kuliah_Kode_MK')->references('Kode_MK')->on('mata_kuliah');
-
-
-
         });
     }
 
