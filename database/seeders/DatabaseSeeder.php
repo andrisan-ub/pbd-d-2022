@@ -50,5 +50,31 @@ class DatabaseSeeder extends Seeder
             'NIP' => '21515070000005'
         ]);
         
+
+        DB::table('Prodi') -> insert([
+            'ID_Prodi' => '1',
+            'Nama_Prodi' => 'Teknologi Informasi'
+        ]);
+        
+        DB::table('Prodi') -> insert([
+            'ID_Prodi' => '2',
+            'Nama_Prodi' => 'Sistem Informasi'
+        ]);
+
+        DB::table('Prodi') -> insert([
+            'ID_Prodi' => '3',
+            'Nama_Prodi' => 'Teknik Informatika'
+        ]);
+
+        DB::table('Prodi') -> insert([
+            'ID_Prodi' => '4',
+            'Nama_Prodi' => 'Teknik Komputer'
+        ]);
+
+        DB::table('Prodi') -> insert([
+            'ID_Prodi' => '5',
+            'Nama_Prodi' => 'Pendidikan Teknologi informasi'
+        ]);
+        
     }
 }
