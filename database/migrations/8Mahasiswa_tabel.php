@@ -24,8 +24,8 @@ return new class extends Migration
             $table->integer('Matkul_ID_Prodi');
             $table->char('Matkul_Dosen_NIP',20);
             $table->string('Matkul_ID_CPL');
-            $table->integer('Matkul_ID_MK');
-            $table->integer('Matkul_ID_CPMK');
+            $table->string('Matkul_ID_MK');
+            $table->string('Matkul_ID_CPMK');
 
             $table->foreign('Prodi_ID_Prodi')-> references ('ID_Prodi')-> on ('prodi');
             $table->foreign('Matkul_ID_Prodi')-> references ('ID_Prodi')-> on ('mata_kuliah');
