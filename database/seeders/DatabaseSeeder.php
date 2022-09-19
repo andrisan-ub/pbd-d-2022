@@ -120,5 +120,17 @@ class DatabaseSeeder extends Seeder
         DB::table('tipe_ujian')->insert([
             'nama' => 'UAS'
         ]);
+
+        DB::table('tugas_ujian')->insert([
+            'id_mahasiswa' => 1,
+            'tipe_ujian' => 'UAS',
+            'nilai' => 90
+        ]);
+
+        DB::table('tugas_ujian')->insert([
+            'id_mahasiswa' => 1,
+            'tipe_ujian' => 'UTS',
+            'nilai' => 95
+        ]);
     }
 }
