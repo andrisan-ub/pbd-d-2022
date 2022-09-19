@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cpmk', function (Blueprint $table) {
-            $table->integer('Kode_CPMK')->primary;
+            $table->bigIncrements('Kode_CPMK')->primary;
             $table->string('Keterangan_CPMK');
         });
     }
