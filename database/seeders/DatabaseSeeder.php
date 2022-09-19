@@ -90,6 +90,27 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
+        DB::table('CPMK') -> insert ([
+            'ID_CPMK' => 'M1',
+            'Desc' => 'Mampu memahami konsep pemrograman basis data untuk menunjang integrasi data dalam pengembangan aplikasi'
+        ]);
+
+        DB::table('CPMK') -> insert ([
+            'ID_CPMK' => 'M2',
+            'Desc' => 'Mampu merancang dan mengimplementasikan logika pemrograman dalam stored procedure, store function, cursor dan trigger'
+        ]);
+
+        DB::table('CPMK') -> insert ([
+            'ID_CPMK' => 'M3',
+            'Desc' => 'Mampu mengintegrasikan pemrograman basis data dalam aplikasi'
+        ]);
+
+        DB::table('CPMK') -> insert ([
+            'ID_CPMK' => 'M4',
+            'Desc' => 'Mampu menyampaikan hasil rancangan dan implementasi projek secara ilmiah'
+        ]);
+
+
         DB::table('SubTugas_LK') -> insert([
             'ID_Sub_LK' => 'LK-01.a',
             'Desc_2' => 'Mahasiswa secara individu membuat sebuah deskripsi sederhana tentang konsep pemrograman basis data dalam pengembangan aplikasi.'
