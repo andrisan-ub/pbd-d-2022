@@ -93,6 +93,25 @@ class DatabaseSeeder extends Seeder
             'description' => 'IT-ILO-09: Lulusan memiliki kemampuan untuk bersikap ilmiah, bekerja secara kolaboratif, memiliki sikap profesionalisme, serta mampu beradaptasi dengan baik di dalam situasi kerja kelompok maupun individu'
         ]);
 
+        DB::table('cpmk')->insert([
+            'tipe_cpmk' => 'M1',
+            'description' => 'Mampu memahami konsep pemrograman basis data untuk menunjang integrasi data dalam pengembangan aplikasi'
+        ]);
+
+        DB::table('cpmk')->insert([
+            'tipe_cpmk' => 'M2',
+            'description' => 'Mampu merancang dan mengimplementasikan logika pemrograman dalam stored procedure, store function, cursor, dan trigger'
+        ]);
+
+        DB::table('cpmk')->insert([
+            'tipe_cpmk' => 'M3',
+            'description' => 'Mampu mengintegrasikan pemrograman basis data dalam aplikasi'
+        ]);
+
+        DB::table('cpmk')->insert([
+            'tipe_cpmk' => 'M4',
+            'description' => 'Mampu menyampaikan hasil rancangan dan implementasi projek secara ilmiah'
+        ]);
 
     }
 }
