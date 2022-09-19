@@ -132,5 +132,35 @@ class DatabaseSeeder extends Seeder
             'tipe_ujian' => 'UTS',
             'nilai' => 95
         ]);
+
+        DB::table('subcpmk')->insert([
+            'tipe_sub_cpmk' => 'L1',
+            'description' => 'Mampu memahami konsep dasar pemrograman database dan struktur stored procedure',
+            'id_cpmk' => 'M1'
+        ]);
+
+        DB::table('subcpmk')->insert([
+            'tipe_sub_cpmk' => 'L2',
+            'description' => 'Mampu mengimplementasikan logika pemrograman dalam stored procedure',
+            'id_cpmk' => 'M2'
+        ]);
+
+        DB::table('subcpmk')->insert([
+            'tipe_sub_cpmk' => 'L3',
+            'description' => 'Mampu mengimplementasikan cursor, function dan trigger',
+            'id_cpmk' => 'M2'
+        ]);
+
+        DB::table('subcpmk')->insert([
+            'tipe_sub_cpmk' => 'L4',
+            'description' => 'Mampu merancang dan mengimplementasikan dynamic sql dan mengintegrasikannya dalam aplikasi',
+            'id_cpmk' => 'M3'
+        ]);
+
+        DB::table('subcpmk')->insert([
+            'tipe_sub_cpmk' => 'L5',
+            'description' => 'Mampu menyampaikan hasil progres rancangan dan implementasi projek',
+            'id_cpmk' => 'M4'
+        ]);
     }
 }
