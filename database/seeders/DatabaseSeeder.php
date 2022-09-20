@@ -57,6 +57,7 @@ class DatabaseSeeder extends Seeder
             'id_matkul' => 1
         ]);
 
+        // kegiatan pembelajaran siswa
         DB::table('mahasiswamatkul')->insert([
             'id' => 1,
             'nim' => '215150701111006',
@@ -69,6 +70,7 @@ class DatabaseSeeder extends Seeder
             'id_matkul' => 1
         ]);
 
+        // tipe tugas
         DB::table('tipetugas')->insert([
             'nama' => 'LK1'
         ]);
@@ -85,6 +87,7 @@ class DatabaseSeeder extends Seeder
             'nama' => 'LK4'
         ]);
 
+        // cpl
         DB::table('cpl')->insert([
             'description' => 'IT-ILO-02: Mampu merancang dan menimplementasikan solusi teknologi informasi terintegrasi yang diperlukan untuk mewujudkan sistem yang terpadu secara efektif pada suatu organisasi'
         ]);
@@ -93,6 +96,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'IT-ILO-09: Lulusan memiliki kemampuan untuk bersikap ilmiah, bekerja secara kolaboratif, memiliki sikap profesionalisme, serta mampu beradaptasi dengan baik di dalam situasi kerja kelompok maupun individu'
         ]);
 
+        // cpmk
         DB::table('cpmk')->insert([
             'tipe_cpmk' => 'M1',
             'description' => 'Mampu memahami konsep pemrograman basis data untuk menunjang integrasi data dalam pengembangan aplikasi'
@@ -113,26 +117,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Mampu menyampaikan hasil rancangan dan implementasi projek secara ilmiah'
         ]);
 
-        DB::table('tipe_ujian')->insert([
-            'nama' => 'UTS'
-        ]);
-
-        DB::table('tipe_ujian')->insert([
-            'nama' => 'UAS'
-        ]);
-
-        DB::table('tugas_ujian')->insert([
-            'id_mahasiswa' => 1,
-            'tipe_ujian' => 'UAS',
-            'nilai' => 90
-        ]);
-
-        DB::table('tugas_ujian')->insert([
-            'id_mahasiswa' => 1,
-            'tipe_ujian' => 'UTS',
-            'nilai' => 95
-        ]);
-
+        // Sub cpmk
         DB::table('subcpmk')->insert([
             'tipe_sub_cpmk' => 'L1',
             'description' => 'Mampu memahami konsep dasar pemrograman database dan struktur stored procedure',
@@ -162,5 +147,51 @@ class DatabaseSeeder extends Seeder
             'description' => 'Mampu menyampaikan hasil progres rancangan dan implementasi projek',
             'id_cpmk' => 'M4'
         ]);
+
+        // tipe ujian
+        DB::table('tipe_ujian')->insert([
+            'nama' => 'UTS'
+        ]);
+
+        DB::table('tipe_ujian')->insert([
+            'nama' => 'UAS'
+        ]);
+
+        // input daya nilai tugas siswa
+        DB::table('tugas_lk')->insert([
+            'id_mahasiswa' => 1,
+            'tipe_tugas' => 'LK1',
+            'nilai' => 10,
+            'id_cpl' => 1,
+            'id_cpmk' => 'M1',
+            'id_sub_cpmk' => 'L1'
+        ]);
+
+        // input data nilai ujian siswa
+        DB::table('tugas_ujian')->insert([
+            'id_mahasiswa' => 1,
+            'tipe_ujian' => 'UAS',
+            'nilai' => 90
+        ]);
+
+        DB::table('tugas_ujian')->insert([
+            'id_mahasiswa' => 1,
+            'tipe_ujian' => 'UTS',
+            'nilai' => 95
+        ]);
+
+        DB::table('tugas_ujian')->insert([
+            'id_mahasiswa' => 2,
+            'tipe_ujian' => 'UAS',
+            'nilai' => 88
+        ]);
+
+        DB::table('tugas_ujian')->insert([
+            'id_mahasiswa' => 2,
+            'tipe_ujian' => 'UTS',
+            'nilai' => 92
+        ]);
+
+        
     }
 }
