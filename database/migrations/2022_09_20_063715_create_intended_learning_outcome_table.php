@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('intended_learning_outcome', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->BigInteger('ID_ILO')->primary;
+            $table->Integer('POSITION');
+            $table->text('DESCRIPTION');
         });
     }
 
