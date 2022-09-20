@@ -486,5 +486,17 @@ class DatabaseSeeder extends Seeder
             'Nilai_Keaktifan' => '67'
         ]);
 
+    DB::table('Nilai')->insert([
+            'Kode_Nilai' => '10303',
+            'NIM' => '215150707111321',
+            'NIP' => '20180452111612223',
+            'Kode_MK' => '103',
+            'Nilai_Tugas' => '98',
+            'Nilai_Kuis' => '76',
+            'Nilai_UTS' => '79',
+            'Nilai_UAS' => '81',
+            'Nilai_Keaktifan' => '99'
+        ]);
+
 }
 }
