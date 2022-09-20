@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('Lembar_Kerja', function (Blueprint $table) {
-            $table->string('ID_LK',4)->primary();
+            $table->string('ID_LK',4);
             $table->double('Bobot');
             $table->string('ID_SUB_CPMK');
             $table->integer('ID_Penilaian');
