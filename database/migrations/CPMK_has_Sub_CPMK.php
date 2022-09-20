@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('CPMK_Sub_CPMK', function (Blueprint $table) {
+        Schema::create('CPMK_SubCPMK', function (Blueprint $table) {
             $table->string('ID_CPMK', 2);
             $table->string('ID_SUB_CPMK', 2);
 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('CPMK_Sub_CPMK');
+        Schema::dropIfExists('CPMK_SubCPMK');
     }
 };
