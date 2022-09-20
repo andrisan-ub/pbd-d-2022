@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('assignment', function (Blueprint $table) {
             $table->unsignedBigInteger('id')->notnull()->primary;
+            $table->unsignedBigInteger('llo_id')->notnull();
             $table->text('objective')->nullable();
             $table->string('title', 2048)->nullable();
             $table->boolean('is_group_assigment')->nullable();
@@ -23,6 +24,7 @@ return new class extends Migration
             $table->text('output_instruction')->nullable();
             $table->text('submission_instruction')->nullable();
             $table->text('deadline_instruction')->nullable();
+            $table->unsignedBigInteger('class_id')->notnull();
             $table->integer('created_at')->notnull();
             $table->integer('updated_at')->nullable();
         });
