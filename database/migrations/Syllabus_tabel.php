@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('syllabus', function (Blueprint $table) {
-            $table->UnsignedBigInteger('id')->notnull();
+            $table->UnsignedBigInteger('id')->notnull()->primary();
             $table->UnsignedBigInteger('course_id')->notnull();
             $table->string('name')->notnull();
             $table->text('author')->nullable();
