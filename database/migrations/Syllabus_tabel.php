@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('failed_jobs', function (Blueprint $table) {
-            $table->id();
-            $table->string('uuid')->unique();
-            $table->text('connection');
-            $table->text('queue');
-            $table->longText('payload');
-            $table->longText('exception');
-            $table->timestamp('failed_at')->useCurrent();
+        Schema::create('syllabus', function (Blueprint $table) {
+            $table->UnsignedBigInteger('id')->notnull();
+            $table->UnsignedBigInteger('course_id')->notnull();
+            $table->string('name')->notnull();
+            $table->text('author')->nullable();
+            $table->string('head_of_study_program', 512)->nullable();
         });
     }
 
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('failed_jobs');
+        Schema::dropIfExists('syllabus');
     }
 };
