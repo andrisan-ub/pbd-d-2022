@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('criterion_level', function (Blueprint $table) {
-            $table-> autoIncrement('id')->primary;
-            $table->float('Point');
-            $table->varchar('Tittle',1024);
+            $table->autoIncrement('id')->primary;
+            $table->float('Point')->notnull;
+            $table->char('Tittle',1024)->nullable();
             $table->text('Description');
         });
     }
