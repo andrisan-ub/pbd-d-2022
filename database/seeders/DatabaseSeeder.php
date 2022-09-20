@@ -168,5 +168,167 @@ class DatabaseSeeder extends Seeder
         'Mata_kuliah' => 'Pemrograman Aplikasi Web',
         'SKS' => '4'
     ]);
-    }
+    DB::table('Mata_Kuliah')->insert([
+        'Kode_MK' => '101',
+        'NIP' => '20190453122211030',
+        'NIM' => '185150700111000',
+        'Mata_kuliah' => 'Pemrograman Aplikasi Web',
+        'SKS' => '4'
+    ]);
+
+    DB::table('Mata_Kuliah')->insert([
+        'Kode_MK' => '101',
+        'NIP' => '20190453122211030',
+        'NIM' => '195150701111936',
+        'Mata_kuliah' => 'Pemrograman Aplikasi Web',
+        'SKS' => '4'
+    ]);
+
+    DB::table('Mata_Kuliah')->insert([
+        'Kode_MK' => '102',
+        'NIP' => '196109051986011024',
+        'NIM' => '205150700111456',
+        'Mata_kuliah' => 'Algoritma dan Struktur Data',
+        'SKS' => '3'
+    ]);
+
+    DB::table('Mata_Kuliah')->insert([
+        'Kode_MK' => '102',
+        'NIP' => '196109051986011024',
+        'NIM' => '225150700111448',
+        'Mata_kuliah' => 'Algoritma dan Struktur Data',
+        'SKS' => '3'
+    ]);
+
+    DB::table('Mata_Kuliah')->insert([
+        'Kode_MK' => '102',
+        'NIP' => '196109051986011024',
+        'NIM' => '225150701111697',
+        'Mata_kuliah' => 'Algoritma dan Struktur Data',
+        'SKS' => '3'
+    ]);
+
+    DB::table('Mata_Kuliah')->insert([
+        'Kode_MK' => '102',
+        'NIP' => '196109051986011024',
+        'NIM' => '195150707111530',
+        'Mata_kuliah' => 'Algoritma dan Struktur Data',
+        'SKS' => '3'
+    ]);
+    DB::table('Mata_Kuliah')->insert([
+        'Kode_MK' => '102',
+        'NIP' => '196109051986011024',
+        'NIM' => '215150707111711',
+        'Mata_kuliah' => 'Algoritma dan Struktur Data',
+        'SKS' => '3'
+    ]);
+
+    DB::table('Mata_Kuliah')->insert([
+        'Kode_MK' => '102',
+        'NIP' => '196109051986011024',
+        'NIM' => '215150707111321',
+        'Mata_kuliah' => 'Algoritma dan Struktur Data',
+        'SKS' => '3'
+    ]);
+
+    DB::table('Mata_Kuliah')->insert([
+        'Kode_MK' => '102',
+        'NIP' => '196109051986011024',
+        'NIM' => '195150701111936',
+        'Mata_kuliah' => 'Algoritma dan Struktur Data',
+        'SKS' => '3'
+    ]);
+
+    DB::table('Mata_Kuliah')->insert([
+        'Kode_MK' => '103',
+        'NIP' => '20180452111612223',
+        'NIM' => '215150707111711',
+        'Mata_kuliah' => 'Statistika',
+        'SKS' => '3'
+    ]);
+
+    DB::table('Mata_Kuliah')->insert([
+        'Kode_MK' => '103',
+        'NIP' => '20180452111612223',
+        'NIM' => '195150701111936',
+        'Mata_kuliah' => 'Statistika',
+        'SKS' => '3'
+    ]);
+    
+    DB::table('Mata_Kuliah')->insert([
+        'Kode_MK' => '103',
+        'NIP' => '20180452111612223',
+        'NIM' => '215150707111321',
+        'Mata_kuliah' => 'Statistika',
+        'SKS' => '3'
+    ]);
+
+    DB::table('Mata_Kuliah')->insert([
+        'Kode_MK' => '103',
+        'NIP' => '20180452111612223',
+        'NIM' => '185150700111000',
+        'Mata_kuliah' => 'Statistika',
+        'SKS' => '3'
+    ]);
+
+    DB::table('Mata_Kuliah')->insert([
+        'Kode_MK' => '104',
+        'NIP' => '195707121985031057',
+        'NIM' => '205150701111404',
+        'Mata_kuliah' => 'Jaringan Komputer Dasar',
+        'SKS' => '3'
+    ]);
+
+    DB::table('Mata_Kuliah')->insert([
+        'Kode_MK' => '104',
+        'NIP' => '195707121985031057',
+        'NIM' => '195150701111936',
+        'Mata_kuliah' => 'Jaringan Komputer Dasar',
+        'SKS' => '3'
+    ]);
+
+    DB::table('Mata_Kuliah')->insert([
+        'Kode_MK' => '104',
+        'NIP' => '195707121985031057',
+        'NIM' => '225150701111697',
+        'Mata_kuliah' => 'Jaringan Komputer Dasar',
+        'SKS' => '3'
+    ]);
+
+    DB::table('Mata_Kuliah')->insert([
+        'Kode_MK' => '104',
+        'NIP' => '195707121985031057',
+        'NIM' => '215150707111321',
+        'Mata_kuliah' => 'Jaringan Komputer Dasar',
+        'SKS' => '3'
+    ]);
+
+    DB::table('Mata_Kuliah')->insert([
+        'Kode_MK' => '104',
+        'NIP' => '195707121985031057',
+        'NIM' => '215150707111711',
+        'Mata_kuliah' => 'Jaringan Komputer Dasar',
+        'SKS' => '3'
+    ]);
+
+    DB::table('Mata_Kuliah')->insert([
+        'Kode_MK' => '104',
+        'NIP' => '195707121985031057',
+        'NIM' => '215150707111711',
+        'Mata_kuliah' => 'Jaringan Komputer Dasar',
+        'SKS' => '3'
+    ]);
+
+    DB::table('Nilai')->insert([
+        'Kode_Nilai' => '10101',
+        'NIM' => '195150707111530',
+        'NIP' => '20190453122211030',
+        'Kode_MK' => '101',
+        'Nilai_Tugas' => '78',
+        'Nilai_Kuis' => '94',
+        'Nilai_UTS' => '67',
+        'Nilai_UAS' => '88',
+        'Nilai_Keaktifan' => '90'
+    ]);
+}
 }
