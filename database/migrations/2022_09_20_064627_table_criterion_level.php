@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('criterion_level', function (Blueprint $table) {
             $table-> autoIncrement('id')->primary;
+            $table->float('Point');
+            $table->varchar('Tittle',1024);
             $table->text('Description');
         });
     }
