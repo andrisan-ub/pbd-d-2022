@@ -110,11 +110,14 @@ class DatabaseSeeder extends Seeder
 
         //////////////////////////////////////////SUB_CPMK/////////////////////////////////////////
         DB::table('Sub_CPMK') -> insert([
-            'ID_SUB_CPMK' => '',
-            'Desc' => ''
+            'ID_SUB_CPMK' => 'L1',
+            'Desc' => 'blablabla1'
             ]);
+        DB::table('Sub_CPMK') -> insert([
+            'ID_SUB_CPMK' => 'L2',
+            'Desc' => 'blablabla2'
+            ]);                
             
-
         ////////////////////////////////////SUBTUGAS_LK///////////////////////////////////////////////////
         DB::table('SubTugas_LK') -> insert([
             'ID_Sub_LK' => 'LK-01.a',
@@ -221,62 +224,85 @@ class DatabaseSeeder extends Seeder
         ////////////////////////////////////DENGAN FOREIGN KEY///////////////////////////////////////
         //////////////////////////////////////////MATKUL/////////////////////////////////////////
         DB::table('Mata_Kuliah') -> insert([
-            'ID_MK' => '',
-            'Dosen_NIP' => '',
-            'ID_Prodi' => '',
-            'Nama_MK' => ''
+            'ID_MK' => '1',
+            'Dosen_NIP' => '21515070000001',
+            'ID_Prodi' => '1',
+            'Nama_MK' => 'Pemrograman Basis Data'
         ]);
-        
+
         //////////////////////////////////////////MAHASISWA/////////////////////////////////////////
         DB::table('Mahasiswa') -> insert([
-            'NIM' => '',
-            'Nama' => '',
-            'Jenis_Kelamin' => '',
-            'Tahun_Masuk' => '',
-            'Prodi_ID_Prodi' => '',
-            'Matkul_ID_Prodi' => '',
-            'Matkul_Dosen_NIP' => '',
-            'Matkul_ID_MK' => ''
+            'NIM' => '215150700111234',
+            'Nama' => 'Spongebob Square Pants',
+            'Jenis_Kelamin' => 'L',
+            'Tahun_Masuk' => '2021',
+            'Prodi_ID_Prodi' => '1',
+            'Matkul_ID_Prodi' => '1',
+            'Matkul_Dosen_NIP' => '21515070000001',
+            'Matkul_ID_MK' => '1'
         ]);
 
         //////////////////////////////////////////MATKUL_HAS_CPL/////////////////////////////////////////
         DB::table('Matkul_CPL') -> insert([
-            'ID_Prodi' => '',
-            'Dosen_NIP' => '',
-            'ID_MK' => '',
-            'ID_CPL' => ''
+            'ID_Prodi' => '1',
+            'Dosen_NIP' => '21515070000001',
+            'ID_MK' => '1',
+            'ID_CPL' => 'IT-ILO-02'
+        ]);
+        DB::table('Matkul_CPL') -> insert([
+            'ID_Prodi' => '1',
+            'Dosen_NIP' => '21515070000001',
+            'ID_MK' => '1',
+            'ID_CPL' => 'IT-ILO-09'
         ]);
 
         //////////////////////////////////////////MATKUL_HAS_CPMK/////////////////////////////////////////
         DB::table('Matkul_CPMK') -> insert([
-            'ID_Prodi' => '',
-            'Dosen_NIP' => '',
-            'ID_MK' => '',
-            'ID_CMPK' => ''
+            'ID_Prodi' => '1',
+            'Dosen_NIP' => '21515070000001',
+            'ID_MK' => '1',
+            'ID_CPMK' => 'M1'
+        ]);
+        DB::table('Matkul_CPMK') -> insert([
+            'ID_Prodi' => '1',
+            'Dosen_NIP' => '21515070000001',
+            'ID_MK' => '1',
+            'ID_CPMK' => 'M2'
         ]);
 
         //////////////////////////////////////////CPMK_HAS_SUBCPMK/////////////////////////////////////////
         DB::table('CPMK_SubCPMK') -> insert([
-            'ID_CPMK' => '',
-            'ID_SUB_CPMK' => ''
+            'ID_CPMK' => 'M1',
+            'ID_SUB_CPMK' => 'L1'
+        ]);
+        DB::table('CPMK_SubCPMK') -> insert([
+            'ID_CPMK' => 'M1',
+            'ID_SUB_CPMK' => 'L2'
         ]);
 
         //////////////////////////////////////////PENILAIAN/////////////////////////////////////////
         DB::table('Penilaian') -> insert([
-            'ID_Penilaian' => '',
-            'Nama_Penilaian' => '',
-            'ID_SUB_CPMK' => '',
-            'Bobot' => ''
+            'ID_Penilaian' => '4',
+            'Nama_Penilaian' => 'LK',
+            'ID_SUB_CPMK' => 'L1',
         ]);
 
         //////////////////////////////////////////LEMBAR_KERJA/////////////////////////////////////////
         DB::table('Lembar_Kerja') -> insert([
-            'ID_LK' => '',
-            'Bobot' => '',
-            'ID_SUB_CPMK' => '',
-            'ID_Penilaian' => '',
-            'ID_SUB_LK' => '',
-            'ID_Indikator' => ''
+            'ID_LK' => '1',
+            'Bobot' => '10',
+            'ID_SUB_CPMK' => 'L1',
+            'ID_Penilaian' => '4',
+            'ID_SUB_LK' => 'LK-01.a',
+            'ID_Indikator' => 'N01-1'
+        ]);
+        DB::table('Lembar_Kerja') -> insert([
+            'ID_LK' => '1',
+            'Bobot' => '10',
+            'ID_SUB_CPMK' => 'L1',
+            'ID_Penilaian' => '4',
+            'ID_SUB_LK' => 'LK-01.b',
+            'ID_Indikator' => 'N01-2'
         ]);
     }
 }

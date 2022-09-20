@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('ID_Penilaian')-> primary();
             $table->string('Nama_Penilaian', 10);
             $table->string('ID_SUB_CPMK');
-            $table->double('Bobot');
+            $table->double('Bobot')-> nullable();
            
             $table->foreign('ID_SUB_CPMK')->references('ID_sub_CPMK')->on('sub_cpmk');     
         });
