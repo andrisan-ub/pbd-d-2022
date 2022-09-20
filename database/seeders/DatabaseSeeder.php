@@ -438,5 +438,53 @@ class DatabaseSeeder extends Seeder
             'Nilai_Keaktifan' => '98'
         ]);
 
+    DB::table('Nilai')->insert([
+            'Kode_Nilai' => '10207',
+            'NIM' => '215150707111321',
+            'NIP' => '196109051986011024',
+            'Kode_MK' => '102',
+            'Nilai_Tugas' => '78',
+            'Nilai_Kuis' => '87',
+            'Nilai_UTS' => '67',
+            'Nilai_UAS' => '87',
+            'Nilai_Keaktifan' => '99'
+        ]);
+
+        DB::table('Nilai')->insert([
+            'Kode_Nilai' => '10208',
+            'NIM' => '195150701111936',
+            'NIP' => '196109051986011024',
+            'Kode_MK' => '102',
+            'Nilai_Tugas' => '78',
+            'Nilai_Kuis' => '77',
+            'Nilai_UTS' => '79',
+            'Nilai_UAS' => '80',
+            'Nilai_Keaktifan' => '90'
+        ]);
+
+        DB::table('Nilai')->insert([
+            'Kode_Nilai' => '10301',
+            'NIM' => '215150707111711',
+            'NIP' => '20180452111612223',
+            'Kode_MK' => '103',
+            'Nilai_Tugas' => '76',
+            'Nilai_Kuis' => '87',
+            'Nilai_UTS' => '83',
+            'Nilai_UAS' => '73',
+            'Nilai_Keaktifan' => '87'
+        ]);
+
+        DB::table('Nilai')->insert([
+            'Kode_Nilai' => '10302',
+            'NIM' => '195150701111936',
+            'NIP' => '20180452111612223',
+            'Kode_MK' => '103',
+            'Nilai_Tugas' => '90',
+            'Nilai_Kuis' => '67',
+            'Nilai_UTS' => '86',
+            'Nilai_UAS' => '46',
+            'Nilai_Keaktifan' => '67'
+        ]);
+
 }
 }
