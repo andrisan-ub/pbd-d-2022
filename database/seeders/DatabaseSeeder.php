@@ -17,12 +17,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        ////////////////////////////////////DOSEN///////////////////////////////////////////////////
          DB::table('Dosen')->insert([
             'Nama' => 'Andri Santoso',
             'NIP' => '21515070000001'
@@ -53,6 +48,7 @@ class DatabaseSeeder extends Seeder
         ]);
         
 
+        ////////////////////////////////////PRODI///////////////////////////////////////////////////
         DB::table('Prodi') -> insert([
             'ID_Prodi' => '1',
             'Nama_Prodi' => 'Teknologi Informasi'
@@ -79,6 +75,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
+        ////////////////////////////////////CPL///////////////////////////////////////////////////
         DB::table('CPL') -> insert([
             'ID_CPL' => 'IT-ILO-02',
             'Desc' => 'Mampu merancang dan mengimplementasikan solusi teknologi informasi terintegrasi yang diperlukan untuk mewujudkan sistem yang terpadu secara efektif pada suatu organisasi'
@@ -90,6 +87,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
+        ////////////////////////////////////CPMK///////////////////////////////////////////////////
         DB::table('CPMK') -> insert ([
             'ID_CPMK' => 'M1',
             'Desc' => 'Mampu memahami konsep pemrograman basis data untuk menunjang integrasi data dalam pengembangan aplikasi'
@@ -110,7 +108,14 @@ class DatabaseSeeder extends Seeder
             'Desc' => 'Mampu menyampaikan hasil rancangan dan implementasi projek secara ilmiah'
         ]);
 
+        //////////////////////////////////////////SUB_CPMK/////////////////////////////////////////
+        DB::table('Sub_CPMK') -> insert([
+            'ID_SUB_CPMK' => '',
+            'Desc' => ''
+            ]);
+            
 
+        ////////////////////////////////////SUBTUGAS_LK///////////////////////////////////////////////////
         DB::table('SubTugas_LK') -> insert([
             'ID_Sub_LK' => 'LK-01.a',
             'Desc_2' => 'Mahasiswa secara individu membuat sebuah deskripsi sederhana tentang konsep pemrograman basis data dalam pengembangan aplikasi.'
@@ -171,6 +176,7 @@ class DatabaseSeeder extends Seeder
 
 
 
+        ////////////////////////////////////INDIKATOR///////////////////////////////////////////////////
         DB::table('Indikator') -> insert([
             'ID_Indikator' => 'N01-1',
             'Desc_2' => 'Mampu menjelaskan konsep yang ditanyakan dengan benar dan terperinci. Sangat maenguasai materi.'
@@ -211,7 +217,66 @@ class DatabaseSeeder extends Seeder
             'ID_Indikator' => 'N02-5',
             'Desc_2' => 'Hampir tidak ada progress sama sekali dalam mengerjakan tugas yang diberikan.'
         ]);
+
+        ////////////////////////////////////DENGAN FOREIGN KEY///////////////////////////////////////
+        //////////////////////////////////////////MATKUL/////////////////////////////////////////
+        DB::table('Mata_Kuliah') -> insert([
+            'ID_MK' => '',
+            'Dosen_NIP' => '',
+            'ID_Prodi' => '',
+            'Nama_MK' => ''
+        ]);
         
-        
+        //////////////////////////////////////////MAHASISWA/////////////////////////////////////////
+        DB::table('Mahasiswa') -> insert([
+            'NIM' => '',
+            'Nama' => '',
+            'Jenis_Kelamin' => '',
+            'Tahun_Masuk' => '',
+            'Prodi_ID_Prodi' => '',
+            'Matkul_ID_Prodi' => '',
+            'Matkul_Dosen_NIP' => '',
+            'Matkul_ID_MK' => ''
+        ]);
+
+        //////////////////////////////////////////MATKUL_HAS_CPL/////////////////////////////////////////
+        DB::table('Matkul_CPL') -> insert([
+            'ID_Prodi' => '',
+            'Dosen_NIP' => '',
+            'ID_MK' => '',
+            'ID_CPL' => ''
+        ]);
+
+        //////////////////////////////////////////MATKUL_HAS_CPMK/////////////////////////////////////////
+        DB::table('Matkul_CPMK') -> insert([
+            'ID_Prodi' => '',
+            'Dosen_NIP' => '',
+            'ID_MK' => '',
+            'ID_CMPK' => ''
+        ]);
+
+        //////////////////////////////////////////CPMK_HAS_SUBCPMK/////////////////////////////////////////
+        DB::table('CPMK_SubCPMK') -> insert([
+            'ID_CPMK' => '',
+            'ID_SUB_CPMK' => ''
+        ]);
+
+        //////////////////////////////////////////PENILAIAN/////////////////////////////////////////
+        DB::table('Penilaian') -> insert([
+            'ID_Penilaian' => '',
+            'Nama_Penilaian' => '',
+            'ID_SUB_CPMK' => '',
+            'Bobot' => ''
+        ]);
+
+        //////////////////////////////////////////LEMBAR_KERJA/////////////////////////////////////////
+        DB::table('Lembar_Kerja') -> insert([
+            'ID_LK' => '',
+            'Bobot' => '',
+            'ID_SUB_CPMK' => '',
+            'ID_Penilaian' => '',
+            'ID_SUB_LK' => '',
+            'ID_Indikator' => ''
+        ]);
     }
 }
