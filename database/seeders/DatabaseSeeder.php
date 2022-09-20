@@ -254,7 +254,7 @@ class DatabaseSeeder extends Seeder
         'Mata_kuliah' => 'Statistika',
         'SKS' => '3'
     ]);
-    
+
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '103',
         'NIP' => '20180452111612223',
@@ -330,5 +330,29 @@ class DatabaseSeeder extends Seeder
         'Nilai_UAS' => '88',
         'Nilai_Keaktifan' => '90'
     ]);
+
+    DB::table('Nilai')->insert([
+            'Kode_Nilai' => '10102',
+            'NIM' => '205150700111456',
+            'NIP' => '20190453122211030',
+            'Kode_MK' => '101',
+            'Nilai_Tugas' => '78',
+            'Nilai_Kuis' => '98',
+            'Nilai_UTS' => '99',
+            'Nilai_UAS' => '87',
+            'Nilai_Keaktifan' => '99'
+        ]);
+
+        DB::table('Nilai')->insert([
+            'Kode_Nilai' => '10103',
+            'NIM' => '215150701111831',
+            'NIP' => '20190453122211030',
+            'Kode_MK' => '101',
+            'Nilai_Tugas' => '77',
+            'Nilai_Kuis' => '88',
+            'Nilai_UTS' => '99',
+            'Nilai_UAS' => '85',
+            'Nilai_Keaktifan' => '90'
+        ]);
 }
 }
