@@ -390,7 +390,8 @@ class DatabaseSeeder extends Seeder
                 'Nilai_UAS' => '91',
                 'Nilai_Keaktifan' => '95'
             ]);
-      DB::table('Nilai')->insert([
+
+    DB::table('Nilai')->insert([
             'Kode_Nilai' => '10202',
             'NIM' => '225150700111448',
             'NIP' => '196109051986011024',
@@ -402,7 +403,7 @@ class DatabaseSeeder extends Seeder
             'Nilai_Keaktifan' => '88'
         ]);
 
-        DB::table('Nilai')->insert([
+    DB::table('Nilai')->insert([
             'Kode_Nilai' => '10203',
             'NIM' => '225150701111697',
             'NIP' => '196109051986011024',
@@ -414,7 +415,7 @@ class DatabaseSeeder extends Seeder
             'Nilai_Keaktifan' => '99'
         ]);
 
-        DB::table('Nilai')->insert([
+    DB::table('Nilai')->insert([
             'Kode_Nilai' => '10204',
             'NIM' => '195150707111530',
             'NIP' => '196109051986011024',
@@ -426,7 +427,7 @@ class DatabaseSeeder extends Seeder
             'Nilai_Keaktifan' => '90'
         ]);
 
-        DB::table('Nilai')->insert([
+    DB::table('Nilai')->insert([
             'Kode_Nilai' => '10206',
             'NIM' => '215150707111711',
             'NIP' => '196109051986011024',
@@ -450,7 +451,7 @@ class DatabaseSeeder extends Seeder
             'Nilai_Keaktifan' => '99'
         ]);
 
-        DB::table('Nilai')->insert([
+    DB::table('Nilai')->insert([
             'Kode_Nilai' => '10208',
             'NIM' => '195150701111936',
             'NIP' => '196109051986011024',
@@ -462,7 +463,7 @@ class DatabaseSeeder extends Seeder
             'Nilai_Keaktifan' => '90'
         ]);
 
-        DB::table('Nilai')->insert([
+    DB::table('Nilai')->insert([
             'Kode_Nilai' => '10301',
             'NIM' => '215150707111711',
             'NIP' => '20180452111612223',
@@ -474,7 +475,7 @@ class DatabaseSeeder extends Seeder
             'Nilai_Keaktifan' => '87'
         ]);
 
-        DB::table('Nilai')->insert([
+    DB::table('Nilai')->insert([
             'Kode_Nilai' => '10302',
             'NIM' => '195150701111936',
             'NIP' => '20180452111612223',
