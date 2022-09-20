@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('criterion_level', function (Blueprint $table) {
-            $table-> bigIncrement('ID_criterion')->primary;
+            $table-> autoIncrement('id')->primary;
             $table->text('Description');
         });
     }
