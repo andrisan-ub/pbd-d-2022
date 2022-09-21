@@ -14,7 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('lesson_learning_outcome', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->integer('position');
+            $table->text('description');
+            // $table->unsignedBigInteger('clo_id');
+            // $table->foreign('clo_id')->references('id')->on('course_learning_outcome');
             $table->timestamps();
         });
     }
