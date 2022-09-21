@@ -14,11 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('course_learning_outcame', function (Blueprint $table) {
-            $table->id();
-            $table->string('Description');
+            $table->id('id');
+            $table->integer('position');
+            $table->string('description');
             $table->timestamps();
-            $table->foreignId('syllabus_id')->nullable();
-            $table->foreign('syllabus_id')->references('id')->on('syllabus');
         });
     }
 
