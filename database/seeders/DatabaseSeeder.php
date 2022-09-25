@@ -14,11 +14,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        DB::table('study_program')->insert([
+            'id'=>1,
+            'faculty_id'=>1,
+            'name'=>'Teknologi Informasi'
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        DB::table('study_program')->insert([
+            'id'=>2,
+            'faculty_id'=>1,
+            'name'=>'Pendidikan Teknologi Informasi'
+        ]);
+
+        DB::table('study_program')->insert([
+            'id'=>3,
+            'faculty_id'=>1,
+            'name'=>'Teknik Informatika'
+        ]);
     }
 }
