@@ -15,8 +15,12 @@ return new class extends Migration
     {
         Schema::create('study_program', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigIncrements('faculty_id'); 
             $table->string('name');
             $table->timestamps();
+
+            $table->foreign('faculty_id')->refereces('id')->on('faculty');
+
         });
     }
 
