@@ -21,35 +21,35 @@ class LLO_Seeder extends Seeder
 
         DB::table('lesson_learning_outcome')->insert([
             'id' => 'L1',  
-            'position' => '',
+            'position' => '1',
             'description' => 'Mampu memahami konsep dasar pemrograman database dan struktur stored procedure',
             // 'clo_id' => '',
         ]);
 
         DB::table('lesson_learning_outcome')->insert([
             'id' => 'L2',  
-            'position' => '',
+            'position' => '2',
             'description' => 'Mampu mengimplementasikan logika pemrograman dalam stored procedure',
             // 'clo_id' => '',
         ]);
 
         DB::table('lesson_learning_outcome')->insert([
             'id' => 'L3',  
-            'position' => '',
+            'position' => '3',
             'description' => 'Mampu mengimplementasikan cursor, function, dan trigger',
             // 'clo_id' => '',
         ]);
 
         DB::table('lesson_learning_outcome')->insert([
             'id' => 'L4',  
-            'position' => '',
+            'position' => '4',
             'description' => 'Mampu merancang dan mengimplementasikan dynamic sql dan mengintegrasikannya dalam aplikasi',
             // 'clo_id' => '',
         ]);
 
         DB::table('lesson_learning_outcome')->insert([
             'id' => 'L5',  
-            'position' => '',
+            'position' => '5',
             'description' => 'Mampu menyampaikan hasil progres rancangan dan implementasi projek',
             // 'clo_id' => '',
         ]);
