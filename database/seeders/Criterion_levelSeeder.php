@@ -46,5 +46,30 @@ class DatabaseSeeder extends Seeder
         'description' => 'Tidak bisa menjawab dan terlihat sangat tidak menguasai konsep yang ditanyakan',
     ]);
 
+    DB::table('criterion')->insert([
+        'title' => 'Excellent',
+        'description' => 'Mampu mengimplementsikan tugas yang diberikan dengan sangat baik dan lancar. Sangat menguasai tools atau framework yang digunakan.',
+    ]);
+
+    DB::table('criterion')->insert([
+        'title' => 'Proficient',
+        'description' => 'Mampu mengimplementasikan tugas yang diberikan dengan baik walaupun ada yang sedikit belum tuntas. Pemahaman tentang tools dan framework yang digunakan masih bisa ditingkatkan.',
+    ]);
+
+    DB::table('criterion')->insert([
+        'title' => 'Satisfactory',
+        'description' => 'Setengah jalan atau lebih dalam mengimplementasikan tugas yang diberikan. Menunjukkan arah pengerjaan yang benar',
+    ]);
+
+    DB::table('criterion')->insert([
+        'title' => 'Poor',
+        'description' => 'Belum selesai mengimplementasikan tugas yang diberikan, tetapi ada progress yang cukup. Menunjukkan pemahaman yang kurang',
+    ]);
+
+    DB::table('criterion')->insert([
+        'title' => 'Incomplete',
+        'description' => 'Hampir tidak ada progress sama sekali dalam mengerjakan tugas yang diberikan',
+    ]);
+
    }
 }
