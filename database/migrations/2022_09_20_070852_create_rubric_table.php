@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('rubric', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name', 1024);
+            $table->id();
+            $table->string('name',1024);
             $table->bigInteger('assigment_id');
             $table->timestamps();
         });
