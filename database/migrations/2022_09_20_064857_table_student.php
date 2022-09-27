@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create ('student', function (Blueprint $table){
-            $table->autoIncrements('id')->primary;
+            $table->UnsignedBigInteger('id')->notnull()->primary;
             $table->char('student_id')->nullable();
+
         });
     }
 
