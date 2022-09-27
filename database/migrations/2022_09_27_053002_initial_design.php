@@ -18,6 +18,16 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->timestamps();
         });
+
+        Schema::create('study_program', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->bigIncrements('faculty_id'); 
+            $table->string('name');
+            $table->timestamps();
+
+            $table->foreign('faculty_id')->refereces('id')->on('faculty');
+
+        });
     }
 
     /**
