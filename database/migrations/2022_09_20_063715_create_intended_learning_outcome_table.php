@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('intended_learning_outcome', function (Blueprint $table) {
-            $table->UnsignedBigInteger('id')->notnull()->primary;
+            $table->id('id')->notnull()->primary;
             $table->Integer('position');
             $table->text('description');
 
