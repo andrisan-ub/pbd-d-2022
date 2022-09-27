@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('criterion_level', function (Blueprint $table) {
             $table->UnsignedBigInteger('id')->notnull()->primary;
             $table->float('point')->notnull;
-            $table->char('title',255)->nullable();
+            $table->char('title')->nullable();
             $table->text('description')->nullable();
         });
     }
