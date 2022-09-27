@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('assignment', function (Blueprint $table) {
-            $table->unsignedBigInteger('id')->notnull()->primary;
+            $table->id();
             $table->unsignedBigInteger('llo_id')->notnull();
             $table->text('objective')->nullable();
             $table->string('title', 2048)->nullable();
