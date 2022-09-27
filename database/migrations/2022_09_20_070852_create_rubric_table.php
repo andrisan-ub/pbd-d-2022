@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('study_program', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigIncrements('faculty_id'); 
-            $table->string('name');
+        Schema::create('rubric', function (Blueprint $table) {
+            $table->id();
+            $table->string('name',1024);
+            $table->bigInteger('assigment_id');
             $table->timestamps();
-
-            $table->foreign('faculty_id')->refereces('id')->on('faculty');
-
         });
     }
 
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('study_program');
+        Schema::dropIfExists('rubric');
     }
 };
