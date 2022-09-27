@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create ('student', function (Blueprint $table){
             $table->autoIncrements('id')->primary;
             $table->char('student_id')->nullable();
+            
         });
     }
 
