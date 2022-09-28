@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         DB::table('intended_learning_outcome')->insert([
-            'id' => '000111',
+            'id' => 'IT-ILO-02',
             'position' => '1',
             'description' => 'Mampu merancang dan mengimplementasikan solusi teknologi infromasi terintegrasi yang diperlukan untuk mewujudkan sistem yang terpadu secara efektif pada suatu organisasi',
             //'syllabus_id_syllabus' => '',
@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
 
 
         DB::table('intended_learning_outcome')->insert([
-            'id' => '000112',
+            'id' => 'IT-ILO-09',
             'position' => '2',
             'description' => 'Lulusan memiliki kemampuan untuk bersikap ilmiah, bekerja secara kolaboratif, memiliki sikap profesionalisme, serta mampu beradaptasi dengan baik di dalam situasi kerja kelompok maupun individu',
             //'syllabus_id_syllabus' => '',
