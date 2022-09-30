@@ -25,17 +25,17 @@ class DatabaseSeeder extends Seeder
     DB::table('Program_Studi')->insert([
         'ID_Program_Studi' => '1',
         'Prodi' => 'Sistem Informasi'
-    ]);
+        ]);
 
     DB::table('Program_Studi')->insert([
         'ID_Program_Studi' => '2',
         'Prodi' => 'Teknologi Informasi'
-    ]);
+        ]);
 
     DB::table('Program_Studi')->insert([
         'ID_Program_Studi' => '3',
         'Prodi' => 'Pendidikan Teknologi Informasi'
-    ]);
+        ]);
 
     DB::table('Mahasiswa')->insert([
         'NIM' => '195150707111530',
@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
         'Nama' => 'Rihan Malik',
         'Angkatan' => '2019',
         'Email' => 'RihanMalik@student.ub.ac.id'
-    ]);
+        ]);
 
     DB::table('Mahasiswa')->insert([
         'NIM' => '205150700111456',
@@ -51,7 +51,7 @@ class DatabaseSeeder extends Seeder
         'Nama' => 'Salsabila Cinta',
         'Angkatan' => '2020',
         'Email' => 'CintaSalsa@student.ub.ac.id'
-    ]);
+        ]);
 
     DB::table('Mahasiswa')->insert([
         'NIM' => '215150701111831',
@@ -59,7 +59,7 @@ class DatabaseSeeder extends Seeder
         'Nama' => 'Dinda Latifa Putri',
         'Angkatan' => '2021',
         'Email' => 'DindaLP@student.ub.ac.id'
-    ]);
+        ]);
 
     DB::table('Mahasiswa')->insert([
         'NIM' => '225150700111448',
@@ -67,7 +67,7 @@ class DatabaseSeeder extends Seeder
         'Nama' => 'Agung Wijaya',
         'Angkatan' => '2022',
         'Email' => 'AwiTI22@student.ub.ac.id'
-    ]);
+        ]);
 
     DB::table('Mahasiswa')->insert([
         'NIM' => '225150701111697',
@@ -75,7 +75,7 @@ class DatabaseSeeder extends Seeder
         'Nama' => 'Muhammad Farhan Sakha',
         'Angkatan' => '2022',
         'Email' => 'Sakhahama@student.ub.ac.id'
-    ]);
+        ]);
 
     DB::table('Mahasiswa')->insert([
         'NIM' => '215150707111711',
@@ -83,7 +83,7 @@ class DatabaseSeeder extends Seeder
         'Nama' => 'Raniya Salsabila',
         'Angkatan' => '2021',
         'Email' => 'Ranibila27@student.ub.ac.id'
-    ]);
+        ]);
 
     DB::table('Mahasiswa')->insert([
         'NIM' => '215150707111321',
@@ -91,7 +91,7 @@ class DatabaseSeeder extends Seeder
         'Nama' => 'Bagas Adi Putra',
         'Angkatan' => '2021',
         'Email' => 'AdiTX04@student.ub.ac.id'
-    ]);
+        ]);
 
     DB::table('Mahasiswa')->insert([
         'NIM' => '185150700111000',
@@ -99,7 +99,7 @@ class DatabaseSeeder extends Seeder
         'Nama' => 'Tiara Nadita Putri',
         'Angkatan' => '2018',
         'Email' => 'Tiara319@student.ub.ac.id'
-    ]);
+        ]);
 
     DB::table('Mahasiswa')->insert([
         'NIM' => '205150701111404',
@@ -107,7 +107,7 @@ class DatabaseSeeder extends Seeder
         'Nama' => 'Bintang Laksana',
         'Angkatan' => '2020',
         'Email' => 'Bintanglangit@student.ub.ac.id'
-    ]);
+        ]);
 
     DB::table('Mahasiswa')->insert([
         'NIM' => '195150701111936',
@@ -115,35 +115,35 @@ class DatabaseSeeder extends Seeder
         'Nama' => 'Rangga Dewangga Bentar',
         'Angkatan' => '2019',
         'Email' => 'BentarbukanBentar@student.ub.ac.id'
-    ]);
+        ]);
 
     DB::table('Dosen')->insert([
         'NIP' => '20190453122211030',
         'Nama' => 'Arya Bimasa',
         'No_Telpon' => '082927480123',
         'Email' => 'Aryasa20@gmail.com'
-    ]);
+        ]);
 
     DB::table('Dosen')->insert([
         'NIP' => '196109051986011024',
         'Nama' => 'Puspita Dewi Ayu',
         'No_Telpon' => '081623019657',
         'Email' => 'Ayu123@gmail.com'
-    ]);
+        ]);
 
     DB::table('Dosen')->insert([
         'NIP' => '20180452111612223',
         'Nama' => 'Dita Purnomo',
         'No_Telpon' => '085937540194',
         'Email' => 'ditapurnomo@gmail.com'
-    ]);
+        ]);
 
     DB::table('Dosen')->insert([
         'NIP' => '195707121985031057',
         'Nama' => 'Ahmad Salam',
         'No_Telpon' => '082278653088',
         'Email' => 'Ahmad19@gmail.com'
-    ]);
+        ]);
 
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '101',
@@ -151,7 +151,7 @@ class DatabaseSeeder extends Seeder
         'NIM' => '195150707111530',
         'Mata_kuliah' => 'Pemrograman Aplikasi Web',
         'SKS' => '4'
-    ]);
+        ]);
 
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '101',
@@ -159,7 +159,7 @@ class DatabaseSeeder extends Seeder
         'NIM' => '205150700111456',
         'Mata_kuliah' => 'Pemrograman Aplikasi Web',
         'SKS' => '4'
-    ]);
+        ]);
 
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '101',
@@ -167,14 +167,15 @@ class DatabaseSeeder extends Seeder
         'NIM' => '215150701111831',
         'Mata_kuliah' => 'Pemrograman Aplikasi Web',
         'SKS' => '4'
-    ]);
+        ]);
+
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '101',
         'NIP' => '20190453122211030',
         'NIM' => '185150700111000',
         'Mata_kuliah' => 'Pemrograman Aplikasi Web',
         'SKS' => '4'
-    ]);
+        ]);
 
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '101',
@@ -182,7 +183,7 @@ class DatabaseSeeder extends Seeder
         'NIM' => '195150701111936',
         'Mata_kuliah' => 'Pemrograman Aplikasi Web',
         'SKS' => '4'
-    ]);
+        ]);
 
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '102',
@@ -190,7 +191,7 @@ class DatabaseSeeder extends Seeder
         'NIM' => '205150700111456',
         'Mata_kuliah' => 'Algoritma dan Struktur Data',
         'SKS' => '3'
-    ]);
+        ]);
 
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '102',
@@ -198,7 +199,7 @@ class DatabaseSeeder extends Seeder
         'NIM' => '225150700111448',
         'Mata_kuliah' => 'Algoritma dan Struktur Data',
         'SKS' => '3'
-    ]);
+        ]);
 
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '102',
@@ -206,7 +207,7 @@ class DatabaseSeeder extends Seeder
         'NIM' => '225150701111697',
         'Mata_kuliah' => 'Algoritma dan Struktur Data',
         'SKS' => '3'
-    ]);
+        ]);
 
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '102',
@@ -214,14 +215,15 @@ class DatabaseSeeder extends Seeder
         'NIM' => '195150707111530',
         'Mata_kuliah' => 'Algoritma dan Struktur Data',
         'SKS' => '3'
-    ]);
+        ]);
+
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '102',
         'NIP' => '196109051986011024',
         'NIM' => '215150707111711',
         'Mata_kuliah' => 'Algoritma dan Struktur Data',
         'SKS' => '3'
-    ]);
+        ]);
 
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '102',
@@ -229,7 +231,7 @@ class DatabaseSeeder extends Seeder
         'NIM' => '215150707111321',
         'Mata_kuliah' => 'Algoritma dan Struktur Data',
         'SKS' => '3'
-    ]);
+        ]);
 
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '102',
@@ -237,7 +239,7 @@ class DatabaseSeeder extends Seeder
         'NIM' => '195150701111936',
         'Mata_kuliah' => 'Algoritma dan Struktur Data',
         'SKS' => '3'
-    ]);
+        ]);
 
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '103',
@@ -245,7 +247,7 @@ class DatabaseSeeder extends Seeder
         'NIM' => '215150707111711',
         'Mata_kuliah' => 'Statistika',
         'SKS' => '3'
-    ]);
+        ]);
 
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '103',
@@ -253,7 +255,7 @@ class DatabaseSeeder extends Seeder
         'NIM' => '195150701111936',
         'Mata_kuliah' => 'Statistika',
         'SKS' => '3'
-    ]);
+        ]);
 
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '103',
@@ -261,7 +263,7 @@ class DatabaseSeeder extends Seeder
         'NIM' => '215150707111321',
         'Mata_kuliah' => 'Statistika',
         'SKS' => '3'
-    ]);
+        ]);
 
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '103',
@@ -269,7 +271,7 @@ class DatabaseSeeder extends Seeder
         'NIM' => '185150700111000',
         'Mata_kuliah' => 'Statistika',
         'SKS' => '3'
-    ]);
+        ]);
 
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '104',
@@ -277,7 +279,7 @@ class DatabaseSeeder extends Seeder
         'NIM' => '205150701111404',
         'Mata_kuliah' => 'Jaringan Komputer Dasar',
         'SKS' => '3'
-    ]);
+        ]);
 
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '104',
@@ -285,7 +287,7 @@ class DatabaseSeeder extends Seeder
         'NIM' => '195150701111936',
         'Mata_kuliah' => 'Jaringan Komputer Dasar',
         'SKS' => '3'
-    ]);
+        ]);
 
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '104',
@@ -293,7 +295,7 @@ class DatabaseSeeder extends Seeder
         'NIM' => '225150701111697',
         'Mata_kuliah' => 'Jaringan Komputer Dasar',
         'SKS' => '3'
-    ]);
+        ]);
 
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '104',
@@ -301,7 +303,7 @@ class DatabaseSeeder extends Seeder
         'NIM' => '215150707111321',
         'Mata_kuliah' => 'Jaringan Komputer Dasar',
         'SKS' => '3'
-    ]);
+        ]);
 
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '104',
@@ -309,7 +311,7 @@ class DatabaseSeeder extends Seeder
         'NIM' => '215150707111711',
         'Mata_kuliah' => 'Jaringan Komputer Dasar',
         'SKS' => '3'
-    ]);
+        ]);
 
     DB::table('Mata_Kuliah')->insert([
         'Kode_MK' => '104',
@@ -317,7 +319,7 @@ class DatabaseSeeder extends Seeder
         'NIM' => '215150707111711',
         'Mata_kuliah' => 'Jaringan Komputer Dasar',
         'SKS' => '3'
-    ]);
+        ]);
 
     DB::table('Nilai')->insert([
         'Kode_Nilai' => '10101',
@@ -329,7 +331,7 @@ class DatabaseSeeder extends Seeder
         'Nilai_UTS' => '67',
         'Nilai_UAS' => '88',
         'Nilai_Keaktifan' => '90'
-    ]);
+        ]);
 
     DB::table('Nilai')->insert([
             'Kode_Nilai' => '10102',
@@ -499,5 +501,78 @@ class DatabaseSeeder extends Seeder
             'Nilai_Keaktifan' => '99'
         ]);
 
-}
-}
+    DB::table('Nilai')->insert([
+            'Kode_Nilai' => '10304',
+            'NIM' => '185150700111000',
+            'NIP' => '20180452111612223',
+            'Kode_MK' => '103',
+            'Nilai_Tugas' => '98',
+            'Nilai_Kuis' => '65',
+            'Nilai_UTS' => '78',
+            'Nilai_UAS' => '54',
+            'Nilai_Keaktifan' => '82'
+        ]);
+    
+    DB::table('Nilai')->insert([
+            'Kode_Nilai' => '10401',
+            'NIM' => '205150701111404',
+            'NIP' => '195707121985031057',
+            'Kode_MK' => '104',
+            'Nilai_Tugas' => '76',
+            'Nilai_Kuis' => '87',
+            'Nilai_UTS' => '65',
+            'Nilai_UAS' => '54',
+            'Nilai_Keaktifan' => '43'
+        ]);
+    
+    DB::table('Nilai')->insert([
+            'Kode_Nilai' => '10402',
+            'NIM' => '195150701111936',
+            'NIP' => '195707121985031057',
+            'Kode_MK' => '104',
+            'Nilai_Tugas' => '78',
+            'Nilai_Kuis' => '89',
+            'Nilai_UTS' => '56',
+            'Nilai_UAS' => '75',
+            'Nilai_Keaktifan' => '80'
+        ]);
+    
+    DB::table('Nilai')->insert([
+            'Kode_Nilai' => '10403',
+            'NIM' => '225150701111697',
+            'NIP' => '195707121985031057',
+            'Kode_MK' => '104',
+            'Nilai_Tugas' => '89',
+            'Nilai_Kuis' => '65',
+            'Nilai_UTS' => '45',
+            'Nilai_UAS' => '98',
+            'Nilai_Keaktifan' => '87'
+        ]);
+    
+    DB::table('Nilai')->insert([
+            'Kode_Nilai' => '10404',
+            'NIM' => '215150707111321',
+            'NIP' => '195707121985031057',
+            'Kode_MK' => '104',
+            'Nilai_Tugas' => '76',
+            'Nilai_Kuis' => '77',
+            'Nilai_UTS' => '65',
+            'Nilai_UAS' => '69',
+            'Nilai_Keaktifan' => '63'
+        ]);
+    
+    DB::table('Nilai')->insert([
+            'Kode_Nilai' => '10405',
+            'NIM' => '215150707111711',
+            'NIP' => '195707121985031057',
+            'Kode_MK' => '105',
+            'Nilai_Tugas' => '73',
+            'Nilai_Kuis' => '75',
+            'Nilai_UTS' => '43',
+            'Nilai_UAS' => '98',
+            'Nilai_Keaktifan' => '80'
+        ]);
+        
+
+        }
+    }
