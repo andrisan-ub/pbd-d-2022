@@ -21,16 +21,5 @@ class DatabaseSeeder extends Seeder
             'name'=>'Teknologi Informasi'
         ]);
 
-        DB::table('study_program')->insert([
-            'id'=>2,
-            'faculty_id'=>1,
-            'name'=>'Pendidikan Teknologi Informasi'
-        ]);
-
-        DB::table('study_program')->insert([
-            'id'=>3,
-            'faculty_id'=>1,
-            'name'=>'Teknik Informatika'
-        ]);
     }
 }
