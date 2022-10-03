@@ -4,8 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class DatabaseSeeder extends Seeder
+class StudentSeeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -21,52 +22,52 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         DB::table('student')->insert([
-            'id' => 001,
+            'id' => 1,
             'student id' => 215150701111031
         ]);
 
         DB::table('student')->insert([
-            'id' => 002,
+            'id' => 2,
             'student id' => 215150700111043
         ]);
 
         DB::table('student')->insert([
-            'id' => 003,
+            'id' => 3,
             'student id' => 215150701111032
         ]);
 
         DB::table('student')->insert([
-            'id' => 004,
+            'id' => 4,
             'student id' => 215150701111033
         ]);
 
         DB::table('student')->insert([
-            'id' => 005,
+            'id' => 5,
             'student id' => 215150701111034
         ]);
 
         DB::table('student')->insert([
-            'id' => 006,
+            'id' => 6,
             'student id' => 215150701111035
         ]);
 
         DB::table('student')->insert([
-            'id' => 007,
+            'id' => 7,
             'student id' => 215150701111036
         ]);
 
         DB::table('student')->insert([
-            'id' => 008,
+            'id' => 8,
             'student id' => 215150701111037
         ]);
 
         DB::table('student')->insert([
-            'id' => 009,
+            'id' => 9,
             'student id' => 215150701111038
         ]);
 
         DB::table('student')->insert([
-            'id' => 010,
+            'id' => 10,
             'student id' => 215150701111039
         ]);
     }
