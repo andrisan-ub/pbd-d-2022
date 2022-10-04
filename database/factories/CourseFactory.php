@@ -20,8 +20,6 @@ class CourseFactory extends Factory
     public function definition()
     {
         return [
-            "study_program_id" => StudyProgram::factory(),
-            "creator_users_id" => User::factory(),
             "name" => fake()->sentence(rand(5,7)),
             "code" => fake()->lexify((str_repeat('?', 5))),
             "course_credit" => fake()->numberBetween(2, 3),

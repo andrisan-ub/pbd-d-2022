@@ -10,4 +10,9 @@ class Faculty extends Model
     protected $table = 'faculty';
 
     use HasFactory;
+
+    public function studyPrograms()
+    {
+        return $this->hasMany(StudyProgram::class);
+    }
 }

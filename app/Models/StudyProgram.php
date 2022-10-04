@@ -10,4 +10,14 @@ class StudyProgram extends Model
     protected $table = 'study_program';
 
     use HasFactory;
+
+    public function courses()
+    {
+        return $this->hasMany(Course::class);
+    }
+
+    public function faculty()
+    {
+        return $this->belongsTo(Faculty::class);
+    }
 }

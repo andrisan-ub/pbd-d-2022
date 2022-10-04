@@ -18,8 +18,7 @@ class StudyProgramFactory extends Factory
     public function definition()
     {
         return [
-            'faculty_id' => Faculty::factory(),
-            'name' => fake()->word,
+            'name' => fake()->words(rand(1,3), true),
         ];
     }
 }

@@ -2,14 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\Faculty;
-use App\Models\StudyProgram;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<Faculty>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Criterion>
  */
-class FacultyFactory extends Factory
+class CriterionFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,7 +17,7 @@ class FacultyFactory extends Factory
     public function definition()
     {
         return [
-            'name' => "Faculty of ".fake()->company,
+            //
         ];
     }
 }

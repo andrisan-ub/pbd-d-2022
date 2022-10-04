@@ -29,7 +29,7 @@ return new class extends Migration
         Schema::create('course', function (Blueprint $table) {
             $table->id();
             $table->foreignId('study_program_id')->constrained('study_program');
-            $table->foreignId('creator_users_id')->constrained('users');
+            $table->foreignId('creator_user_id')->constrained('users');
             $table->string('name')->nullable();
             $table->string('code')->unique()->nullable();
             $table->integer('course_credit')->nullable();
@@ -54,24 +54,24 @@ return new class extends Migration
         Schema::create('intended_learning_outcome', function (Blueprint $table) {
             $table->id();
             $table->foreignId('syllabus_id')->constrained('syllabus');
-            $table->integer('position');
-            $table->text('description');
+            $table->integer('position')->nullable();
+            $table->text('description')->nullable();
             $table->timestampsTz();
         });
 
         Schema::create('course_learning_outcome', function (Blueprint $table) {
             $table->id();
             $table->foreignId('ilo_id')->constrained('intended_learning_outcome');
-            $table->integer('position');
-            $table->text('description');
+            $table->integer('position')->nullable();
+            $table->text('description')->nullable();
             $table->timestampsTz();
         });
 
         Schema::create('lesson_learning_outcome', function (Blueprint $table) {
             $table->id();
             $table->foreignId('clo_id')->constrained('course_learning_outcome');
-            $table->integer('position');
-            $table->text('description');
+            $table->integer('position')->nullable();
+            $table->text('description')->nullable();
             $table->timestampsTz();
         });
 
@@ -85,20 +85,19 @@ return new class extends Migration
             $table->timestampsTz();
         });
 
-        Schema::create('class', function (Blueprint $table) {
+        Schema::create('course_class', function (Blueprint $table) {
             $table->id();
             $table->foreignId('course_id')->constrained('course');
             $table->string('name', 1024);
             $table->string('thumbnail_img', 1024)->nullable();
             $table->string('class_code', 256)->nullable();
-            $table->foreignId('creator_users_id')->constrained('users');
+            $table->foreignId('creator_user_id')->constrained('users');
             $table->timestampsTz();
         });
 
         Schema::create('assignment', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('class_id')->constrained('class');
-            $table->foreignId('llo_id')->constrained('lesson_learning_outcome');
+            $table->foreignId('course_class_id')->constrained('course_class');
             $table->text('objective')->nullable();
             $table->string('title', 2048)->nullable();
             $table->boolean('is_group_assigment')->nullable();
@@ -120,6 +119,7 @@ return new class extends Migration
         Schema::create('criterion', function (Blueprint $table) {
             $table->id();
             $table->foreignId('rubric_id')->constrained('rubric');
+            $table->foreignId('llo_id')->constrained('lesson_learning_outcome');
             $table->string('title', 1024)->nullable();
             $table->string('description', 1024)->nullable();
             $table->float('max_point');
@@ -142,7 +142,7 @@ return new class extends Migration
 
         Schema::create('join_class', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('class_id')->constrained('class');
+            $table->foreignId('course_class_id')->constrained('course_class');
             $table->foreignId('student_id')->constrained('users');
         });
 
@@ -177,7 +177,7 @@ return new class extends Migration
         Schema::dropIfExists('criterion');
         Schema::dropIfExists('rubric');
         Schema::dropIfExists('assignment');
-        Schema::dropIfExists('class');
+        Schema::dropIfExists('course_class');
         Schema::dropIfExists('learning_plan');
         Schema::dropIfExists('lesson_learning_outcome');
         Schema::dropIfExists('course_learning_outcome');
