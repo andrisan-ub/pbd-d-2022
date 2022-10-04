@@ -25,8 +25,27 @@ return new class extends Migration
             $table->string('name');
             $table->timestamps();
 
-            $table->foreign('faculty_id')->refereces('id')->on('faculty');
+            $table->foreign('faculty_id')->references('id')->on('faculty');
 
+        });
+
+        Schema::create('course', function (Blueprint $table){
+            $table->id();
+            $table->bigIncrements('study_program_id');
+            $table->bigIncrements('creator_user_id');
+            $table->timestamps();
+            $table->string('name')->nullable();
+            $table->string('code')->nullable();
+            $table->integer('course_credit')->nullable();
+            $table->integer('lab_credit')->nullable();
+            $table->enum('type', array('mandatory', 'elective'))->nullable();
+            $table->text('short_description')->nullable();
+            $table->string('minimal_requirement', 1024)->nullable();
+            $table->text('study_material_summary')->nullable();
+            $table->text('learning_media')->nullable();
+
+            $table->foreign('study_program_id')->references('id')->on('study_program');
+            $table->foreign('creator_user_id')->references('id')->on('users');
         });
     }
 
