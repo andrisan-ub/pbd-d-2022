@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('name')->notnull();
             $table->text('author')->nullable();
             $table->string('head_of_study_program', 512)->nullable();
+
+            $table->foreign('course_id')->refereces('id')->on('course');
         });
     }
 
