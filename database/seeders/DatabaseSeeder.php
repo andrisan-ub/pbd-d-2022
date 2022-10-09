@@ -15,11 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('study_program')->insert([
-            'id'=>1,
-            'faculty_id'=>1,
-            'name'=>'Teknologi Informasi'
-        ]);
-
+        $this->call(FakeDataSeeder::class);
     }
 }

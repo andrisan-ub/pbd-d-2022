@@ -6,7 +6,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class DatabaseSeeder extends Seeder
+class Criterion_levelSeeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
     DB::table('criterion_level')->insert([
-        'id' => 1,  
+        'id' => 1,
         'point' => 2.5,
         'title' => 'Baik',
     ]);
@@ -92,6 +92,6 @@ class DatabaseSeeder extends Seeder
         'point' => 1,
         'title' => 'Kurang',
     ]);
-    
+
    }
 }
