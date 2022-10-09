@@ -20,153 +20,153 @@ class InitialDesignSeeder extends Seeder
         ]);
         
         DB::table('users')->insert([
-            'id' => 001,
+            'id' => 1,
             'name' => 'Andi Setia Budi',
             'email' => 'andi@student.ub.ac.id',
-            //'email_verified_at' =>,
+            'email_verified_at' => '2022-07-03 07:18:30',
             'password' => 'A1234567',
-            //'remember_token' =>,
-            //'created_at' => ,
-            //'updated_at' =>,
+            'remember_token' => 'Ausdsbs',
+            'created_at' => '2022-07-03 07:18:30',
+            'updated_at' =>'2022-07-03 07:18:30',
         ]);
         DB::table('users')->insert([
-            'id' => 002,
+            'id' => 2,
             'name' => 'Ahmad Satrio',
             'email' => 'ahmad@student.ub.ac.id',
-            //'email_verified_at' =>,
+            'email_verified_at' => '2022-07-03 07:18:30',
             'password' => 'AA123456',
-            //'remember_token' => ,
-            //'created_at' => ,
-            //'updated_at' =>,
+            'remember_token' => 'Ausdsds',
+            'created_at' => '2022-07-03 07:18:30',
+            'updated_at' =>'2022-07-03 07:18:30',
         ]);
         DB::table('users')->insert([
-            'id' => 003,
+            'id' => 3,
             'name' => 'Budi Santoso',
             'email' => 'budi@student.ub.ac.id',
-            //'email_verified_at' =>,
+            'email_verified_at' => '2022-07-03 07:18:30',
             'password' => 'BB123456' ,
-            //'remember_token' =>,
-            //'created_at' => ,
-            //'updated_at' =>,
+            'remember_token' =>'Ausdsba',
+            'created_at' => '2022-07-03 07:18:30',
+            'updated_at' =>'2022-07-03 07:18:30',
         ]);
         DB::table('users')->insert([
-            'id' => 004,
+            'id' => 4,
             'name' => 'Bella Dermawan',
             'email' => 'bella@student.ub.ac.id',
-            //'email_verified_at' =>,
+            'email_verified_at' => '2022-07-03 07:18:30',
             'password' => 'B1234567',
-            //'remember_token' =>,
-            //'created_at' => ,
-            //'updated_at' =>,
+            'remember_token' =>'Ausdsbb',
+            'created_at' => '2022-07-03 07:18:30',
+            'updated_at' =>'2022-07-03 07:18:30',
         ]);
         DB::table('users')->insert([
-            'id' => 005,
+            'id' => 5,
             'name' => 'Cindy Cecillia',
             'email' => 'cindy@student.ub.ac.id',
-            //'email_verified_at' =>,
+            'email_verified_at' => '2022-07-03 07:18:30',
             'password' => 'C1234567',
-            //'remember_token' =>,
-            //'created_at' => ,
-            //'updated_at' =>,
+            'remember_token' =>'Ausdsbc',
+            'created_at' => '2022-07-03 07:18:30',
+            'updated_at' =>'2022-07-03 07:18:30',
         ]);
         DB::table('users')->insert([
-            'id' => 006,
+            'id' => 6,
             'name' => 'Ciko Jericho',
             'email' => 'ciko@student.ub.ac.id',
-            //'email_verified_at' =>,
+            'email_verified_at' => '2022-07-03 07:18:30',
             'password' => 'CC123456' ,
-            //'remember_token' =>,
-            //'created_at' => ,
-            //'updated_at' =>,
+            'remember_token' =>'Ausdsbd',
+            'created_at' => '2022-07-03 07:18:30',
+            'updated_at' =>'2022-07-03 07:18:30',
         ]);
         DB::table('users')->insert([
-            'id' => 007,
+            'id' => 7,
             'name' => 'Dito Haryanto',
             'email' => 'dito@student.ub.ac.id',
-            //'email_verified_at' =>,
+            'email_verified_at' => '2022-07-03 07:18:30',
             'password' => 'D1234567',
-            //'remember_token' =>,
-            //'created_at' => ,
-            //'updated_at' =>,
+            'remember_token' =>'Ausdsbe',
+            'created_at' => '2022-07-03 07:18:30',
+            'updated_at' =>'2022-07-03 07:18:30',
         ]);
         DB::table('users')->insert([
-            'id' => 008,
+            'id' => 8,
             'name' => 'Diana Andini Siswanti',
             'email' => 'diana@student.ub.ac.id',
-            //'email_verified_at' =>,
+            'email_verified_at' => '2022-07-03 07:18:30',
             'password' => 'DD123456',
-            //'remember_token' =>,
-            //'created_at' => ,
-            //'updated_at' =>,
+            'remember_token' =>'Ausdsbg',
+            'created_at' => '2022-07-03 07:18:30',
+            'updated_at' =>'2022-07-03 07:18:30',
         ]);
         DB::table('users')->insert([
-            'id' => 009,
+            'id' => 9,
             'name' => 'Eko Prabudi',
             'email' => 'eko@student.ub.ac.id',
-            //'email_verified_at' =>,
+            'email_verified_at' => '2022-07-03 07:18:30',
             'password' => 'E1234567' ,
-            //'remember_token' =>,
-            //'created_at' => ,
-            //'updated_at' =>,
+            'remember_token' =>'Ausdsbh',
+            'created_at' => '2022-07-03 07:18:30',
+            'updated_at' =>'2022-07-03 07:18:30',
         ]);
         DB::table('users')->insert([
-            'id' => 010,
+            'id' => 10,
             'name' => 'Elang Guritno',
             'email' => 'elang@student.ub.ac.id',
-            //'email_verified_at' =>,	
+            'email_verified_at' => '2022-07-03 07:18:30',	
             'password' => 'EE123456',
-            //'remember_token' => ,	
-            //'created_at' => , 		
-            //'updated_at' =>,		
+            'remember_token' =>'Ausdsbi',	
+            'created_at' => '2022-07-03 07:18:30',
+            'updated_at' =>'2022-07-03 07:18:30',	
         ]);
         
          DB::table('student')->insert([
-            'id' => 001,
+            'id' => 1,
             'student id' => 215150701111031
         ]);
 
         DB::table('student')->insert([
-            'id' => 002,
+            'id' => 2,
             'student id' => 215150700111043
         ]);
 
         DB::table('student')->insert([
-            'id' => 003,
+            'id' => 3,
             'student id' => 215150701111032
         ]);
 
         DB::table('student')->insert([
-            'id' => 004,
+            'id' => 4,
             'student id' => 215150701111033
         ]);
 
         DB::table('student')->insert([
-            'id' => 005,
+            'id' => 5,
             'student id' => 215150701111034
         ]);
 
         DB::table('student')->insert([
-            'id' => 006,
+            'id' => 6,
             'student id' => 215150701111035
         ]);
 
         DB::table('student')->insert([
-            'id' => 007,
+            'id' => 7,
             'student id' => 215150701111036
         ]);
 
         DB::table('student')->insert([
-            'id' => 008,
+            'id' => 8,
             'student id' => 215150701111037
         ]);
 
         DB::table('student')->insert([
-            'id' => 009,
+            'id' => 9,
             'student id' => 215150701111038
         ]);
 
         DB::table('student')->insert([
-            'id' => 010,
+            'id' => 10,
             'student id' => 215150701111039
         ]);
     }
