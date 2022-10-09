@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class CriterionLevel extends Model
 {
     use HasFactory;
+
+    public $table = 'criterion_level';
+
+    public $timestamps = false;
 }

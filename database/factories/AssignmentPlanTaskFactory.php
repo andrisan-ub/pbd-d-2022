@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Syllabus>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\AssignmentPlanTask>
  */
-class SyllabusFactory extends Factory
+class AssignmentPlanTaskFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,9 +17,8 @@ class SyllabusFactory extends Factory
     public function definition()
     {
         return [
-            'title' => fake()->words(3, true),
-            'author' => fake()->name,
-            'head_of_study_program' => fake()->name,
+            'code' => $this->faker->word,
+            'description' => $this->faker->sentences(10, true),
         ];
     }
 }

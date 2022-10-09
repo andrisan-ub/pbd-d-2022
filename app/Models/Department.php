@@ -5,16 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Assignment extends Model
+class Department extends Model
 {
     use HasFactory;
 
-    public $table = 'assignment';
+    public $table = 'department';
 
     public $timestamps = false;
-
-    public function studentGrades()
-    {
-        return $this->hasMany(StudentGrade::class);
-    }
 }

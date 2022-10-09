@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Syllabus>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\StudentInfo>
  */
-class SyllabusFactory extends Factory
+class StudentInfoFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,9 +17,7 @@ class SyllabusFactory extends Factory
     public function definition()
     {
         return [
-            'title' => fake()->words(3, true),
-            'author' => fake()->name,
-            'head_of_study_program' => fake()->name,
+            'student_id_number' => $this->faker->word(),
         ];
     }
 }

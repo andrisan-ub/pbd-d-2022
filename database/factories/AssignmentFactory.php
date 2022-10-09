@@ -17,14 +17,9 @@ class AssignmentFactory extends Factory
     public function definition()
     {
         return [
-            'objective' => fake()->sentence,
-            'title' => fake()->words(5),
-            'is_group_assignment' => fake()->boolean,
-            'assignment_style' => fake()->words(5),
-            'description' => fake()->sentence,
-            'output_instruction' => fake()->sentence,
-            'submission_instruction' => fake()->sentence,
-            'dealine_instruction' => fake()->sentence
+            'assigned_date' => $this->faker->dateTime,
+            'due_date' => $this->faker->dateTime,
+            'note' => $this->faker->text,
         ];
     }
 }

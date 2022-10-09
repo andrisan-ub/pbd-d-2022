@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Assignment extends Model
+class AssignmentPlanTask extends Model
 {
     use HasFactory;
 
-    public $table = 'assignment';
+    public $table = 'assignment_plan_task';
 
     public $timestamps = false;
 
-    public function studentGrades()
+    public function criterion()
     {
-        return $this->hasMany(StudentGrade::class);
+        return $this->hasOne(Criterion::class, 'id', 'criterion_id');
     }
 }

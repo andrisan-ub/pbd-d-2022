@@ -11,6 +11,8 @@ class Syllabus extends Model
 
     public $table = 'syllabus';
 
+    public $timestamps = false;
+
     public function studyProgram()
     {
         return $this->belongsTo(Course::class, 'course_id');
@@ -19,5 +21,10 @@ class Syllabus extends Model
     public function intentedLearningOutcomes()
     {
         return $this->hasMany(IntendedLearningOutcome::class, 'syllabus_id');
+    }
+
+    public function assignmentPlans()
+    {
+        return $this->hasMany(AssignmentPlan::class, 'syllabus_id');
     }
 }

@@ -17,7 +17,9 @@ class LearningPlanFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'study_material' => $this->faker->words(10, true),
+            'learning_method' => $this->faker->words(3, true),
+            'estimated_time' => "3x50",
         ];
     }
 }

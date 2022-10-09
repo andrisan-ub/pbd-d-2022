@@ -17,7 +17,8 @@ class CriterionLevelFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->words(3, true),
+            'description' => $this->faker->sentences(10, true),
         ];
     }
 }

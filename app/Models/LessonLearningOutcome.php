@@ -10,4 +10,11 @@ class LessonLearningOutcome extends Model
     use HasFactory;
 
     public $table = 'lesson_learning_outcome';
+
+    public $timestamps = false;
+
+    public function courseLearningOutcome()
+    {
+        return $this->belongsTo(CourseLearningOutcome::class);
+    }
 }

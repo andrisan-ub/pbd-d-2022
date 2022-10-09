@@ -17,7 +17,7 @@ class RubricFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->words(3, true)
         ];
     }
 }

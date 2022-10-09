@@ -11,6 +11,12 @@ class CourseLearningOutcome extends Model
 
     public $table = 'course_learning_outcome';
 
+    public $timestamps = false;
+
+    public function intendedLearningOutcome(){
+        return $this->belongsTo(IntendedLearningOutcome::class);
+    }
+
     public function lessonLearningOutcomes()
     {
         return $this->hasMany(LessonLearningOutcome::class, 'clo_id');

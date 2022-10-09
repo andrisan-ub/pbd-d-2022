@@ -20,4 +20,13 @@ class Course extends Model
     {
         return $this->belongsTo(User::class, 'creator_user_id');
     }
+
+    public function courseClasses(){
+        return $this->hasMany(CourseClass::class);
+    }
+
+    public function syllabuses()
+    {
+        return $this->hasMany(Syllabus::class);
+    }
 }
