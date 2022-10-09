@@ -191,7 +191,7 @@ return new class extends Migration
         Schema::dropIfExists('join_class');
         Schema::dropIfExists('course_class');
         Schema::dropIfExists('grading_plan');
-        Schema::dropIfExists('assignment_task');
+        Schema::dropIfExists('assignment_plan_task');
         Schema::dropIfExists('criterion_level');
         Schema::dropIfExists('criterion');
         Schema::dropIfExists('rubric');
@@ -205,6 +205,6 @@ return new class extends Migration
         Schema::dropIfExists('study_program');
         Schema::dropIfExists('department');
         Schema::dropIfExists('faculty');
-        Schema::dropIfExists('student');
+        Schema::dropIfExists('student_info');
     }
 };
