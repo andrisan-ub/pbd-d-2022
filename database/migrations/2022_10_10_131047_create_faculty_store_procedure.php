@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         $procedure_read = "DROP PROCEDURE IF EXISTS `get_faculty_by_facultyid`;
-            CREATE PROCEDURE `get_faculty_by_facultyid` (IN idx int)
+            CREATE PROCEDURE `get_faculty_by_facultyid` (IN new_id int)
             BEGIN
             SELECT * FROM faculty WHERE id = idx;
             END;";
