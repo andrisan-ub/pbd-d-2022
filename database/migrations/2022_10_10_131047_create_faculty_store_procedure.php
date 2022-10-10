@@ -16,7 +16,7 @@ return new class extends Migration
         $procedure_read = "DROP PROCEDURE IF EXISTS `get_faculty_by_facultyid`;
             CREATE PROCEDURE `get_faculty_by_facultyid` (IN new_id int)
             BEGIN
-            SELECT * FROM faculty WHERE id = idx;
+            SELECT * FROM faculty WHERE id = new_id;
             END;";
   
         \DB::unprepared($procedure_read);
