@@ -13,14 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
+        // procedure read - Bagas Meganta - 215150701111004
         $procedure_read = "DROP PROCEDURE IF EXISTS `get_faculty_by_facultyid`;
-            CREATE PROCEDURE `get_faculty_by_facultyid` (IN new_id int)
+            CREATE PROCEDURE `get_faculty_by_facultyid` (IN new_idx int)
             BEGIN
-            SELECT * FROM faculty WHERE id = new_id;
+            SELECT * FROM faculty WHERE id = new_idx;
             END;";
   
         \DB::unprepared($procedure_read);
 
+        //procedure update - Bagas Meganta - 215150701111004
         $procedure_update = "DROP PROCEDURE IF EXISTS `update_faculty_by_facultyid`;
             CREATE PROCEDURE `update_faculty_by_facultyid` (IN new_id int, IN new_name varchar(255))
             BEGIN
@@ -29,6 +31,7 @@ return new class extends Migration
   
         \DB::unprepared($procedure_update);
 
+        //procedure create - Muchammad Saifurrijaal - 215150701111006
         $procedure_create = "DROP PROCEDURE IF EXISTS `create_faculty_by_facultyid`;
             CREATE PROCEDURE `create_faculty_by_facultyid` (new_id int, new_name varchar(255) )
             BEGIN
@@ -38,6 +41,7 @@ return new class extends Migration
   
         \DB::unprepared($procedure_create);
 
+        //procedure delete - Muchammad Saifurrijaal - 215150701111006
         $procedure_delete = "DROP PROCEDURE IF EXISTS `delete_faculty_by_facultyid`;
             CREATE PROCEDURE `delete_faculty_by_facultyid` (new_id int)
             BEGIN
