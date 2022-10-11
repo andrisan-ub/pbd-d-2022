@@ -15,9 +15,9 @@ return new class extends Migration
     {
         // procedure read - Bagas Meganta - 215150701111004
         $procedure_read = "DROP PROCEDURE IF EXISTS `get_faculty_by_facultyid`;
-            CREATE PROCEDURE `get_faculty_by_facultyid` (IN new_idx int)
+            CREATE PROCEDURE `get_faculty_by_facultyid` (IN new_id int)
             BEGIN
-            SELECT * FROM faculty WHERE id = new_idx;
+            SELECT * FROM faculty WHERE id = new_id;
             END;";
   
         \DB::unprepared($procedure_read);
