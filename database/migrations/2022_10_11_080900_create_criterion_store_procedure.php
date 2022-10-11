@@ -1,0 +1,95 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        $get_procedure = "DROP PROCEDURE IF EXISTS `get_criterion_by_id`;
+                CREATE PROCEDURE `get_criterion_by_id` (
+                    IN id_crit int
+                )
+
+                BEGIN 
+                SELECT * FROM criterion
+                WHERE id = id_crit;
+                END;
+
+                ";
+            DB::unprepared($get_procedure);
+        
+            $create_procedure = "DROP PROCEDURE IF EXISTS `create_criterion_by_id`;
+            CREATE PROCEDURE `create_criterion_by_id` (
+                IN id_crit int, 
+                IN id_rubc int,
+                IN id_llo int, 
+                IN new_title varchar(1024),
+                IN new_description varchar(1024),
+                IN new_max_point float, 
+                new_create_at datetime,
+                new_update_at datetime
+            )
+
+            BEGIN 
+            INSERT INTO rubric(id, rubric_id, llo_id, title, description, max_point)
+            VALUES(id_crit, id_rubc, id_llo, new_title, new_description, new_max_point);
+            END;
+
+    
+            ";
+        DB::unprepared($create_procedure);
+
+        // Membuat update procedure - 
+
+        $update_procedure = "DROP PROCEDURE IF EXISTS `update_criterion_by_id`;
+                CREATE PROCEDURE `update_criterion_by_id` (
+                    IN id_crit int, 
+                    IN new_title varchar(1024),
+                    IN new_description varchar(1024)
+                )
+
+                BEGIN 
+                UPDATE criterion SET title = new_title, description = new_description
+                WHERE id = id_crit;
+                END;
+
+        
+                ";
+            DB::unprepared($update_procedure);
+
+        // Membuat delete procedure - 
+
+        $delete_procedure = "DROP PROCEDURE IF EXISTS `delete_criterion_by_id`;
+                CREATE PROCEDURE `delete_criterion_by_id` (
+                    IN id_crit int
+                )
+
+                BEGIN 
+                DELETE FROM criterion
+                WHERE id = id_crit;
+                END;
+
+        
+                ";
+            DB::unprepared($delete_procedure);
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('criterion_store_procedure');
+    }
+};
