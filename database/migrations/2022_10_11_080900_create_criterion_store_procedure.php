@@ -13,7 +13,8 @@ return new class extends Migration
      * @return void
      */
     public function up()
-    {
+    {   
+        // Membuat read procedure - Nazwa Annila - 215150701111009
         $get_procedure = "DROP PROCEDURE IF EXISTS `get_criterion_by_id`;
                 CREATE PROCEDURE `get_criterion_by_id` (
                     IN id_crit int
@@ -27,6 +28,7 @@ return new class extends Migration
                 ";
             DB::unprepared($get_procedure);
         
+            // Membuat create procedure - Nazwa Annila - 215150701111009
             $create_procedure = "DROP PROCEDURE IF EXISTS `create_criterion_by_id`;
             CREATE PROCEDURE `create_criterion_by_id` (
                 IN id_crit int, 
