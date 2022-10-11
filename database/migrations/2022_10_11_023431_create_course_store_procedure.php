@@ -13,40 +13,51 @@ return new class extends Migration
      */
     public function up()
     {
-        // procedure read - Bagas Meganta - 215150701111004
-        $procedure_read = "DROP PROCEDURE IF EXISTS `get_study_program_by_study_program_id`;
-            CREATE PROCEDURE `get_study_program_by_study_program_id` (IN new_idx int)
+        // procedure read - Rafli Ardiansyah - 215150701111030
+        $procedure_read = "DROP PROCEDURE IF EXISTS `get_course_by_course_id`;
+            CREATE PROCEDURE `get_course_by_course_id` (IN new_id int)
             BEGIN
-            SELECT * FROM study_program WHERE id = new_idx;
+            SELECT * FROM course WHERE id = new_id;
             END;";
   
         \DB::unprepared($procedure_read);
 
-        //procedure update - Bagas Meganta - 215150701111004
-        $procedure_update = "DROP PROCEDURE IF EXISTS `update_get_study_program_by_study_program_id`;
-            CREATE PROCEDURE `update_study_program_by_study_program_id` (IN new_id int, IN new_department_id int, IN new_name varchar(255))
+        //procedure update - Rafli Ardiansyah - 215150701111030
+        $procedure_update = "DROP PROCEDURE IF EXISTS `update_course_by_course_id`;
+            CREATE PROCEDURE `update_course_by_course_id` (new_id int, new_study_program_id int, new_creator_user_id, new_name varchar(255), new_code varchar(255), new_course_credit int(11), new_lab_credit int(11), new_type enum('mandatory', 'elective'), new_short_description text, new_minimal_requirement varchar (1024), new_study_material_summary text, new_learning_media text)
             BEGIN
             UPDATE study_program SET department_id = new_department_id WHERE id = new_id;
             UPDATE study_program SET name = new_name WHERE id = new_id;
+            UPDATE course SET study_program_id = new_study_program_id WHERE id = new_id;
+            UPDATE course SET creator_user_id = new_creator_user_id WHERE id = new_id;
+            UPDATE course SET name = new_name WHERE id = new_id;
+            UPDATE course SET code = new_code WHERE id = new_id;
+            UPDATE course SET course_credit = new_course_credit WHERE id = new_id;
+            UPDATE course SET lab_credit = new_lab_credit WHERE id = new_id;
+            UPDATE course SET type = new_type WHERE id = new_id;
+            UPDATE course SET short_description = new_short_description WHERE id = new_id;
+            UPDATE course SET minimal_requirement = new_minimal_requirement WHERE id = new_id;
+            UPDATE course SET study_material_summary = new_study_material_summary WHERE id = new_id;
+            UPDATE course SET learning_media = new_learning_media WHERE id = new_id;
             END;";
   
         \DB::unprepared($procedure_update);
 
-        //procedure create - Muchammad Saifurrijaal - 215150701111006
-        $procedure_create = "DROP PROCEDURE IF EXISTS `create_study_program_by_study_program_id`;
-            CREATE PROCEDURE `create_study_program_by_study_program_id` (new_id int, new_department_id int, new_name varchar(255))
+        //procedure create - Rafli Ardiansyah - 215150701111030
+        $procedure_create = "DROP PROCEDURE IF EXISTS `create_course_by_course_id`;
+            CREATE PROCEDURE `create_course_by_course_id` (new_id int, new_study_program_id int, new_creator_user_id, new_name varchar(255), new_code varchar(255), new_course_credit int(11), new_lab_credit int(11), new_type enum('mandatory', 'elective'), new_short_description text, new_minimal_requirement varchar (1024), new_study_material_summary text, new_learning_media text)
             BEGIN
-            INSERT INTO faculty
-            VALUES(new_id, new_department_id, new_name);
+            INSERT INTO course
+            VALUES(new_id int, new_study_program_id int, new_creator_user_id, new_name varchar(255), new_code varchar(255), new_course_credit int(11), new_lab_credit int(11), new_type enum('mandatory', 'elective'), new_short_description text, new_minimal_requirement varchar (1024), new_study_material_summary text, new_learning_media text);
             END;";
   
         \DB::unprepared($procedure_create);
 
-        //procedure delete - Muchammad Saifurrijaal - 215150701111006
-        $procedure_delete = "DROP PROCEDURE IF EXISTS `delete_study_program_by_study_program_id`;
-            CREATE PROCEDURE `delete_study_program_by_study_program_id` (new_id int)
+        //procedure delete - Rafli Ardiansyah - 215150701111030
+        $procedure_delete = "DROP PROCEDURE IF EXISTS `delete_course_by_course_id`;
+            CREATE PROCEDURE `delete_course_by_course_id` (new_id int)
             BEGIN
-            DELETE FROM faculty
+            DELETE FROM course
             WHERE id = new_id;
             END;";
   

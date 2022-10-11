@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2600,
     "height": 2600,
-    "scrollTop": -1103.5040443280466,
-    "scrollLeft": -773.1183136160817,
-    "zoomLevel": 0.3,
+    "scrollTop": -817.5040443280466,
+    "scrollLeft": 0,
+    "zoomLevel": 1,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -374,29 +374,6 @@
             "id": "df9f30ae-12d7-4031-b862-b2be3c6701af"
           },
           {
-            "name": "creator_user_id",
-            "comment": "",
-            "dataType": "bigint unsigned",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": true,
-              "pfk": false,
-              "widthName": 92.3271484375,
-              "widthComment": 60,
-              "widthDataType": 89.4580078125,
-              "widthDefault": 60
-            },
-            "id": "5dabd7f6-d6d0-4a94-8049-3520d6ca74f4"
-          },
-          {
             "name": "code",
             "comment": "",
             "dataType": "varchar",
@@ -418,6 +395,29 @@
               "widthDefault": 60
             },
             "id": "7c4b28fd-8d9a-4df6-8551-de99deeeffd5"
+          },
+          {
+            "name": "creator_user_id",
+            "comment": "",
+            "dataType": "bigint unsigned",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 92.3271484375,
+              "widthComment": 60,
+              "widthDataType": 89.4580078125,
+              "widthDefault": 60
+            },
+            "id": "5dabd7f6-d6d0-4a94-8049-3520d6ca74f4"
           },
           {
             "name": "name",
@@ -654,7 +654,7 @@
           "active": false,
           "left": 28.2407,
           "top": 898.1562,
-          "zIndex": 8,
+          "zIndex": 22,
           "widthName": 60,
           "widthComment": 60,
           "color": "#FF5722"
