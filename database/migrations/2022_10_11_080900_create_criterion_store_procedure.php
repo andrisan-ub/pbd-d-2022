@@ -50,7 +50,7 @@ return new class extends Migration
             ";
         DB::unprepared($create_procedure);
 
-        // Membuat update procedure - 
+        // Membuat update procedure - Ridha Annisa Sabilla - 215150701111016
 
         $update_procedure = "DROP PROCEDURE IF EXISTS `update_criterion_by_id`;
                 CREATE PROCEDURE `update_criterion_by_id` (
@@ -68,7 +68,7 @@ return new class extends Migration
                 ";
             DB::unprepared($update_procedure);
 
-        // Membuat delete procedure - 
+        // Membuat delete procedure - Ridha Annisa Sabilla - 215150701111016
 
         $delete_procedure = "DROP PROCEDURE IF EXISTS `delete_criterion_by_id`;
                 CREATE PROCEDURE `delete_criterion_by_id` (
