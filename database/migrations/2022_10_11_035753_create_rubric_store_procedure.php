@@ -46,6 +46,8 @@ return new class extends Migration
         
                 ";
             DB::unprepared($create_procedure);
+        
+        // Membuat update procedure - Alishza Putri Rahmadina - 215150700111013
 
         $update_procedure = "DROP PROCEDURE IF EXISTS `update_rubric_by_id`;
                 CREATE PROCEDURE `update_rubric_by_id` (
@@ -61,6 +63,8 @@ return new class extends Migration
         
                 ";
             DB::unprepared($update_procedure);
+
+        // Membuat delete procedure - Alishza Putri Rahmadina - 215150700111013
 
         $delete_procedure = "DROP PROCEDURE IF EXISTS `delete_rubric_by_id`;
                 CREATE PROCEDURE `delete_rubric_by_id` (
