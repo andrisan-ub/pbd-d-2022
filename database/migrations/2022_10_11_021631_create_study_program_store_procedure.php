@@ -23,7 +23,7 @@ return new class extends Migration
         \DB::unprepared($procedure_read);
 
         //procedure update - Bagas Meganta - 215150701111004
-        $procedure_update = "DROP PROCEDURE IF EXISTS `update_get_study_program_by_study_program_id`;
+        $procedure_update = "DROP PROCEDURE IF EXISTS `update_study_program_by_study_program_id`;
             CREATE PROCEDURE `update_study_program_by_study_program_id` (IN new_id int, IN new_department_id int, IN new_name varchar(255))
             BEGIN
             UPDATE study_program SET department_id = new_department_id WHERE id = new_id;
