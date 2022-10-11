@@ -25,9 +25,9 @@ return new class extends Migration
 
         //procedure create - Redomeire - 215150701111032
        $procedure_create_new = "DROP PROCEDURE IF EXISTS `create_criterion`;
-       CREATE PROCEDURE `create_criterion` (IN new_id int, IN new_title varchar(1024), IN new_description varchar(1024), IN new_max_point float)
+       CREATE PROCEDURE `create_criterion` (IN new_id int, IN new_rubric_id int, IN new_llo_id int, IN new_title varchar(1024), IN new_description varchar(1024), IN new_max_point double(8,2), new_created_at datetime, new_updated_at datetime)
        BEGIN
-       INSERT INTO criterion VALUES(new_id, new_title, new_description, new_max_point);
+       INSERT INTO criterion VALUES(new_id, new_rubric_id, new_llo_id, new_title, new_description, new_max_point, new_created_at, new_updated_at);
        END;";
 
        DB::unprepared($procedure_create_new);
