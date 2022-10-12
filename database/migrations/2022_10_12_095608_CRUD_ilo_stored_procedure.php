@@ -16,8 +16,8 @@ return new class extends Migration
     public function up()
     {
         // CREATE by NAUFAL AR - 215150701111014
-        $procedure_create = "DROP PROCEDURE IF EXISTS 'create_ilo';
-        CREATE PROCEDURE 'create_ilo' (
+        $procedure_create = "DROP PROCEDURE IF EXISTS `kelompok3_create_ilo`;
+        CREATE PROCEDURE `kelompok3_create_ilo` (
             cr_id BIGINT(20) UNSIGNED,
             cr_syllabus_id BIGINT(20) UNSIGNED,
             cr_position INT,
@@ -26,15 +26,13 @@ return new class extends Migration
         BEGIN
         INSERT INTO intended_learning_outcome
             VALUES(id, position, description, syllabus);
-        END";
+        END;";
 
         DB::unprepared($procedure_create);
 
-        // READ by NAUFAL AR - 215150701111014
-
         // UPDATE by SHAFA AF - 215150700111057
-        $procedure_update = "DROP PROCEDURE IF EXISTS 'update_ilo';
-        CREATE PROCEDURE 'kelompok3_update_ilo'(
+        $procedure_update = "DROP PROCEDURE IF EXISTS `kelompok3_update_ilo`;
+        CREATE PROCEDURE `kelompok3_update_ilo`(
             up_id BIGINT(20) UNSIGNED,
             up_syllabus_id BIGINT(20) UNSIGNED,
             up_position INT(20),
@@ -42,23 +40,27 @@ return new class extends Migration
         )
         BEGIN
             UPDATE intended_learning_outcome set
-            syllabus_id = up_syllabus_id,
-            position = up_position,
-            description = up_description,
+            syllabus_id = up_syllabus_id
             WHERE id = up_id;
-        END";
+            UPDATE intended_learning_outcome set
+            position = up_position
+            WHERE id = up_id;
+            UPDATE intended_learning_outcome set
+            description = up_description
+            WHERE id = up_id;
+        END;";
 
         DB::unprepared($procedure_update);
 
         // DELETE by SHAFA AF - 215150700111057
-        $procedure_delete = "DROP PROCEDURE IF EXSIST 'delete_ilo';
-        DELETE PROCEDURE 'kelompok3_delete_ilo;(
+        $procedure_delete = "DROP PROCEDURE IF EXISTS `kelompok3_delete_ilo`;
+        CREATE PROCEDURE `kelompok3_delete_ilo`(
             dr_id BIGINT(20) UNSIGNED
         )
         BEGIN
             DELETE from intended_learning_outcome
             WHERE id = dr_id;
-        END";
+        END;";
 
         DB::unprepared($procedure_delete);
 

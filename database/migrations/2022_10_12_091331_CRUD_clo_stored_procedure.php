@@ -14,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-      // Procedure create - Fairuz - 215150701111023
+      // Procedure Create - Fairuz - 215150701111023
       $create_procedure = "DROP PROCEDURE IF EXISTS `kelompok3_create_clo`;
         CREATE PROCEDURE `kelompok3_create_clo` (
 	
@@ -35,7 +35,7 @@ return new class extends Migration
         DB::unprepared($create_procedure);
     
 
-       //procedure update - Aulia S.A - 215150701111045
+       //Procedure Update - Aulia S.A - 215150701111045
        $update_procedure = "DROP PROCEDURE IF EXISTS `kelompok3_create_clo`;
         CREATE PROCEDURE `kelompok3_create_clo` (
 	
