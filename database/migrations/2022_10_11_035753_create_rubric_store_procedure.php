@@ -79,6 +79,40 @@ return new class extends Migration
         
                 ";
             DB::unprepared($delete_procedure);
+
+        // Membuat kondisi procedure - Nazwa Annila - 215150701111009
+        $if_procedure = "DROP PROCEDURE IF EXISTS `if_rubric`;
+
+                CREATE PROCEDURE `if_rubric` (IN input int)
+
+                BEGIN
+                    IF input < 5 THEN
+
+                SELECT * FROM rubric
+                WHERE id = input;
+                END IF;
+            END;
+
+            ";
+
+            DB::unprepared($if_procedure);
+        
+        // Membuat looping procedure - Yehezkiel Imannuel - 215150701111018 
+        $loop_procedure = "DROP PROCEDURE IF EXISTS `loop_rubric`;
+                CREATE PROCEDURE `loop_rubric` ()
+                
+                BEGIN
+                declare n int;
+                set n = 1;
+                WHILE n <= 5 DO
+                SELECT * FROM rubric
+                WHERE id = n;
+                set n = n + 1;
+                END WHILE;
+                END;
+
+                ";
+            DB::unprepared($loop_procedure);
     }
 
     /**
