@@ -31,8 +31,8 @@ return new class extends Migration
 
         // LOOPING PROCEDURE - Rama Adhitya Widodo Putra - 215150700111052
         // Looping untuk menampilkan title dan description pada tabel criterion dengan batas j
-        $procedure_loop2 = "DROP PROCEDURE IF EXISTS `kelompok5_loop_criterionTitleAndDescription`;
-            CREATE PROCEDURE `kelompok5_loop_criterionTitleAndDescription`(
+        $procedure_loop2 = "DROP PROCEDURE IF EXISTS `kelompok5_loop_criterion_title_and_Description`;
+            CREATE PROCEDURE `kelompok5_loop_criterion_title_and_Description`(
                 IN i INT,
                 IN j INT
             )
