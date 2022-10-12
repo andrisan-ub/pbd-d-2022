@@ -80,7 +80,7 @@ return new class extends Migration
                 ";
             DB::unprepared($delete_procedure);
 
-        // Membuat kondisi procedure - Nazwa Annila - 215150701111009
+        //  Membuat kondisi procedure - Nazwa Annila - 215150701111009
         $if_procedure = "DROP PROCEDURE IF EXISTS `if_rubric`;
 
                 CREATE PROCEDURE `if_rubric` (IN input int)
