@@ -15,10 +15,9 @@ return new class extends Migration
     {
         //CONDITION PROCEDURE - Alvianta Dwi Putra - 215150700111053
         //condition untuk menampilkan perbandingan antara dosen dan mahasiswa
-        $procedure_create = "DROP PROCEDURE IF EXISTS `compare_civitas`;
-        CREATE PROCEDURE compare_civitas (
-            )
-            BEGIN
+        $procedure_create = "DROP PROCEDURE IF EXISTS `kelompok5_condition_compare_civitas`;
+        CREATE PROCEDURE `kelompok5_condition_compare_civitas`()
+        BEGIN
             DECLARE COUNT1 INT;
             DECLARE COUNT2 INT;
             set COUNT1 = (SELECT COUNT(*) FROM users us
@@ -33,7 +32,7 @@ return new class extends Migration
             END if;
             SET @tampil = CONCAT('Dosen: ', COUNT1, ' | ', ' Mahasiswa: ', COUNT2, ' | ', @print);
             SELECT @tampil;
-            END;";
+        END;";
         DB::unprepared($procedure_create);
     }
 
