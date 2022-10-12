@@ -83,6 +83,21 @@ return new class extends Migration
         
                 ";
             DB::unprepared($delete_procedure);
+        
+        // Membuat if procedure - Diajeng Kinasih Qurota'ayun - 215150700111022
+        $if_procedure = "DROP PROCEDURE IF EXISTS `if_criterion`;
+        
+                    CREATE PROCEDURE `if_criterion` (IN input int)
+
+                    BEGIN
+                        IF input <= 8 THEN
+                    
+                    SELECT * FROM criterion
+                    WHERE id = input;
+                    END IF;
+                END;
+        ";
+        DB::unprepared($if_procedure);
     }
 
     /**
