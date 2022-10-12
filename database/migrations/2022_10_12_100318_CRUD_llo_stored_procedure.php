@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -32,7 +33,7 @@ return new class extends Migration
         
         END;";
       
-        \DB::unprepared($create_procedure);
+        DB::unprepared($create_procedure);
 
         // procedure update - Deswita Marsya Nadia - 215150701111001
         // melakukan update baris pada table lesson_learning_outocomes berdasarkan id
@@ -56,7 +57,7 @@ return new class extends Migration
         
         END;";
       
-        \DB::unprepared($update_procedure);
+        DB::unprepared($update_procedure);
 
 
         // procedure delete - Maersyifaa Macira Balqis Abdul Gopur - 215150700111031
@@ -74,7 +75,7 @@ return new class extends Migration
         
         END;";
 
-        \DB::unprepared($delete_procedure);
+        DB::unprepared($delete_procedure);
     
     }
 

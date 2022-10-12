@@ -2,7 +2,9 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+
 
 return new class extends Migration
 {
@@ -26,8 +28,12 @@ return new class extends Migration
             VALUES(id, position, description, syllabus);
         END";
 
+        DB::unprepared($procedure_create);
+
+        // READ by NAUFAL AR - 215150701111014
+
         // UPDATE by SHAFA AF - 215150700111057
-        $procedure_update = "DROP PROCEDURE IF EXSIST 'update_ilo';
+        $procedure_update = "DROP PROCEDURE IF EXISTS 'update_ilo';
         CREATE PROCEDURE 'kelompok3_update_ilo'(
             up_id BIGINT(20) UNSIGNED,
             up_syllabus_id BIGINT(20) UNSIGNED,
@@ -41,6 +47,21 @@ return new class extends Migration
             description = up_description,
             WHERE id = up_id;
         END";
+
+        DB::unprepared($procedure_update);
+
+        // DELETE by SHAFA AF - 215150700111057
+        $procedure_delete = "DROP PROCEDURE IF EXSIST 'delete_ilo';
+        DELETE PROCEDURE 'kelompok3_delete_ilo;(
+            dr_id BIGINT(20) UNSIGNED
+        )
+        BEGIN
+            DELETE from intended_learning_outcome
+            WHERE id = dr_id;
+        END";
+
+        DB::unprepared($procedure_delete);
+
     }
 
     /**
