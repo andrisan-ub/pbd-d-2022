@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        // 
-           
+        
         // Procedure seleksi kondisi - Deswita Marsya Nadia - 215150701111001
+        // mengembalikan nilai dari kolom assignment_plan
       $status_assignment = "DROP PROCEDURE IF EXISTS `kelompok3_condition_status_assignment`;
       CREATE PROCEDURE `kelompok3_condition_status_assignment`()
       BEGIN
