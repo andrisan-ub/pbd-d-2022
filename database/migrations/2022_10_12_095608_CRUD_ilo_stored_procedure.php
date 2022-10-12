@@ -64,6 +64,21 @@ return new class extends Migration
 
         DB::unprepared($procedure_delete);
 
+
+        // READ by NAUFAL AR - 215150701111014
+        $procedure_read = "DROP PROCEDURE IF EXISTS `kelompok3_view_course_course_classes`;
+        CREATE PROCEDURE `kelompok3_view_course_course_classes`()
+        
+        BEGIN
+            SELECT co.name, co.code, cs.course_id, cs.class_code
+            FROM courses co
+            JOIN course_classes cs
+            ON co.id = cs.course_id;
+        END;";
+
+        DB::unprepared($procedure_read);
+
+
     }
 
     /**
