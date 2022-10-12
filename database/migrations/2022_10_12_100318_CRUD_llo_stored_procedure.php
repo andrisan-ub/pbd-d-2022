@@ -77,6 +77,20 @@ return new class extends Migration
 
         DB::unprepared($delete_procedure);
     
+        // procedure read - Maersyifaa Macira Balqis Abdul Gopur - 215150700111031
+        $read_procedure = "DROP PROCEDURE IF EXISTS `kelompok3_create_view_LLO_criterias`;
+        CREATE PROCEDURE `kelompok3_create_view_LLO_criterias`()
+        BEGIN
+            SELECT llo.id, llo.description, c.max_point 
+            FROM lesson_learning_outcomes llo 
+            JOIN criterias c 
+            ON c.llo_id = llo.id;
+        
+        END;";
+
+        DB::unprepared($read_procedure);
+    
+        
     }
 
     /**
