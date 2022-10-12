@@ -19,7 +19,18 @@ return new class extends Migration
       BEGIN
       INSERT INTO course_learning_outcome VALUES(IN_id, IN_ilo_id, IN_position, IN_description);
       END;";
-    }
+    
+
+       //procedure update - Aulia S.A - 215150701111045
+       $procedure_update_by_id = "DROP PROCEDURE IF EXISTS 'update_clo';
+       CREATE PROCEDURE 'update_clo' (IN 'new_id' int, IN new_ilo_id BIGINT(20), IN new_position INT(11), IN new_description TEXT)
+       BEGIN
+       UPDATE course_learning_outcome 
+       SET id = new_id, SET ilo = new_ilo_id, SET position = new_position, SET description = new_description
+       WHERE id = new_id;
+       END;";
+
+  }
 
     /**
      * Reverse the migrations.
