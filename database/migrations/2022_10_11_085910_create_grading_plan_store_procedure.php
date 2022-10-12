@@ -76,6 +76,22 @@ return new class extends Migration
         
                 ";
             DB::unprepared($delete_procedure);
+
+        //Membuat if procedure - Erio Andrian Arriom - 215150701111022
+        $if_procedure = "DROP PROCEDURE IF EXISTS `if_grading_plan`;
+                CREATE PROCEDURE `if_grading_plan` (IN input int)
+
+                BEGIN
+                IF input < 10 THEN
+        
+                SELECT * FROM grading_plan
+                WHERE id = input;
+                END IF;
+                END;
+                ";
+            DB::unprepared($if_procedure);
+
+
         }
     
 
