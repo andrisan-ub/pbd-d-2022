@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('delete_s_p');
     }
 };
