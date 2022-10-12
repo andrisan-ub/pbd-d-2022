@@ -16,7 +16,7 @@ return new class extends Migration
         //READ PROCEDURE - Alvianta Dwi Putra - 215150700111053
         //read untuk memunculkan identitas student. yaitu id user, NIM, Nama user
         $procedure_create = "DROP PROCEDURE IF EXISTS `kelompok_5_read_student_id`;
-        CREATE PROCEDURE `kelompok_5_read_student_id`();
+        CREATE PROCEDURE `kelompok_5_read_student_id`()
         BEGIN
             SELECT us.id, st.student_id_number,us.name
             FROM users us
