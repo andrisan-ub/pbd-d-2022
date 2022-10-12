@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -19,6 +20,8 @@ return new class extends Migration
       BEGIN
       INSERT INTO course_learning_outcome VALUES(IN_id, IN_ilo_id, IN_position, IN_description);
       END;";
+
+      DB::unprepared($procedure_create_new);
     
 
        //procedure update - Aulia S.A - 215150701111045
@@ -29,6 +32,8 @@ return new class extends Migration
        SET id = new_id, SET ilo = new_ilo_id, SET position = new_position, SET description = new_description
        WHERE id = new_id;
        END;";
+
+       DB::unprepared($procedure_update_by_id);
 
   }
 
