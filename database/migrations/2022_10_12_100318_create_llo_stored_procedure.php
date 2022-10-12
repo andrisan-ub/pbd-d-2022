@@ -64,13 +64,13 @@ return new class extends Migration
         $delete_procedure = "DROP PROCEDURE IF EXISTS `kelompok3_delete_LLO`;
         CREATE PROCEDURE `kelompok3_delete_LLO`( 
 		
-            dr_position int (11)
+            dr_id bigint (20)
         
         )
         BEGIN
     
             delete from lesson_learning_outcomes
-            where position = dr_position;
+            where id = dr_id;
         
         END;";
 
