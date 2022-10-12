@@ -15,6 +15,7 @@ return new class extends Migration
     public function up()
     {
         // CREATE PROCEDURE - Kevin Leonardo Julianto - 215150701111039
+        // Create untuk menambah baris data pada tabel syllabus
         $procedure_create = "DROP PROCEDURE IF EXISTS `kelompok5_create_syllabus`;
         CREATE PROCEDURE `kelompok5_create_syllabus` (
 
@@ -35,7 +36,7 @@ return new class extends Migration
         DB::unprepared($procedure_create);
 
         // UPDATE PROCEDURE - Kevin Leonardo Julianto - 215150701111039
-        // update baris pada syllabus berdasarkan id
+        // Update untuk mengubah data pada tabel syllabus berdasarkan id
         $procedure_update = "DROP PROCEDURE IF EXISTS `kelompok5_update_syllabus`;
         CREATE PROCEDURE `kelompok5_update_syllabus` (
 
