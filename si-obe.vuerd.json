@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2600,
     "height": 2600,
-    "scrollTop": -630.8333082662718,
-    "scrollLeft": -312.5000080466273,
-    "zoomLevel": 0.5,
+    "scrollTop": -724.4333082662732,
+    "scrollLeft": -1763.700008046624,
+    "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -1999,29 +1999,6 @@
         "comment": "",
         "columns": [
           {
-            "name": "id",
-            "comment": "",
-            "dataType": "bigint unsigned",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": true,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": true,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 89.4580078125,
-              "widthDefault": 60
-            },
-            "id": "1bd14cbd-ccf9-4b10-b311-1e6ca715f47a"
-          },
-          {
             "name": "assignment_plan_id",
             "comment": "",
             "dataType": "bigint unsigned",
@@ -2091,6 +2068,29 @@
             "id": "63d33c07-adff-473d-b6d1-2676a080660d"
           },
           {
+            "name": "id",
+            "comment": "",
+            "dataType": "bigint unsigned",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 89.4580078125,
+              "widthDefault": 60
+            },
+            "id": "1bd14cbd-ccf9-4b10-b311-1e6ca715f47a"
+          },
+          {
             "name": "updated_at",
             "comment": "",
             "dataType": "timestamp",
@@ -2118,7 +2118,7 @@
           "active": false,
           "left": 1219.262,
           "top": 773.2908,
-          "zIndex": 11,
+          "zIndex": 22,
           "widthName": 60,
           "widthComment": 60,
           "color": "#2196F3"
