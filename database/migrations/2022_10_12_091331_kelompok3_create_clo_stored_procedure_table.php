@@ -32,7 +32,7 @@ return new class extends Migration
         
         END;";
       
-        \DB::unprepared($create_procedure);
+        DB::unprepared($create_procedure);
     
 
        //procedure update - Aulia S.A - 215150701111045
@@ -52,9 +52,26 @@ return new class extends Migration
             UPDATE course_learning_outcomes SET description = new_description WHERE id = new_id;
         END;";
       
-        \DB::unprepared($update_procedure);
+        DB::unprepared($update_procedure);
+        //procedure update - Aulia S.A - 215150701111045
+       $delete_procedure = "DROP PROCEDURE IF EXISTS `kelompok3_delete_clo`;
+       CREATE PROCEDURE `kelompok3_delete_clo` (
+   
+           new_id bigint (20),
+           new_ilo_id bigint (20),
+           new_position int (11),
+           new_description text
+           
+       )
+       BEGIN
+           DELETE FROM course_learning_outcomes WHERE id = new_id;
+       END;";
+     
+       DB::unprepared($delete_procedure);
+
 
   }
+
 
     /**
      * Reverse the migrations.
