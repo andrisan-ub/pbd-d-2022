@@ -29,7 +29,24 @@ return new class extends Migration
 
         DB::unprepared($procedure_loop);
 
+        // LOOPING PROCEDURE - Rama Adhitya Widodo Putra - 215150700111052
+        // Looping untuk menampilkan title dan description pada tabel criterion dengan batas j
+        $procedure_loop2 = "DROP PROCEDURE IF EXISTS `kelompok5_loop_criterionTitleAndDescription`;
+            CREATE PROCEDURE `kelompok5_loop_criterionTitleAndDescription`(
+                IN i INT,
+                IN j INT
+            )
+            BEGIN
+                REPEAT
+                    SELECT lesson_learning_outcome.id, criterion.description, criterion.title
+                    FROM lesson_learning_outcome, criterion
+                    WHERE lesson_learning_outcome.id = criterion.llo_id AND lesson_learning_outcome.id = i;
+                    SET i = i + 1;
+                UNTIL i >= j
+                END REPEAT;
+            END;";
 
+        DB::unprepared($procedure_loop2);
 
     }
 
