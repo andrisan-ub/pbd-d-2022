@@ -40,6 +40,7 @@ class FakeDataSeeder extends Seeder
         $admin = User::factory()->create([
             'email' => 'admin@siobe.com',
             'name' => 'Admin',
+            'role' => 'admin',
         ]);
 
         Faculty::factory(1)->create()->each(function ($faculty) use ($admin) {
@@ -49,7 +50,9 @@ class FakeDataSeeder extends Seeder
                 StudyProgram::factory(1)->create([
                     'department_id' => $department->id
                 ])->each(function ($study_program) use ($admin) {
-                    $teachers = User::factory(5)->create();
+                    $teachers = User::factory(5)->create([
+                        'role' => 'teacher',
+                    ]);
 
                     // Create Syllabus, ILO, CLO, and LLO for each course
                     Course::factory(1)->create([
@@ -151,10 +154,11 @@ class FakeDataSeeder extends Seeder
                             'course_id' => $course->id,
                             'creator_user_id' => $teachers->random(1)->first()->id
                         ])->each(function ($course_class) use ($course, $teachers) {
-                            $studentsJoinThisClass = User::factory(rand(30, 40))->create()
-                                ->each(function ($student) {
+                            $studentsJoinThisClass = User::factory(rand(30, 40))->create([
+                                'role' => 'student',
+                            ])->each(function ($student) {
                                     StudentData::factory()->create([
-                                        'id' => $student->id
+                                        'id' => $student->id,
                                     ]);
                                 });
 
