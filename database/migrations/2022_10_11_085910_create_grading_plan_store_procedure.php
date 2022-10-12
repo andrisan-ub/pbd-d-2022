@@ -91,6 +91,23 @@ return new class extends Migration
                 ";
             DB::unprepared($if_procedure);
 
+        // Membuat loop procedure - Ridha Annisa Sabilla - 215150701111016
+        $loop_procedure = "DROP PROCEDURE IF EXISTS `loop_grading_plan`;
+            CREATE PROCEDURE `loop_grading_plan`() 
+
+            BEGIN
+            declare i int;
+            set i = 1; 
+            WHILE i <= 10 DO 
+            SELECT * FROM grading_plan
+            WHERE id = i;
+            set i = i + 2;
+            END WHILE;
+            END;
+
+            ";
+            DB::unprepared($loop_procedure);
+
 
         }
     
