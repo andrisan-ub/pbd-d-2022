@@ -59,6 +59,23 @@ return new class extends Migration
         \DB::unprepared($update_procedure);
 
 
+        // procedure delete - Maersyifaa Macira Balqis Abdul Gopur - 215150700111031
+        // melakukan delete baris pada table lesson_learning_outcomes berdasarkan id
+        $delete_procedure = "DROP PROCEDURE IF EXISTS `kelompok3_delete_LLO`;
+        CREATE PROCEDURE `kelompok3_delete_LLO`( 
+		
+            dr_position int (11)
+        
+        )
+        BEGIN
+    
+            delete from lesson_learning_outcomes
+            where position = dr_position;
+        
+        END;";
+
+        \DB::unprepared($delete_procedure);
+    
     }
 
     /**
