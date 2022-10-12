@@ -34,8 +34,24 @@ return new class extends Migration
 
         DB::unprepared($procedure_create);
 
+        //CREATE PROCEDURE - Alvianta Dwi Putra - 215150700111053
+        //create untuk insert baris data pada tabel assignment
+        $procedure_create = "DROP PROCEDURE IF EXISTS `add_assignment`;
+        CREATE PROCEDURE `add_assignment` (
+            IN id BIGINT,
+            IN assignment_plan_id BIGINT,
+            IN course_class_id BIGINT,
+            IN assigned_date TIMESTAMP,
+            IN due_date TIMESTAMP,
+            IN note TEXT
+            )
 
-        
+            BEGIN
+            INSERT into assignment
+            VALUES(id, assignment_plan_id, course_class_id, assigned_date, due_date, note);
+            END;";
+            
+        DB::unprepared($procedure_create);
     }
 
     /**
