@@ -88,7 +88,7 @@ return new class extends Migration
         
         END;";
 
-        DB::unprepared($delete_procedure);
+        DB::unprepared($read_procedure);
     
         
     }
