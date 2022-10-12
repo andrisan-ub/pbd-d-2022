@@ -16,7 +16,7 @@ return new class extends Migration
     {
        // Procedure Read - Fairuz - 215150701111023
       $viewSyllabiClo_procedure = "DROP PROCEDURE IF EXISTS `kelompok3_viewSyllabiClo`;
-      CREATE PROCEDURE `kelompok3_viewSyllabiClo` 
+      CREATE PROCEDURE `kelompok3_viewSyllabiClo`()
       BEGIN
             SELECT s.title, clo.id, clo.description FROM course_learning_outcomes clo 
             JOIN intended_learning_outcomes ilo ON clo.ilo_id = ilo.id 
