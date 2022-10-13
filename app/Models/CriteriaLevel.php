@@ -5,7 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class LearningPlan extends Model
+class CriteriaLevel extends Model
 {
     use HasFactory;
+
+    public $timestamps = false;
 }
