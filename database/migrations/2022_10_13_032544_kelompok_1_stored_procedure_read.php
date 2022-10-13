@@ -37,6 +37,19 @@ return new class extends Migration
             WHERE u.role = 'student';
             END;";
         \DB::unprepared($procedure_read);
+
+        //procedure read student_user and course - Muchammad Saifurrijaal - 215150701111006
+        $procedure_read = "DROP PROCEDURE IF EXISTS `kelompok_1_read_student_user_and_point`;
+            CREATE PROCEDURE `kelompok_1_read_student_user_and_point` ()
+            BEGIN
+            SELECT sg.id, cl.point, u.name
+            FROM student_grades sg 
+            JOIN criteria_levels cl ON sg.criteria_level_id = cl.id
+            JOIN users u ON u.id = sg.student_user_id
+            JOIN assignments a ON a.id = sg.assignment_id;
+            END;";
+        \DB::unprepared($procedure_read);
+        
     }
 
     /**
