@@ -113,6 +113,18 @@ return new class extends Migration
 
                 ";
             DB::unprepared($loop_procedure);
+        
+        $join_procedure = "DROP PROCEDURE IF EXISTS `join_table_rubric`;
+                CREATE PROCEDURE `join_table_rubric`()
+
+                BEGIN
+                SELECT u.id, u.name as student, u.email, c.name as mata_kuliah ,sp.name as nama_prodi ,c.course_credit as sks
+                FROM users as u, course as c, study_program as sp
+                WHERE u.id = c.creator_user_id
+                AND sp.id = c.study_program_id;
+                END;
+        ";
+        DB::unprepared($join_procedure);
     }
 
     /**
