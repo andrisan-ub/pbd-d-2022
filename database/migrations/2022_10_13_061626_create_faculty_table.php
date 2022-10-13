@@ -15,7 +15,7 @@ return new class extends Migration
     public function up()
     {
         // Procedure create - Putri Daliana - 215150700111043
-        $procedure_create_new= "DROP PROCEDURE IF EXISTS 'create_faculty';
+        $procedure_create_new= "DROP PROCEDURE IF EXISTS 'kelompok2_create_faculty';
         CREATE PROCEDURE 'kelompok2_create_faculty'(IN 'id' BIGINT(20) UNSIGNED, IN 'name' VARCHAR(45))
         BEGIN 
         INSERT INTO faculty VALUES (in_id, in_name);
@@ -23,8 +23,8 @@ return new class extends Migration
 
         DB::unprepared($procedure_create_new);
         // Procedure update - Diandra Charisa - 215150700111032
-        $update_procedure = "DROP PROCEDURE IF EXISTS kelompok2_create_faculty;
-        CREATE PROCEDURE kelompok2_create_faculty (
+        $update_procedure = "DROP PROCEDURE IF EXISTS 'kelompok2_create_faculty';
+        CREATE PROCEDURE 'kelompok2_create_faculty' (
  
             new_id bigint (20),
             new_name bigint (45)
@@ -32,7 +32,7 @@ return new class extends Migration
         )
         BEGIN
             UPDATE kelompok2_create_faculty SET id = new_id WHERE id = new_id;
-            UPDATE course_learning_outcomes SET name = new_name WHERE id = new_id;
+            UPDATE kelompok2_create_faculty SET name = new_name WHERE id = new_id;
         END;";
       
         DB::unprepared($update_procedure);
