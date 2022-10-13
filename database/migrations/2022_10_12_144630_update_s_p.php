@@ -49,6 +49,21 @@ return new class extends Migration
         END;";
 
         DB::unprepared($procedure_update2);
+
+        DB::unprepared($procedure_create);
+
+
+        // UPDATE PROCEDURE - Ardhi Wahyu Hidayat - 215150707111038
+        // Procedure untuk update data pada tabel faculty berdasarkan id
+        $procedure_update = "DROP PROCEDURE IF EXISTS `kelompok_5_update_faculty`;
+            CREATE PROCEDURE `kelompok_5_update_faculty` (
+                IN new_id int, 
+                IN new_name varchar(255))
+            BEGIN
+            UPDATE faculty SET name = new_name WHERE id = new_id;
+            END;";
+  
+        DB::unprepared($procedure_update);
         
     }
 
