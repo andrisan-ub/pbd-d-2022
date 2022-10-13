@@ -16,7 +16,7 @@ return new class extends Migration
     {
         // Procedure create - Putri Daliana - 215150700111043
         $procedure_create_new= "DROP PROCEDURE IF EXISTS 'kelompok2_create_faculty';
-        CREATE PROCEDURE 'kelompok2_create_faculty'(IN 'id' BIGINT(20) UNSIGNED, IN 'name' VARCHAR(45))
+        CREATE PROCEDURE 'kelompok2_create_faculty'(IN_id BIGINT(20) UNSIGNED, IN_name VARCHAR(45))
         BEGIN 
         INSERT INTO faculty VALUES (in_id, in_name);
         END;";
