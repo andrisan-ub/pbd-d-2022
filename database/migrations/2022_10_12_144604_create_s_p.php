@@ -47,6 +47,19 @@ return new class extends Migration
         END;";
             
         DB::unprepared($procedure_create);
+
+        //CREATE PROCEDURE - Ardhi Wahyu Hidayat - 215150707111038
+        //create untuk insert baris data pada tabel faculty
+        $procedure_create = "DROP PROCEDURE IF EXISTS `kelompok5_create_faculty`;
+        CREATE PROCEDURE `kelompok5_create_faculty` (
+            in_id int(20),
+            in_name varchar(255)
+        )
+        BEGIN
+        INSERT INTO faculty
+            values (in_id, in_name);
+        END;";
+        DB::unprepared($procedure_create);
     }
 
     /**
