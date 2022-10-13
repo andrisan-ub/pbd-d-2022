@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -38,6 +39,11 @@ return new class extends Migration
 
         //CONDITION PROCEDURE - Alifa Nurfika - 215150700111044
         //condition untuk menampilkan p
+
+
+        //CONDITION PROCEDURE - Nur Fathiyyah - 215150700111048
+        //condition untuk menampilkan 
+        
     }
 
     /**
