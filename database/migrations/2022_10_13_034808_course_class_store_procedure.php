@@ -47,6 +47,34 @@ return new class extends Migration
             ";
 
         \DB::unprepared($create_procedure);
+    
+    
+        //update procedure - Marcelino Kelvin - 215150707111026
+        $update_procedure = "DROP PROCEDURE IF EXISTS `update_course_class_by_id`;
+            CREATE PROCEDURE `update_course_class_by_id` (
+                IN id_crs_cls int,
+                IN new_created_at int
+                IN new_updated_at int)
+            BEGIN
+            UPDATE faculty SET created_at = new_created_at WHERE id = id_std_grade;
+            UPDATE faculty SET updated_at = new_updated_at WHERE id = id_std_grade;
+            END;";
+  
+        \DB::unprepared($update_procedure);
+
+        
+
+        //procedure delete -Marcelino Kelvin - 215150707111026
+        $delete_procedure = "DROP PROCEDURE IF EXISTS `delete_course_class_by_id`;
+            CREATE PROCEDURE `delete_course_class_by_id` (id_crs_cls int)
+            BEGIN
+            DELETE FROM course_class
+            WHERE id = id_crs_cls;
+            END;
+            
+            ";
+  
+        \DB::unprepared($delete_procedure);
     }
 
     /**
@@ -56,6 +84,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('student_grade_store_procedure');
     }
 };
