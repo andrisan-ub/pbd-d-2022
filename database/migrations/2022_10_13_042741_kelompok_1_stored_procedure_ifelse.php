@@ -24,6 +24,17 @@ return new class extends Migration
                 SELECT hasil;
             END;";
         \DB::unprepared($procedure_loop);
+
+        $procedure_ifelse = "DROP PROCEDURE IF EXISTS `kelompok_1_ifelse_courses`;
+            CREATE PROCEDURE `kelompok_1_ifelse_courses` (IN type enum('mandatory', 'elective'))
+            BEGIN
+            DECLARE hasil VARCHAR(100);
+                IF type = 'mandatory' THEN
+                SET hasil = 'MATA KULIAH INI WAJIB DIAMBIL';
+                END IF;
+                SELECT HASIL;
+            END;";
+        \DB::unprepared($procedure_ifelse);
     }
 
     /**
