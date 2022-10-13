@@ -24,6 +24,14 @@ return new class extends Migration
         END;";
             
         DB::unprepared($procedure_create);
+
+
+        //READ PROCEDURE - Alifa Nurfika - 215150700111044
+        //read untuk menampilkan identitas 
+
+
+        //READ PROCEDURE - Alifa Nurfika - 215150700111044
+        //read untuk menampilkan 
     }
 
     /**

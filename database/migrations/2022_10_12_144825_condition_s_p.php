@@ -34,6 +34,10 @@ return new class extends Migration
             SELECT @tampil;
         END;";
         DB::unprepared($procedure_create);
+
+
+        //CONDITION PROCEDURE - Alifa Nurfika - 215150700111044
+        //condition untuk menampilkan p
     }
 
     /**
