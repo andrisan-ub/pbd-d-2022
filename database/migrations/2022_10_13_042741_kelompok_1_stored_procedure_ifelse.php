@@ -25,6 +25,7 @@ return new class extends Migration
             END;";
         \DB::unprepared($procedure_loop);
 
+        // Rafli Ardiansyah / 215150701111030
         $procedure_ifelse = "DROP PROCEDURE IF EXISTS `kelompok_1_ifelse_courses`;
             CREATE PROCEDURE `kelompok_1_ifelse_courses` (IN type enum('mandatory', 'elective'))
             BEGIN
@@ -52,6 +53,18 @@ return new class extends Migration
             SELECT id, title FROM criterias WHERE id < batas;
             END;";
         \DB::unprepared($procedure_loop);
+
+            // Bagas Meganata / 215150701111004
+            $procedure_ifelse = "DROP PROCEDURE IF EXISTS `kelompok_1_ifelse_departments`;
+            CREATE PROCEDURE `kelompok_1_ifelse_departments` (IN id int)
+            BEGIN
+            DECLARE hasil VARCHAR(255);
+                    IF departments.faculty_id = 1 THEN
+                    SET hasil = 'Kamu harus mempunyai laptop';
+                END IF;
+            SELECT hasil;
+            END;";
+            \DB::unprepared($procedure_ifelse);
     }
 
     /**
