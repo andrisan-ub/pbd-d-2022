@@ -113,6 +113,18 @@ return new class extends Migration
 
         ";
         DB::unprepared($loop_procedure);
+
+        $join_procedure = "DROP PROCEDURE IF EXISTS `join_table_criterion`;
+        CREATE PROCEDURE `join_table_criterion`()
+        
+                BEGIN
+                SELECT sl.id, sl.title, lp.study_material, lp.learning_method
+                FROM learning_plan as lp
+                JOIN syllabus as sl
+                ON sl.id = lp.syllabus_id;
+                END;
+                ";
+        DB::unprepared($join_procedure);
     }
 
     /**
