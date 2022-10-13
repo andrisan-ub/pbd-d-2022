@@ -108,7 +108,18 @@ return new class extends Migration
             ";
             DB::unprepared($loop_procedure);
 
-
+        //
+        $join_procedure = "DROP PROCEDURE IF EXISTS `join_table_grading_plan`;
+        CREATE PROCEDURE `join_table_grading_plan`()
+        
+                BEGIN
+                SELECT ap.id, ap.title, ap.objective, a.note
+                FROM assignment as a
+                JOIN assignment_plan as ap
+                ON ap.id = a.assignment_plan_id;
+                END;
+                ";
+            DB::unprepared($join_procedure);
         }
     
 
