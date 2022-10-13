@@ -36,7 +36,7 @@ return new class extends Migration
 
         // UPDATE PROCEDURE - Rama Adhitya Widodo Putra - 215150700111052
         // Procedure untuk update data pada tabel department berdasarkan id dan faculty_id
-        $procedure_update2 = "DROP PROCEDURE IF EXISTS `kelompok5_update_department`;
+        $procedure_update = "DROP PROCEDURE IF EXISTS `kelompok5_update_department`;
         CREATE PROCEDURE `kelompok5_update_department` (
             IN d_id bigint(20),
             IN d_faculty_id bigint(20),
@@ -48,7 +48,7 @@ return new class extends Migration
             WHERE id = d_id AND faculty_id = d_faculty_id;
         END;";
 
-        DB::unprepared($procedure_update2);
+        DB::unprepared($procedure_update);
 
         // UPDATE PROCEDURE - Ardhi Wahyu Hidayat - 215150707111038
         // Procedure untuk update data pada tabel faculty berdasarkan id
