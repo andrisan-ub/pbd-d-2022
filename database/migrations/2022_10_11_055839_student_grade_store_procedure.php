@@ -25,9 +25,10 @@ return new class extends Migration
   
         \DB::unprepared($get_procedure);
 
+
         //create procedure - Tanziil Aziizil Ali - 215150707111028
         $create_procedure = "DROP PROCEDURE IF EXISTS `create_student_grade_by_id`;
-            CREATE PROCEDURE `create_faculty_by_facultyid` (
+            CREATE PROCEDURE `create_student_grade_by_id` (
                 id_std_grade int,
                 std_user_id int,
                 asg_id int,
@@ -44,28 +45,25 @@ return new class extends Migration
             END;
             
             ";
-  
-            
 
-            ///////
+
         \DB::unprepared($create_procedure);
 
-        //update procedure - Ahmad Fauzi - 215150700111027
+        //update procedure - Ahmad Fauzi - 215150700111037
         $update_procedure = "DROP PROCEDURE IF EXISTS `update_student_grade_by_id`;
             CREATE PROCEDURE `update_student_grade_by_id` (
                 IN id_std_grade int,
                 IN new_created_at int
                 IN new_updated_at int)
             BEGIN
-            UPDATE faculty SET created_at = new_created_at WHERE id = id_std_grade;
-            UPDATE faculty SET updated_at = new_updated_at WHERE id = id_std_grade;
+            UPDATE student_grade SET created_at = new_created_at WHERE id = id_std_grade;
+            UPDATE student_grade updated_at = new_updated_at WHERE id = id_std_grade;
             END;";
   
         \DB::unprepared($update_procedure);
 
         
-
-        //procedure delete -Ahmad Fauzi - 215150700111027
+        //procedure delete -Ahmad Fauzi - 215150700111037
         $delete_procedure = "DROP PROCEDURE IF EXISTS `delete_student_grade_by_id`;
             CREATE PROCEDURE `delete_student_grade_by_id` (id_std_grade int)
             BEGIN
