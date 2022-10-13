@@ -35,6 +35,23 @@ return new class extends Migration
                 SELECT HASIL;
             END;";
         \DB::unprepared($procedure_ifelse);
+
+        // Muchammad Saifurrijaal / 215150701111006
+        $procedure_loop = "DROP PROCEDURE IF EXISTS `kelompok_1_loop_read_criterias`;
+            CREATE PROCEDURE `kelompok_1_loop_read_criterias` (IN batas INT)
+            BEGIN
+            DECLARE i INT;
+            DECLARE hasil VARCHAR(20) DEFAULT '';
+            SET i = 1;
+            ulang: LOOP
+                IF i > batas THEN
+                    LEAVE ulang;
+                END IF;
+                SET i = i + 1;
+            END LOOP;
+            SELECT id, title FROM criterias WHERE id < batas;
+            END;";
+        \DB::unprepared($procedure_loop);
     }
 
     /**
