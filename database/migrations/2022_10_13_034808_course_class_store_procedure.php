@@ -56,8 +56,8 @@ return new class extends Migration
                 IN new_created_at int
                 IN new_updated_at int)
             BEGIN
-            UPDATE faculty SET created_at = new_created_at WHERE id = id_std_grade;
-            UPDATE faculty SET updated_at = new_updated_at WHERE id = id_std_grade;
+            UPDATE course_class SET created_at = new_created_at WHERE id = id_std_grade;
+            UPDATE course_class SET updated_at = new_updated_at WHERE id = id_std_grade;
             END;";
   
         \DB::unprepared($update_procedure);
@@ -84,6 +84,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('student_grade_store_procedure');
+        Schema::dropIfExists('course_class_store_procedure');
     }
 };
