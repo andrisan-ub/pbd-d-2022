@@ -114,6 +114,7 @@ return new class extends Migration
         ";
         DB::unprepared($loop_procedure);
 
+        //  Membuat join procedure antara tabel learning plan dan syllabus - Nazwa Annila - 215150701111009
         $join_procedure = "DROP PROCEDURE IF EXISTS `join_table_criterion`;
         CREATE PROCEDURE `join_table_criterion`()
         
