@@ -14,13 +14,16 @@ return new class extends Migration
      */
     public function up()
     {
-        $procedure_create_new= "DROP PROCEDURE IF EXISTS 'create_clo';
-        CREATE PROCEDURE 'kelompok2_create_criterion_level'(IN 'id' BIGINT UNSIGNED, IN 'criterion_id' BIGINT UNSIGNED, IN 'point' FLOAT, IN 'title' VARCHAR(1024), IN 'description'TEXT)
+        // Procedure create - Firda Kusumawardhani- 215150701111031
+        $procedure_create_new= "DROP PROCEDURE IF EXISTS 'create_criterion_level';
+        CREATE PROCEDURE 'kelompok2_create_criterion_level'(IN_id BIGINT UNSIGNED, IN_criterion_id BIGINT UNSIGNED, IN_point FLOAT, IN_title VARCHAR(1024), IN_description TEXT)
         BEGIN 
         INSERT INTO criterion_level VALUES (IN_id, IN_criterion_id, IN_point, IN_title, IN_description);
         END;";
 
         DB::unprepared($procedure_create_new);
+
+         // Procedure update - Firda Kusumaw2ardhani  - 215150701111031
 
         $update_procedure = "DROP PROCEDURE IF EXISTS `kelompok2_create_criterion_level`;
         CREATE PROCEDURE `kelompok2_create_criterion_level` (
