@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -27,11 +28,26 @@ return new class extends Migration
 
 
         //READ PROCEDURE - Alifa Nurfika - 215150700111044
-        //read untuk menampilkan identitas 
-
+        $procedure_read = "DROP PROCEDURE IF EXISTS `kelompok_5_read_course_id`;
+        CREATE PROCEDURE `kelompok_5_read_course_id`()
+        BEGIN
+            SELECT study_program.id, course.id, course.name
+            FROM study_program
+            right JOIN course ON course.id=study_program.id;
+        END;";
+            
+        DB::unprepared($procedure_read);
 
         //READ PROCEDURE - Alifa Nurfika - 215150700111044
-        //read untuk menampilkan 
+        $procedure_read = "DROP PROCEDURE IF EXISTS `kelompok_5_read_grading_plan_id`;
+        CREATE PROCEDURE `kelompok_5_read_grading_plan_id`()
+        BEGIN
+            SELECT assignment_plan_task.id, grading_plan.id, assignment_plan_task.description
+            FROM assignment_plan_task
+            right JOIN grading_plan ON grading_plan.id=assignment_plan_task.id;
+        END;";
+            
+        DB::unprepared($procedure_read);
     }
 
     /**
