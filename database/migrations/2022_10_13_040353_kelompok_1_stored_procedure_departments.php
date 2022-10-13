@@ -13,14 +13,6 @@ return new class extends Migration
      */
     public function up()
     {
-        //procedure get by id - Bagas Meganata - 215150701111004
-        $procedure_get_by_id = "DROP PROCEDURE IF EXISTS `kelompok_1_get_departments_by_departments_id`;
-            CREATE PROCEDURE `kelompok_1_get_departments_by_departments_id` (new_id int)
-            BEGIN
-            SELECT * FROM departments WHERE id = new_id;
-            END;";
-
-            DB::unprepared($procedure_get_by_id);
 
         //procedure create - Bagas Meganata - 215150701111004
         $procedure_create = "DROP PROCEDURE IF EXISTS `kelompok_1_create_departments_by_departments_id`;
