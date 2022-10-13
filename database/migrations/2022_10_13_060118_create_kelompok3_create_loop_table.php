@@ -44,6 +44,22 @@ return new class extends Migration
     
     \DB::unprepared($loopLLO_procedure);
 
+    // Procedure loop - Naufal AR - 215150701111014
+    $loopCourse_procedure = "DROP PROCEDURE IF EXISTS `kelompok3_create_loop`;
+      CREATE PROCEDURE `kelompok3_create_loop`(IN `i` INT(10), IN `j` INT(10))
+      BEGIN
+      REPEAT
+        SELECT co.name, co.code, cs.course_id, cs.class_code
+            FROM courses, course_classes
+            WHERE courses.courses_class_id = courses_class.id AND courses.id =  i;
+             SET i = i + 1;
+             UNTIL i = j + 1
+                 END REPEAT;
+      END;";
+    
+      \DB::unprepared($loopAssignment_procedure);
+
+
     }
 
     /**
