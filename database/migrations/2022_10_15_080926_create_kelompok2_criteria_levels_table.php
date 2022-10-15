@@ -23,8 +23,8 @@ return new class extends Migration
 
         DB::unprepared($procedure_create_new);
 
-         // Procedure update - Firda Kusumaw2ardhani  - 215150701111031
-         $update_procedure = "DROP PROCEDURE IF EXISTS `kelompok2_student_grades`;
+        // Procedure update - Firda Kusumaw2ardhani  - 215150701111031
+        $update_procedure = "DROP PROCEDURE IF EXISTS `kelompok2_student_grades`;
         CREATE PROCEDURE kelompok2_student_grades (IN new_id bigint, IN new_student_user_id bigint)
         BEGIN
             UPDATE student_grades SET student_user_id = new_student_user_id 
@@ -34,10 +34,8 @@ return new class extends Migration
        
         
         //CONDITION PROCEDURE - Firda kusumawardhani Hillal - 215150701111031
-        
-        $procedure_condition = "DROP PROCEDURE IF EXISTS `kelompok3_condition_final_score`;
-        CREATE PROCEDURE `kelompok3_condition_final_score`()
-
+        $procedure_condition = "DROP PROCEDURE IF EXISTS `kelompok2_score`;
+        CREATE PROCEDURE `kelompok2_score`()
         BEGIN
         DECLARE nilai_akhir INT;
         DECLARE max_point INT;
@@ -51,20 +49,9 @@ return new class extends Migration
             END if;
             SELECT keterangan;
         END;";
-
         DB::unprepared($procedure_condition);
 
-    }
-
-    
-
-
-
-
-
-
-        
-
+    }   
 
     /**
      * Reverse the migrations.
@@ -73,6 +60,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('criteria_levels');
+        DB::unprepared("DROP PROCEDURE IF EXISTS `kelompok2_create_criteria_levels");
+        DB::unprepared("DROP PROCEDURE IF EXISTS `kelompok2_student_grades");
+        DB::unprepared("DROP PROCEDURE IF EXISTS `kelompok2_score");
     }
 };
