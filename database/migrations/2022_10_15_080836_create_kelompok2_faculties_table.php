@@ -55,6 +55,21 @@ return new class extends Migration
         END;";
 
         DB::unprepared($read_procedure);
+
+        // Procedure loop - Putri Daliana Salsabilla Rais - 215150700111043
+        $loopAssignment_procedure = "DROP PROCEDURE IF EXISTS `kelompok2_create_loop`;
+        CREATE PROCEDURE `kelompok2_create_loop`(IN `i` INT(10), IN `j` INT(10))
+        BEGIN
+        REPEAT
+            SELECT assignment_plan_tasks.id, assignment_plans.title, assignment_plan_tasks.description
+                FROM assignment_plan_tasks, assignment_plans
+                WHERE assignment_plan_tasks.assignment_plan_id = assignment_plans.id AND assignment_plan_tasks.id = i;
+                SET i = i + 1;
+                UNTIL i = j + 1
+                    END REPEAT;
+        END;";
+        
+        DB::unprepared($loopAssignment_procedure);
     }
 
     /**

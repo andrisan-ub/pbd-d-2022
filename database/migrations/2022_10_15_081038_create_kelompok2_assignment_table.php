@@ -15,6 +15,7 @@ return new class extends Migration
     public function up()
     {
         // Procedure create - Fauzan Zakaria Hermansah - 215150700111023
+        
         $procedure_create_new= "DROP PROCEDURE IF EXISTS `kelompok2_create_assignment`;
         CREATE PROCEDURE `kelompok2_create_assignment` (
             in_id BIGINT,
