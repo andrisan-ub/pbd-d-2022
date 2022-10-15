@@ -29,11 +29,11 @@ return new class extends Migration
         DB::unprepared($create_procedure);
     
         // Procedure update - Diandra Charisa - 215150700111032
-        $update_procedure = "DROP PROCEDURE IF EXISTS `kelompok2_create_faculties`;
-        CREATE PROCEDURE `kelompok2_create_faculties` (
+        $update_procedure = "DROP PROCEDURE IF EXISTS `kelompok2_update_faculties`;
+        CREATE PROCEDURE `kelompok2_update_faculties` (
  
             new_id bigint (20),
-            new_name bigint (45)
+            new_name varchar (45)
             
         )
         BEGIN
@@ -42,6 +42,36 @@ return new class extends Migration
         END;";
       
         DB::unprepared($update_procedure);
+
+        //Procedure Delete - Diandra Charisa - 215150700111032
+       $delete_procedure = "DROP PROCEDURE IF EXISTS `kelompok2_delete_faculties`;
+       CREATE PROCEDURE `kelompok2_delete_faculties` (
+   
+           new_id bigint (20),
+           new_name varchar (45)
+           
+       )
+       BEGIN
+           DELETE FROM faculties WHERE id = new_id;
+       END;";
+     
+       DB::unprepared($delete_procedure);
+
+       $procedure_condition = "DROP PROCEDURE IF EXISTS `kelompok2_condition_deadline`;
+        CREATE PROCEDURE `kelompok2_condition_deadline`()
+
+        BEGIN
+        DECLARE keterangan VARCHAR(20);
+        SELECT users.name, assignments_assigned_date, assignments_due_date;
+        if (assignments.assigned_date <= assignments.due_date) THEN
+        SET keterangan = 'on time';
+        ELSE 
+        SET keterangan = 'terlambat';
+        END IF;
+            SELECT keterangan;
+        END;";
+
+        DB::unprepared($procedure_condition); 
     }
 
     /**
