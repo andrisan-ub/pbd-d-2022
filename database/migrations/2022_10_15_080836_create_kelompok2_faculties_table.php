@@ -42,6 +42,19 @@ return new class extends Migration
         END;";
       
         DB::unprepared($update_procedure);
+
+        // procedure read - Putri Daliana Salsabilla Rais - 215150700111043
+        $read_procedure = "DROP PROCEDURE IF EXISTS `kelompok2_create_view_faculty_criterias`;
+        CREATE PROCEDURE `kelompok2_create_view_faculty_criterias`()
+        BEGIN
+            SELECT fc.id, fc.description, c.max_point 
+            FROM faculty fc 
+            JOIN criterias c 
+            ON c.fc_id = fc.id;
+        
+        END;";
+
+        DB::unprepared($read_procedure);
     }
 
     /**
@@ -53,4 +66,8 @@ return new class extends Migration
     {
         Schema::dropIfExists('kelompok2_faculties');
     }
+
+    // DB::unprepared($delete_procedure);
+    
+    
 };
