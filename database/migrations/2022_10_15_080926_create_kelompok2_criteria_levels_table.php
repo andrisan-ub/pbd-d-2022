@@ -51,7 +51,43 @@ return new class extends Migration
         END;";
         DB::unprepared($procedure_condition);
 
-    }   
+
+        //Procedure read - Clara Clarita Yung - 215150700111051
+        $read_procedure = "DROP PROCEDURE IF EXISTS `kelompok2_create_read`;
+        CREATE PROCEDURE `kelompok2_create_read`()
+        BEGIN
+        SELECT cl.id, cl.criteria_id, cl.point, cl.title, cl.description, r.title from criteria_levels cl
+        JOIN criterias c ON cl.criteria_id = c.id
+        JOIN rubrics r ON r.id = c.rubric_id;
+        END;";
+
+        DB::unprepared($read_procedure);
+
+
+        //Procedure delete - Clara Clarita Yung - 215150700111051
+        $query = "DROP PROCEDURE IF EXISTS `kelompok2_delete_join_classes`;
+        CREATE PROCEDURE kelompok2_delete_join_classes(in del_id bigint)
+        BEGIN
+        delete from `join_classes` where id = del_id;
+        END;";
+
+        DB::unprepared($query);
+
+        //Looping - Clara Clarita Yung - 215150700111051
+        $looping = "DROP PROCEDURE IF EXISTS `loop_criterion`;
+        CREATE PROCEDURE`loop_criterion`(IN a int)
+        BEGIN
+            while a <= 10 do
+            SELECT*FROM criterion WHERE id = a;
+            set a = a*2;
+            END while;
+        END;";
+
+        DB::unprepared($looping);
+    }
+
+
+    
 
     /**
      * Reverse the migrations.
