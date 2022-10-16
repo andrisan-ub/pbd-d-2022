@@ -78,8 +78,19 @@ return new class extends Migration
                 END REPEAT;
         END;";
   
-    DB::unprepared($procedure_loop);
+        DB::unprepared($procedure_loop);
 
+        // Procedure seleksi kondisi - Jasmine Cecilia Putri Effendy- 215150701111041
+        $status_assignment = "DROP PROCEDURE IF EXISTS `kelompok2_condition_status_assignment`;
+        CREATE PROCEDURE `kelompok2_condition_status_assignment`()
+        BEGIN
+        SELECT ap.title, ap.description, 
+            if(ap.is_group_assignment is true, 'Kelompok', 'Individu') AS model_pengerjaan
+            from assignment_plans 
+            join  assignment_plan_tasks on assignment_plans.id = assignment_plan_tasks.assignment_plan_id;
+        END;";
+            
+      DB::unprepared($status_assignment);
     }
 
     /**
