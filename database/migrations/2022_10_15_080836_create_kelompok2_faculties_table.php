@@ -71,6 +71,36 @@ return new class extends Migration
         END;";
 
         DB::unprepared($procedure_condition); 
+
+        // Procedure read - Putri Daliana Salsabilla Rais- 215150700111043
+        $procedure_read_new= "DROP PROCEDURE IF EXISTS `kelompok2_create_view_faculties`;
+        CREATE PROCEDURE `kelompok2_create_view_faculties` ()
+        BEGIN
+        SELECT f.id, f.name, d.id, d.name
+            FROM faculties f
+            JOIN departments d
+            ON f.departments_id = f.id;
+        END;";
+
+        DB::unprepared($procedure_read_new);
+
+        // LOOPING PROCEDURE - Putri Daliana Salsabilla Rais - 215150700111043
+        $procedure_loop = "DROP PROCEDURE IF EXISTS `kelompok2_create_loop`;
+            CREATE PROCEDURE `kelompok2_create_loop`(
+                IN i INT,
+                IN j INT
+            )
+            BEGIN
+                REPEAT
+                    SELECT lesson_learning_outcome.id, criterion.description, criterion.title
+                    FROM lesson_learning_outcome, criterion
+                    WHERE lesson_learning_outcome.id = criterion.llo_id AND lesson_learning_outcome.id= i;
+                    SET i= i + 1;
+                UNTIL i>= j
+                END REPEAT;
+            END;";
+
+        DB::unprepared($procedure_loop);
     }
 
     /**
