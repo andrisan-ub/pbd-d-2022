@@ -53,11 +53,17 @@ return new class extends Migration
         $update_procedure = "DROP PROCEDURE IF EXISTS `update_course_class_by_id`;
             CREATE PROCEDURE `update_course_class_by_id` (
                 IN id_crs_cls int,
-                IN new_created_at int
+                new_crs_name varchar(1024),
+                new_thumb_img varchar(1024),
+                new_cls_code varchar(256),
+                IN new_created_at int,
                 IN new_updated_at int)
             BEGIN
-            UPDATE course_class SET created_at = new_created_at WHERE id = id_std_grade;
-            UPDATE course_class SET updated_at = new_updated_at WHERE id = id_std_grade;
+            UPDATE course_class SET crs_name = new_crs_name WHERE id = id_crs_cls;
+            UPDATE course_class SET thumb_img = new_thumb_img WHERE id = id_crs_cls;
+            UPDATE course_class SET cls_code = new_cls_code WHERE id = id_crs_cls;
+            UPDATE course_class SET created_at = new_created_at WHERE id = id_crs_cls;
+            UPDATE course_class SET updated_at = new_updated_at WHERE id = id_crs_cls;
             END;";
   
         \DB::unprepared($update_procedure);

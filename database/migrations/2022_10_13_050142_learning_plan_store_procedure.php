@@ -49,7 +49,41 @@ return new class extends Migration
 
         \DB::unprepared($create_procedure);
 
+        //update procedure - Marcelino Kelvin - 215150707111026
+        $update_procedure = "DROP PROCEDURE IF EXISTS `update_learning_plan_by_id`;
+        CREATE PROCEDURE `update_learning_plan_by_id` (
+            id_learn_pln int,
+            syll_id int,
+            new_week_no int,
+            lesson_outcome_id int,
+            new_std_material varchar(1024),
+            new_learning_mtd varchar(1024),
+            new_est_time varchar(1024),
+            new_created_at int,
+            new_updated_at int )
+        BEGIN
+        UPDATE learning_plan SET week_no = new_week_no WHERE id = id_learning_plan;
+        UPDATE learning_plan SET std_material = new_std_material WHERE id = id_learning_plan;
+        UPDATE learning_plan SET learning_mtd = new_learning_mtd WHERE id = id_learning_plan;
+        UPDATE learning_plan SET est_time = new_est_time WHERE id = id_learning_plan;
+        UPDATE learning_plan SET created_at = new_created_at WHERE id = id_learning_plan;
+        UPDATE learning_plan SET updated_at = new_updated_at WHERE id = id_learning_plan;
+        END;";
 
+    \DB::unprepared($update_procedure);
+
+    
+    //procedure delete -Marcelino Kelvin - 215150707111026
+    $delete_procedure = "DROP PROCEDURE IF EXISTS `delete_learning_plan_by_id`;
+        CREATE PROCEDURE `delete_learning_plan_by_id` (id_learn_pln int)
+        BEGIN
+        DELETE FROM learning_plan
+        WHERE id = id_learn_pln int;
+        END;
+        
+        ";
+
+    \DB::unprepared($delete_procedure);
 
 
 
