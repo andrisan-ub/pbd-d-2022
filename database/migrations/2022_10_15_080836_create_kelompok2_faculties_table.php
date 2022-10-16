@@ -56,21 +56,19 @@ return new class extends Migration
      
        DB::unprepared($delete_procedure);
 
-       $procedure_condition = "DROP PROCEDURE IF EXISTS `kelompok2_condition_deadline`;
-        CREATE PROCEDURE `kelompok2_condition_deadline`()
+        //Procedure Condition - Diandra Charisa - 215150700111032 
+        $procedure_condition = "DROP PROCEDURE IF EXISTS `kelompok2_status_assignment`;
+         CREATE PROCEDURE `kelompok2_status_assignment`()
+ 
+         BEGIN
+         SELECT assignment_plans.title, assignment_plan_tasks.description, 
+         if(assignment_plans.is_group_assignment is true, 'kelompok', 'individu') AS model_pengerjaan
+         from assignment_plans 
+         join  assignment_plan_tasks on assignment_plans.id = assignment_plan_tasks.assignment_plan_id;
+      
+       END;";
 
-        BEGIN
-        DECLARE keterangan VARCHAR(20);
-        SELECT users.name, assignments_assigned_date, assignments_due_date;
-        if (assignments.assigned_date <= assignments.due_date) THEN
-        SET keterangan = 'on time';
-        ELSE 
-        SET keterangan = 'terlambat';
-        END IF;
-            SELECT keterangan;
-        END;";
-
-        DB::unprepared($procedure_condition); 
+         DB::unprepared($procedure_condition); 
 
         // Procedure read - Putri Daliana Salsabilla Rais- 215150700111043
         $procedure_read_new= "DROP PROCEDURE IF EXISTS `kelompok2_create_view_faculties`;
