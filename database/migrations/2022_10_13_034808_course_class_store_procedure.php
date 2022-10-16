@@ -104,7 +104,32 @@ return new class extends Migration
   
         \DB::unprepared($ifelse_procedure);
 
+        //LOOP get course class in limit - -
+        $loop_procedure = "DROP PROCEDURE IF EXISTS `get_course_class_loop`;
+        CREATE PROCEDURE `get_course_class_loop` (IN batas int)
+
+        BEGIN
+        DECLARE i INT;
+        SET i = 0;
+            
+        ulang: : LOOP
+            IF i > batas THEN
+                LEAVE ulang;
+            END IF;
+
+            SET i = i + 1;
+
+            SELECT name, class_code, FROM course_class
+            INNER JOIN name AS creator ON user.id = creator_user_id
+            WHERE i = id.learning_plan;
+        END LOOP;
         
+        END;
+
+        ";
+
+        \DB::unprepared($loop_procedure);
+    
     }
 
     /**
