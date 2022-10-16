@@ -15,17 +15,19 @@ return new class extends Migration
     public function up()
     {
         // LOOPING PROCEDURE - Kevin Leonardo Julianto - 215150701111039
-        // Loop untuk menampilkan tabel criterion_level dengan point yang lebih dari atau sama dengan 4.25
+        // Looping untuk menampilkan tabel criterion_level dengan point yang diinginkan dan dengan batas y
         $procedure_loop = "DROP PROCEDURE IF EXISTS `kelompok5_loop_criterion_level`;
-                CREATE PROCEDURE `kelompok5_loop_criterion_level` ()
+                CREATE PROCEDURE `kelompok5_loop_criterion_level` (
+                    IN x FLOAT,
+                    IN y FLOAT
+                )
                 BEGIN
-                    DECLARE x float;
-                    SET x = 4.25; 
-                    WHILE x <= 10 DO
+                    REPEAT
                     SELECT * FROM criterion_level
                     WHERE point = x;
-                    SET x = x + 0.25;
-                    END WHILE;
+                    SET x = x + 1;
+                    UNTIL x >= y
+                    END REPEAT;
                 END;";
 
         DB::unprepared($procedure_loop);
