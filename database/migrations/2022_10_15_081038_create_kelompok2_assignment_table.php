@@ -50,8 +50,8 @@ return new class extends Migration
             in_note TEXT            
         )
         BEGIN
-            UPDATE kelompok2_create_assignment SET id = in_id WHERE id = in_id;
-            UPDATE kelompok2_create_assignment SET note = in_note WHERE id = in_id;
+            UPDATE assignments SET id = in_id WHERE id = in_id;
+            UPDATE assignments SET note = in_note WHERE id = in_id;
         END;";
       
         DB::unprepared($update_procedure);
