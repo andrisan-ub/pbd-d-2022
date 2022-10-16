@@ -43,12 +43,12 @@ return new class extends Migration
             VALUES(
                 id_crs_cls, crs_id, crs_name, thumb_img, cls_code, creator_usr_id, new_created_at, new_updated_at);
             END;
-            
+
             ";
 
         \DB::unprepared($create_procedure);
-    
-    
+
+
         //update procedure - Marcelino Kelvin - 215150707111026
         $update_procedure = "DROP PROCEDURE IF EXISTS `update_course_class_by_id`;
             CREATE PROCEDURE `update_course_class_by_id` (
@@ -59,10 +59,10 @@ return new class extends Migration
             UPDATE course_class SET created_at = new_created_at WHERE id = id_std_grade;
             UPDATE course_class SET updated_at = new_updated_at WHERE id = id_std_grade;
             END;";
-  
+
         \DB::unprepared($update_procedure);
 
-        
+
 
         //procedure delete -Marcelino Kelvin - 215150707111026
         $delete_procedure = "DROP PROCEDURE IF EXISTS `delete_course_class_by_id`;
@@ -71,12 +71,58 @@ return new class extends Migration
             DELETE FROM course_class
             WHERE id = id_crs_cls;
             END;
-            
+
             ";
-  
+
         \DB::unprepared($delete_procedure);
     }
+    //IF ELSE course class update - -
+            $ifelse_procedure = "DROP PROCEDURE IF EXISTS `get_student_grade_conditions`;
+            CREATE PROCEDURE `get_student_grade_conditions` (IN _id int)
 
+            BEGIN
+            DECLARE status Varchar(25);
+
+                IF course_class.updated_at = NULL THEN
+                SET status = '';
+
+                ELSE
+                SET status = 'CLASS UPDATED';
+                END IF;
+
+            SELECT status;
+
+            END;
+
+            ";
+
+            \DB::unprepared($ifelse_procedure);
+
+            //LOOP get course class in limit - -
+            $loop_procedure = "DROP PROCEDURE IF EXISTS `get_course_class_loop`;
+            CREATE PROCEDURE `get_course_class_loop` (IN batas int)
+
+            BEGIN
+            DECLARE i INT;
+            SET i = 0;
+
+            ulang: : LOOP
+                IF i > batas THEN
+                    LEAVE ulang;
+                END IF;
+
+                SET i = i + 1;
+
+                SELECT name, class_code, FROM course_class
+                INNER JOIN name AS creator ON user.id = creator_user_id
+                WHERE i = id.learning_plan;
+            END LOOP;
+
+            END;
+
+            ";
+
+            \DB::unprepared($loop_procedure);
     /**
      * Reverse the migrations.
      *
