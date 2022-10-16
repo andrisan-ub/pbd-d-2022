@@ -60,12 +60,12 @@ return new class extends Migration
             IN new_created_at int,
             IN new_updated_at int )
         BEGIN
-        UPDATE learning_plan SET week_no = new_week_no WHERE id = id_learning_plan;
-        UPDATE learning_plan SET std_material = new_std_material WHERE id = id_learning_plan;
-        UPDATE learning_plan SET learning_mtd = new_learning_mtd WHERE id = id_learning_plan;
-        UPDATE learning_plan SET est_time = new_est_time WHERE id = id_learning_plan;
-        UPDATE learning_plan SET created_at = new_created_at WHERE id = id_learning_plan;
-        UPDATE learning_plan SET updated_at = new_updated_at WHERE id = id_learning_plan;
+        UPDATE learning_plan SET week_number = new_week_no WHERE id = id_learn_pln;
+        UPDATE learning_plan SET study_material = new_std_material WHERE id = id_learn_pln;
+        UPDATE learning_plan SET learning_method = new_learning_mtd WHERE id = id_learn_pln;
+        UPDATE learning_plan SET estimated_time = new_est_time WHERE id = id_learn_pln;
+        UPDATE learning_plan SET created_at = new_created_at WHERE id = id_learn_pln;
+        UPDATE learning_plan SET updated_at = new_updated_at WHERE id = id_learn_pln;
         END;";
 
     \DB::unprepared($update_procedure);
