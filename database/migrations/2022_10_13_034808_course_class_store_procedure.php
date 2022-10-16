@@ -59,9 +59,9 @@ return new class extends Migration
                 IN new_created_at int,
                 IN new_updated_at int)
             BEGIN
-            UPDATE course_class SET crs_name = new_crs_name WHERE id = id_crs_cls;
-            UPDATE course_class SET thumb_img = new_thumb_img WHERE id = id_crs_cls;
-            UPDATE course_class SET cls_code = new_cls_code WHERE id = id_crs_cls;
+            UPDATE course_class SET course_name = new_crs_name WHERE id = id_crs_cls;
+            UPDATE course_class SET thumbnail_img = new_thumb_img WHERE id = id_crs_cls;
+            UPDATE course_class SET class_code = new_cls_code WHERE id = id_crs_cls;
             UPDATE course_class SET created_at = new_created_at WHERE id = id_crs_cls;
             UPDATE course_class SET updated_at = new_updated_at WHERE id = id_crs_cls;
             END;";
