@@ -70,7 +70,7 @@ return new class extends Migration
         CREATE PROCEDURE `kelompok2_loop_assignment_assignment_plans`(IN `i` INT(10), IN `j` INT(10))
         BEGIN
         REPEAT
-        SELECT a.id, ap.tittle, ap.description
+        SELECT a.id, ap.title, ap.description
             FROM assignments a, assignment_plans ap
             WHERE a.id = ap.id AND a.id =  i;
             SET i = i + 1;
