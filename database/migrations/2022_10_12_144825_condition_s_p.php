@@ -38,7 +38,7 @@ return new class extends Migration
 
 
         //CONDITION PROCEDURE - Alifa Nurfika - 215150700111044
-        //condition untuk menampilkan p
+        //condition untuk menampilkan ketepatan waktu penugasan berdasarkan input pengecekan menggunakan id assignment
         $procedure_create = "DROP PROCEDURE IF EXISTS `kelompok5_condition_pengumpulan`;
         CREATE PROCEDURE `kelompok5_condition_pengumpulan`(in input int)
         BEGIN
