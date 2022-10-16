@@ -49,6 +49,23 @@ return new class extends Migration
 
         DB::unprepared($procedure_loop);
 
+        // LOOPING PROCEDURE - Ardhi Wahyu Hidayat - 215150707111038
+        // Looping untuk menampilkan tabel grading_plan
+        $loop_procedure = "DROP PROCEDURE IF EXISTS `kelompok_5_loop_grading_plan`;
+            CREATE PROCEDURE `kelompok_5_loop_grading_plan`() 
+
+            BEGIN
+                declare i int;
+                set i = 1; 
+                WHILE i <= 10 DO 
+                SELECT * FROM grading_plan
+                WHERE id = i;
+                set i = i + 2;
+            END WHILE;
+            END;
+
+            ";
+            DB::unprepared($loop_procedure);
     }
 
     /**
