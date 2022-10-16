@@ -16,14 +16,14 @@ return new class extends Migration
     {
         // Procedure create - Firda Kusumawardhani- 215150701111031
         $procedure_create_new= "DROP PROCEDURE IF EXISTS `kelompok2_create_criteria_levels`;
-        CREATE PROCEDURE `kelompok2_create_criteria_levels`(IN_id BIGINT UNSIGNED, IN_criteria_id BIGINT UNSIGNED, IN_point FLOAT, IN_title VARCHAR(1024), IN_description TEXT)
+        CREATE PROCEDURE `kelompok2_create_criteria_levels` (IN_id BIGINT UNSIGNED, IN_criteria_id BIGINT UNSIGNED, IN_point FLOAT, IN_title VARCHAR(1024), IN_description TEXT)
         BEGIN 
         INSERT INTO criteria_levels VALUES (IN_id, IN_criteria_id, IN_point, IN_title, IN_description);
         END;";
 
         DB::unprepared($procedure_create_new);
 
-        // Procedure update - Firda Kusumaw2ardhani  - 215150701111031
+        // Procedure update - Firda Kusumawardhani - 215150701111031
         $update_procedure = "DROP PROCEDURE IF EXISTS `kelompok2_student_grades`;
         CREATE PROCEDURE kelompok2_student_grades (IN new_id bigint, IN new_student_user_id bigint)
         BEGIN
@@ -33,7 +33,7 @@ return new class extends Migration
         DB::unprepared($update_procedure);
        
         
-        //CONDITION PROCEDURE - Firda kusumawardhani Hillal - 215150701111031
+        //Procedure condition - Firda kusumawardhani - 215150701111031
         $procedure_condition = "DROP PROCEDURE IF EXISTS `kelompok2_score`;
         CREATE PROCEDURE `kelompok2_score`()
         BEGIN
@@ -65,17 +65,17 @@ return new class extends Migration
 
 
         //Procedure delete - Clara Clarita Yung - 215150700111051
-        $query = "DROP PROCEDURE IF EXISTS `kelompok2_delete_join_classes`;
-        CREATE PROCEDURE kelompok2_delete_join_classes(in del_id bigint)
+        $update_procedure = "DROP PROCEDURE IF EXISTS `kelompok2_delete_join_classes`;
+        CREATE PROCEDURE kelompok2_delete_join_classes (in del_id bigint)
         BEGIN
         delete from `join_classes` where id = del_id;
         END;";
 
-        DB::unprepared($query);
+        DB::unprepared($update_procedure);
 
-        //Looping - Clara Clarita Yung - 215150700111051
+        //Procedure looping - Clara Clarita Yung - 215150700111051
         $looping = "DROP PROCEDURE IF EXISTS `loop_criterion`;
-        CREATE PROCEDURE`loop_criterion`(IN a int)
+        CREATE PROCEDURE`loop_criterion` (IN a int)
         BEGIN
             while a <= 10 do
             SELECT*FROM criterion WHERE id = a;
@@ -96,8 +96,6 @@ return new class extends Migration
      */
     public function down()
     {
-        DB::unprepared("DROP PROCEDURE IF EXISTS `kelompok2_create_criteria_levels");
-        DB::unprepared("DROP PROCEDURE IF EXISTS `kelompok2_student_grades");
-        DB::unprepared("DROP PROCEDURE IF EXISTS `kelompok2_score");
+        Schema::dropIfExists('kelompok2_criteria_levels');
     }
 };
