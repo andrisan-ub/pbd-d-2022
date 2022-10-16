@@ -81,6 +81,30 @@ return new class extends Migration
             ";
   
         \DB::unprepared($delete_procedure);
+    
+        //IF ELSE course class update - - 
+        $ifelse_procedure = "DROP PROCEDURE IF EXISTS `get_student_grade_conditions`;
+        CREATE PROCEDURE `get_student_grade_conditions` (IN _id int)
+
+        BEGIN
+        DECLARE status Varchar(25);
+
+            IF course_class.updated_at = NULL THEN
+            SET status = '';
+
+            ELSE
+            SET status = 'CLASS UPDATED';
+            END IF;
+            
+        SELECT status;
+
+        END;
+
+        ";
+  
+        \DB::unprepared($ifelse_procedure);
+
+        
     }
 
     /**
