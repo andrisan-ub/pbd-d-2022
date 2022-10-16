@@ -57,12 +57,12 @@ return new class extends Migration
             CREATE PROCEDURE `kelompok5_loop_grading_plan`() 
 
             BEGIN
-                declare i int;
-                set i = 1; 
-                WHILE i <= 10 DO 
+                declare a int;
+                set a = 1; 
+                WHILE a <= 10 DO 
                 SELECT * FROM grading_plan
-                WHERE id = i;
-                set i = i + 2;
+                WHERE id = a;
+                set a = a + 2;
             END WHILE;
             END;
 
