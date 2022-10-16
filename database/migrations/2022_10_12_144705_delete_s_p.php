@@ -18,7 +18,7 @@ return new class extends Migration
         // Prosedur untuk menghapus data pada tabel users berdasarkan id ke-x
         $procedure_delete = "DROP PROCEDURE IF EXISTS `kelompok5_delete_users`;
         CREATE PROCEDURE `kelompok5_delete_users` (
-            IN x INT
+            IN x bigint(20)
         )
         BEGIN
             DELETE FROM users
@@ -31,7 +31,7 @@ return new class extends Migration
         // Prosedur untuk menghapus data pada tabel faculties berdasarkan id
         $procedure_delete = "DROP PROCEDURE IF EXISTS `kelompok5_delete_faculty`;
         CREATE PROCEDURE `kelompok5_delete_faculty` (
-            df_id INT
+            df_id bigint(20)
         )
         BEGIN
             DELETE FROM faculty
@@ -44,7 +44,7 @@ return new class extends Migration
         // Prosedur untuk menghapus data pada tabel assignments berdasarkan id
         $procedure_delete = "DROP PROCEDURE IF EXISTS `kelompok5_delete_assignment`;
         CREATE PROCEDURE `kelompok5_delete_assignment` (
-            da_id INT
+            da_id bigint(20)
         )
         BEGIN
             DELETE FROM faculty

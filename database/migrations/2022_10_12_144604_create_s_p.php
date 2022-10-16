@@ -35,7 +35,7 @@ return new class extends Migration
         //create untuk insert baris data pada tabel assignment
         $procedure_create = "DROP PROCEDURE IF EXISTS `kelompok5_create_assignment`;
         CREATE PROCEDURE `kelompok5_create_assignment` (
-            IN id BIGINT,
+            IN id BIGINT(20),
             IN assignment_plan_id BIGINT,
             IN course_class_id BIGINT,
             IN assigned_date TIMESTAMP,
@@ -53,7 +53,7 @@ return new class extends Migration
         //create untuk insert baris data pada tabel faculty
         $procedure_create = "DROP PROCEDURE IF EXISTS `kelompok5_create_faculty`;
         CREATE PROCEDURE `kelompok5_create_faculty` (
-            in_id int(20),
+            in_id bigint(20),
             in_name varchar(255)
         )
         BEGIN

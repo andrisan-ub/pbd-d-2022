@@ -55,7 +55,7 @@ return new class extends Migration
         // Procedure untuk update data pada tabel faculty berdasarkan id
         $procedure_update = "DROP PROCEDURE IF EXISTS `kelompok5_update_faculty`;
             CREATE PROCEDURE `kelompok5_update_faculty` (
-                IN new_id int, 
+                IN new_id bigint(20), 
                 IN new_name varchar(255))
             BEGIN
             UPDATE faculty SET name = new_name WHERE id = new_id;
