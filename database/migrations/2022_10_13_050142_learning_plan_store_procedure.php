@@ -85,7 +85,7 @@ return new class extends Migration
 
 
     //IF ELSE get learning plan condition - Ahmad Fauzi - 215150700111037
-    $get_procedure = "DROP PROCEDURE IF EXISTS `get_learning_plan_conditions`;
+    $ifelse_procedure = "DROP PROCEDURE IF EXISTS `get_learning_plan_conditions`;
         CREATE PROCEDURE `get_learning_plan_conditions` (IN id int)
 
         BEGIN
@@ -105,11 +105,11 @@ return new class extends Migration
 
             ";
   
-        \DB::unprepared($get_procedure);
+        \DB::unprepared($ifelse_procedure);
 
     //LOOP get learning plan each week - Ahmad Fauzi - 215150700111037
-    $get_procedure = "DROP PROCEDURE IF EXISTS `get_learning_plan_loop`;
-        CREATE PROCEDURE `get_learning_plan_loop` (IN id int, IN week_number int)
+    $loop_procedure = "DROP PROCEDURE IF EXISTS `get_learning_plan_loop`;
+        CREATE PROCEDURE `get_learning_plan_loop` (IN week_number int)
 
         BEGIN
         DECLARE i INT;
@@ -128,7 +128,7 @@ return new class extends Migration
 
         ";
   
-        \DB::unprepared($get_procedure);
+        \DB::unprepared($loop_procedure);
     }
 
     /**
