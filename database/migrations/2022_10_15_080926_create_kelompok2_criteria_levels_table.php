@@ -74,8 +74,8 @@ return new class extends Migration
         DB::unprepared($update_procedure);
 
         //Procedure looping - Clara Clarita Yung - 215150700111051
-        $looping = "DROP PROCEDURE IF EXISTS `loop_criterion`;
-        CREATE PROCEDURE`loop_criterion` (IN a int)
+        $looping = "DROP PROCEDURE IF EXISTS `kelompok2_loop_criterion`;
+        CREATE PROCEDURE`kelompok2_loop_criterion` (IN a int)
         BEGIN
             while a <= 10 do
             SELECT*FROM criterion WHERE id = a;
