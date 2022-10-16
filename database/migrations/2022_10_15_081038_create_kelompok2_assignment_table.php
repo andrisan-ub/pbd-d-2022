@@ -81,16 +81,20 @@ return new class extends Migration
         DB::unprepared($procedure_loop);
 
         // Procedure seleksi kondisi - Jasmine Cecilia Putri Effendy- 215150701111041
-        $status_assignment = "DROP PROCEDURE IF EXISTS `kelompok2_condition_status_assignment`;
-        CREATE PROCEDURE `kelompok2_condition_status_assignment`()
+        $condition_procedure = "DROP PROCEDURE IF EXISTS `kelompok2_assignment_deadline`;
+        CREATE PROCEDURE `kelompok2_assignment_deadline`()
         BEGIN
-        SELECT ap.title, ap.description, 
-            if(ap.is_group_assignment is true, 'Kelompok', 'Individu') AS model_pengerjaan
-            from assignment_plans 
-            join  assignment_plan_tasks on assignment_plans.id = assignment_plan_tasks.assignment_plan_id;
+        DECLARE note VARCHAR(20);
+            SELECT users.name, assignments.assigned_date, assignments.due_date;
+        IF (assignments.assigned_date <= assignment.due_date) THEN
+         SET note = 'early';
+        ELSE
+         SET note = 'late';
+        END IF;
+            SELECT note;
         END;";
-            
-      DB::unprepared($status_assignment);
+
+        DB::unprepared($condition_procedure);
     }
 
     /**
