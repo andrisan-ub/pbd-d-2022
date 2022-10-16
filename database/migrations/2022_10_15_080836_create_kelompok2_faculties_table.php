@@ -92,7 +92,7 @@ return new class extends Migration
                 REPEAT
                     SELECT lesson_learning_outcomes.id, criterias.description, criterias.max_point
                     FROM lesson_learning_outcomes, criterias
-                    WHERE lesson_learning_outcomes.id = criterias.llo_id AND lesson_learning_outcome.id= i;
+                    WHERE lesson_learning_outcomes.id = criterias.llo_id AND lesson_learning_outcomes.id= i;
                     SET i= i + 1;
                 UNTIL i>= j
                 END REPEAT;
