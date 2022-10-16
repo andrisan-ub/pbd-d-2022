@@ -53,8 +53,8 @@ return new class extends Migration
         $update_procedure = "DROP PROCEDURE IF EXISTS `update_student_grade_by_id`;
             CREATE PROCEDURE `update_student_grade_by_id` (
                 IN id_std_grade int,
-                IN new_created_at int
-                IN new_updated_at int)
+                IN new_created_at int,
+                IN new_updated_at int),
             BEGIN
             UPDATE student_grade SET created_at = new_created_at WHERE id = id_std_grade;
             UPDATE student_grade updated_at = new_updated_at WHERE id = id_std_grade;
@@ -71,7 +71,7 @@ return new class extends Migration
             WHERE id = id_std_grade;
             END;
             
-            ";
+        ";
   
         \DB::unprepared($delete_procedure);
     }

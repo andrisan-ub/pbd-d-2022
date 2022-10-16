@@ -52,15 +52,13 @@ return new class extends Migration
         //update procedure - Marcelino Kelvin - 215150707111026
         $update_procedure = "DROP PROCEDURE IF EXISTS `update_learning_plan_by_id`;
         CREATE PROCEDURE `update_learning_plan_by_id` (
-            id_learn_pln int,
-            syll_id int,
-            new_week_no int,
-            lesson_outcome_id int,
-            new_std_material varchar(1024),
-            new_learning_mtd varchar(1024),
-            new_est_time varchar(1024),
-            new_created_at int,
-            new_updated_at int )
+            IN id_learn_pln int,
+            IN new_week_no int,
+            IN new_std_material varchar(1024),
+            IN new_learning_mtd varchar(1024),
+            IN new_est_time varchar(1024),
+            IN new_created_at int,
+            IN new_updated_at int )
         BEGIN
         UPDATE learning_plan SET week_no = new_week_no WHERE id = id_learning_plan;
         UPDATE learning_plan SET std_material = new_std_material WHERE id = id_learning_plan;
@@ -73,7 +71,7 @@ return new class extends Migration
     \DB::unprepared($update_procedure);
 
     
-    //procedure delete -Marcelino Kelvin - 215150707111026
+    //procedure delete - Tanziil Aziizil Ali - 215150707111028
     $delete_procedure = "DROP PROCEDURE IF EXISTS `delete_learning_plan_by_id`;
         CREATE PROCEDURE `delete_learning_plan_by_id` (id_learn_pln int)
         BEGIN
@@ -86,23 +84,21 @@ return new class extends Migration
     \DB::unprepared($delete_procedure);
 
 
+    //IF ELSE get learning plan condition - Ahmad Fauzi - 215150700111037
+    $get_procedure = "DROP PROCEDURE IF EXISTS `get_learning_plan_conditions`;
+        CREATE PROCEDURE `get_learning_plan_conditions` (IN id int)
 
+        BEGIN
+        DECLARE desc VARCHAR();
+            IF study_material = 'studi kasus' THEN
+            SET desc = 'Mahasiswa mempelajari dan memahami materi sesuai dengan fenomena yang terjadi di sekitar';
 
-        //IF ELSE get learning plan condition - Ahmad Fauzi - 215150700111037
-        $get_procedure = "DROP PROCEDURE IF EXISTS `get_learning_plan_conditions`;
-            CREATE PROCEDURE `get_learning_plan_conditions` (IN id int)
+            ELSE IF study_material = 'presentasi' THEN
+            SET desc = 'Mahasiswa mempresentasikan materi yang dipelajari di depan kelas';
 
-            BEGIN
-            DECLARE desc VARCHAR();
-                IF study_material = 'studi kasus' THEN
-                SET desc = 'Mahasiswa mempelajari dan memahami materi sesuai dengan fenomena yang terjadi di sekitar';
-
-                ELSE IF study_material = 'presentasi' THEN
-                SET desc = 'Mahasiswa mempresentasikan materi yang dipelajari di depan kelas';
-
-                ELSE IF study_material = 'diskusi' THEN
-                SET desc = 'Mahasiswa melakukan diskusi aktif di dalam kelas tantang materi yang dipelajari';
-                END IF;
+            ELSE IF study_material = 'diskusi' THEN
+            SET desc = 'Mahasiswa melakukan diskusi aktif di dalam kelas tantang materi yang dipelajari';
+            END IF;
             
             SELECT desc;
             END;
@@ -111,26 +107,26 @@ return new class extends Migration
   
         \DB::unprepared($get_procedure);
 
-        //LOOP get learning plan each week - Ahmad Fauzi - 215150700111037
-        $get_procedure = "DROP PROCEDURE IF EXISTS `get_learning_plan_loop`;
-            CREATE PROCEDURE `get_learning_plan_loop` (IN id int, IN week_number int)
+    //LOOP get learning plan each week - Ahmad Fauzi - 215150700111037
+    $get_procedure = "DROP PROCEDURE IF EXISTS `get_learning_plan_loop`;
+        CREATE PROCEDURE `get_learning_plan_loop` (IN id int, IN week_number int)
 
-            BEGIN
-            DECLARE i INT;
-            SET i = 0;
+        BEGIN
+        DECLARE i INT;
+        SET i = 0;
                 
-            ulang: : LOOP
-                IF i > week_number THEN
-                    LEAVE ulang;
-                END IF;
+        ulang: : LOOP
+            IF i > week_number THEN
+                LEAVE ulang;
+            END IF;
 
-                SET i = i + 1;
-                SELECT week_number, study_material, learning_method FROM learning_plan where id = i;
-            END LOOP;
+            SET i = i + 1;
+            SELECT week_number, study_material, learning_method FROM learning_plan where id = i;
+        END LOOP;
             
-            END;
+        END;
 
-            ";
+        ";
   
         \DB::unprepared($get_procedure);
     }

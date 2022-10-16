@@ -53,9 +53,9 @@ return new class extends Migration
         $update_procedure = "DROP PROCEDURE IF EXISTS `update_course_class_by_id`;
             CREATE PROCEDURE `update_course_class_by_id` (
                 IN id_crs_cls int,
-                new_crs_name varchar(1024),
-                new_thumb_img varchar(1024),
-                new_cls_code varchar(256),
+                IN new_crs_name varchar(1024),
+                IN new_thumb_img varchar(1024),
+                IN new_cls_code varchar(256),
                 IN new_created_at int,
                 IN new_updated_at int)
             BEGIN
