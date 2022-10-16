@@ -37,8 +37,8 @@ return new class extends Migration
             
         )
         BEGIN
-            UPDATE kelompok2_create_faculties SET id = new_id WHERE id = new_id;
-            UPDATE kelompok2_create_faculties SET name = new_name WHERE id = new_id;
+            UPDATE faculties SET id = new_id WHERE id = new_id;
+            UPDATE faculties SET name = new_name WHERE id = new_id;
         END;";
       
         DB::unprepared($update_procedure);
@@ -57,14 +57,14 @@ return new class extends Migration
        DB::unprepared($delete_procedure);
 
         //Procedure Condition - Diandra Charisa - 215150700111032 
-        $procedure_condition = "DROP PROCEDURE IF EXISTS `kelompok2_status_assignment`;
-         CREATE PROCEDURE `kelompok2_status_assignment`()
+        $procedure_condition = "DROP PROCEDURE IF EXISTS `kelompok2_status_deadline`;
+         CREATE PROCEDURE `kelompok2_status_deadline`()
  
          BEGIN
-         SELECT assignment_plans.title, assignment_plan_tasks.description, 
-         if(assignment_plans.is_group_assignment is true, 'kelompok', 'individu') AS model_pengerjaan
-         from assignment_plans 
-         join  assignment_plan_tasks on assignment_plans.id = assignment_plan_tasks.assignment_plan_id;
+         SELECT assignments.assigned_date, assignment_plans.description, 
+         if(assignments.due_date is true, 'early', 'late') AS waktu_pengerjaan
+         from assignments
+         join  assignment_plans on assignments.id = assignments.assignment_plan_id;
       
        END;";
 
