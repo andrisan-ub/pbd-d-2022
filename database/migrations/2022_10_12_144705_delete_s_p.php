@@ -41,14 +41,14 @@ return new class extends Migration
         DB::unprepared($procedure_delete);
 
         // DELETE PROCEDURE - Nur Fathiyyah - 215150700111048
-        // Prosedur untuk menghapus data pada tabel assignments berdasarkan id
-        $procedure_delete = "DROP PROCEDURE IF EXISTS `kelompok5_delete_assignment`;
-        CREATE PROCEDURE `kelompok5_delete_assignment` (
-            da_id bigint(20)
+        // Prosedur untuk menghapus data pada tabel student_info berdasarkan id
+        $procedure_delete = "DROP PROCEDURE IF EXISTS `kelompok5_delete_studentinfo`;
+        CREATE PROCEDURE `kelompok5_delete_studentinfo` (
+            ds_id bigint(20)
         )
         BEGIN
-            DELETE FROM faculty
-            WHERE id = da_id;
+            DELETE FROM student_info
+            WHERE id = ds_id;
         END;";
 
         DB::unprepared($procedure_delete);
