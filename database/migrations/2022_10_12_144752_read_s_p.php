@@ -16,8 +16,8 @@ return new class extends Migration
     {
         //READ PROCEDURE - Alvianta Dwi Putra - 215150700111053
         //read untuk memunculkan identitas student. yaitu id user, NIM, Nama user
-        $procedure_create = "DROP PROCEDURE IF EXISTS `kelompok_5_read_student_id`;
-        CREATE PROCEDURE `kelompok_5_read_student_id`()
+        $procedure_create = "DROP PROCEDURE IF EXISTS `kelompok5_read_student_id`;
+        CREATE PROCEDURE `kelompok5_read_student_id`()
         BEGIN
             SELECT us.id, st.student_id_number,us.name
             FROM users us
@@ -29,8 +29,8 @@ return new class extends Migration
 
         
         //READ PROCEDURE - Alifa Nurfika - 215150700111044
-        $procedure_read = "DROP PROCEDURE IF EXISTS `kelompok_5_read_course_id`;
-        CREATE PROCEDURE `kelompok_5_read_course_id`()
+        $procedure_read = "DROP PROCEDURE IF EXISTS `kelompok5_read_course_id`;
+        CREATE PROCEDURE `kelompok5_read_course_id`()
         BEGIN
             SELECT study_program.id, course.id, course.name
             FROM study_program
@@ -40,8 +40,8 @@ return new class extends Migration
         DB::unprepared($procedure_read);
 
         //READ PROCEDURE - Alifa Nurfika - 215150700111044
-        $procedure_read = "DROP PROCEDURE IF EXISTS `kelompok_5_read_grading_plan_id`;
-        CREATE PROCEDURE `kelompok_5_read_grading_plan_id`()
+        $procedure_read = "DROP PROCEDURE IF EXISTS `kelompok5_read_grading_plan_id`;
+        CREATE PROCEDURE `kelompok5_read_grading_plan_id`()
         BEGIN
             SELECT assignment_plan_task.id, grading_plan.id, assignment_plan_task.description
             FROM assignment_plan_task

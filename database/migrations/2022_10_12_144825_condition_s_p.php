@@ -39,7 +39,21 @@ return new class extends Migration
 
         //CONDITION PROCEDURE - Alifa Nurfika - 215150700111044
         //condition untuk menampilkan p
-
+        $procedure_create = "DROP PROCEDURE IF EXISTS `kelompok5_condition_pengumpulan`;
+        CREATE PROCEDURE `kelompok5_condition_pengumpulan`(in input int)
+        BEGIN
+        DECLARE CASEa timestamp;
+        declare CASEb timestamp;
+        set CASEa = (select assigned_date from assignment where id=input);
+        set CASEb = (select due_date from assignment where id=input);
+        if CASEa>=CASEb then 
+        SET @print = 'terdapat kesalahan pengaturan batas waktu';
+        ELSE
+        SET @print ='pengaturan waktu penugasan telah sesuai';
+        END if;
+        SELECT @print;
+    END;";
+    DB::unprepared($procedure_create);
 
         //CONDITION PROCEDURE - Nur Fathiyyah - 215150700111048
         //condition untuk menampilkan nama dan kode kelas

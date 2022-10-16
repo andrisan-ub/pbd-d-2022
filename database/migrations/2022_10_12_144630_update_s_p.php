@@ -53,8 +53,8 @@ return new class extends Migration
 
         // UPDATE PROCEDURE - Ardhi Wahyu Hidayat - 215150707111038
         // Procedure untuk update data pada tabel faculty berdasarkan id
-        $procedure_update = "DROP PROCEDURE IF EXISTS `kelompok_5_update_faculty`;
-            CREATE PROCEDURE `kelompok_5_update_faculty` (
+        $procedure_update = "DROP PROCEDURE IF EXISTS `kelompok5_update_faculty`;
+            CREATE PROCEDURE `kelompok5_update_faculty` (
                 IN new_id int, 
                 IN new_name varchar(255))
             BEGIN
