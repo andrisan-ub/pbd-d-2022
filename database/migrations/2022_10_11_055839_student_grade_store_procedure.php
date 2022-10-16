@@ -41,7 +41,7 @@ return new class extends Migration
             INSERT INTO student_grade(
                 id, student_user_id, assigment_id, assigment_plan_task_id, criterion_level_id, created_at, updated_at)
             VALUES(
-                id_std_grade, std_user_id, asg_id, asg_plan_task_id, criterion_lvl_id, new_created_at, new_updated_at);
+                id_std_grade, std_user_id, asg_id, asg_plan_task_id, criterion_lvl_id, new_created_at int, updated_at int);
             END;
             
             ";
@@ -74,6 +74,67 @@ return new class extends Migration
         ";
   
         \DB::unprepared($delete_procedure);
+
+        //IF ELSE student grade mark - Ahmad Fauzi - 215150700111037
+        $ifelse_procedure = "DROP PROCEDURE IF EXISTS `get_student_grade_conditions`;
+        CREATE PROCEDURE `get_student_grade_conditions` (IN student_id int)
+
+        BEGIN
+        DECLARE grade int;
+        DECLARE mark Varchar(25);
+        grade = SELECT point FROM criterion_level 
+            WHERE id.criterion_level = criterion_level_id.student_grade
+            AND _id = student_grade.id;
+
+            IF grade < 60 THEN
+            SET grade = 'TIDAK LULUS';
+
+            ELSE
+            SET grade = 'LULUS';
+            END IF;
+            
+        SELECT id, updated_at FROM student grade
+        INNER JOIN name ON users.id = student_grade.student_user_id
+        INNER JOIN code ON assignment_plan_task.id = student_grade.assignment_plan_task_id
+        INNER JOIN point ON criterion_level.id = student_grade.criterion_level_id
+        INNER JOIN mark
+        WHERE student_user_id = student_id;
+
+        END;
+
+        ";
+  
+        \DB::unprepared($ifelse_procedure);
+
+        //loop get certain student grade - Ahmad Fauzi - 215150700111037
+        $loop_procedure = "DROP PROCEDURE IF EXISTS `get_student_grade_loop`;
+        CREATE PROCEDURE `get_student_grade_loop` (IN student_id int)
+
+        BEGIN
+        DECLARE i INT;
+        DECLARE max INT;
+        SET i = 0;
+        SET max = COUNT(id) FROM student_grade;
+                
+        ulang: : LOOP
+            IF i > max THEN
+                LEAVE ulang;
+            END IF;
+
+            SET i = i + 1;
+            
+            SELECT id, updated_at FROM student grade
+            INNER JOIN name ON users.id = student_grade.student_user_id
+            INNER JOIN code ON assignment_plan_task.id = student_grade.assignment_plan_task_id
+            INNER JOIN point ON criterion_level.id = student_grade.criterion_level_id
+            WHERE student_user_id = student_id;
+        END LOOP;
+            
+        END;
+
+        ";
+  
+        \DB::unprepared($loop_procedure);
     }
 
     /**
