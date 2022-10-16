@@ -138,6 +138,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('learning_plan_store_procedure');
     }
 };
