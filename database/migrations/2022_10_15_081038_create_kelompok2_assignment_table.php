@@ -26,9 +26,7 @@ return new class extends Migration
 
         DB::unprepared($procedure_read_new);
 
-
         // Procedure create - Fauzan Zakaria Hermansah - 215150700111023
-        
         $procedure_create_new= "DROP PROCEDURE IF EXISTS `kelompok2_create_assignment`;
         CREATE PROCEDURE `kelompok2_create_assignment` (
             in_id BIGINT,
@@ -43,7 +41,6 @@ return new class extends Migration
         END;";
 
         DB::unprepared($procedure_create_new);
-       
         
         // Procedure update - Jasmine Cecilia Putri Effendy - 215150701111041
         $update_procedure = "DROP PROCEDURE IF EXISTS `kelompok2_update_assignment`;
@@ -59,18 +56,29 @@ return new class extends Migration
       
         DB::unprepared($update_procedure);
 
-       //procedure delete - Jasmine Cecilia Putri Effendy - 215150701111041
-       $procedure_delete = "DROP PROCEDURE IF EXISTS `kelompok2_delete_assignment`;
-       CREATE PROCEDURE `kelompok2_delete_assignment` (IN in_id int)
-       BEGIN
-       DELETE FROM assignments WHERE id = in_id;
-       END;";
+        //procedure delete - Jasmine Cecilia Putri Effendy - 215150701111041
+        $procedure_delete = "DROP PROCEDURE IF EXISTS `kelompok2_delete_assignment`;
+        CREATE PROCEDURE `kelompok2_delete_assignment` (IN in_id int)
+        BEGIN
+        DELETE FROM assignments WHERE id = in_id;
+        END;";
 
-       DB::unprepared($procedure_delete);
+        DB::unprepared($procedure_delete);
 
-         // Procedure loop - Fauzan Zakaria Hermansah - 215150700111023
-
-        
+        // Procedure loop - Fauzan Zakaria Hermansah - 215150700111023
+        $procedure_loop = "DROP PROCEDURE IF EXISTS `kelompok2_loop_assignment_assignment_plans`;
+        CREATE PROCEDURE `kelompok2_loop_assignment_assignment_plans`(IN `i` INT(10), IN `j` INT(10))
+        BEGIN
+        REPEAT
+        SELECT a.id, ap.tittle, ap.description
+            FROM assignments a, assignment_plans ap
+            WHERE a.id = ap.id AND a.id =  i;
+            SET i = i + 1;
+            UNTIL i >= j
+                END REPEAT;
+        END;";
+  
+    DB::unprepared($procedure_loop);
 
     }
 
