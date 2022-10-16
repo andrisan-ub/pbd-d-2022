@@ -42,7 +42,18 @@ return new class extends Migration
 
 
         //CONDITION PROCEDURE - Nur Fathiyyah - 215150700111048
-        //condition untuk menampilkan 
+        //condition untuk menampilkan nama dan kode kelas
+        $procedure_condition = "DROP PROCEDURE IF EXISTS `kelompok5_condition_namecode_class`;
+        CREATE PROCEDURE `kelompok5_condition_namecode_class`()
+        BEGIN
+
+            SELECT course_class.name, course_class.class_code,
+		    IF (join_class.course_class_id = 1, 'A', 'B') AS kelas FROM course_class
+		    JOIN join_class ON course_class.id = join_class.course_class_id;
+
+        END;";
+
+        DB::unprepared($procedure_condition);
         
     }
 
