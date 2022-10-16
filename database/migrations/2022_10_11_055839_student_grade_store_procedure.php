@@ -39,9 +39,9 @@ return new class extends Migration
 
             BEGIN
             INSERT INTO student_grade(
-                id, student_user_id, assigment_id, assigment_plan_task_id, criterion_level_id, new_created_at, new_updated_at)
+                id, student_user_id, assigment_id, assigment_plan_task_id, criterion_level_id, created_at, updated_at)
             VALUES(
-                id_std_grade, std_user_id, asg_id, asg_plan_task_id, criterion_lvl_id, created_at int, updated_at int);
+                id_std_grade, std_user_id, asg_id, asg_plan_task_id, criterion_lvl_id, new_created_at, new_updated_at);
             END;
             
             ";
