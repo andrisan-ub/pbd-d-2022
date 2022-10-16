@@ -81,20 +81,18 @@ return new class extends Migration
         DB::unprepared($procedure_loop);
 
         // Procedure seleksi kondisi - Jasmine Cecilia Putri Effendy- 215150701111041
-        $condition_procedure = "DROP PROCEDURE IF EXISTS `kelompok2_assignment_deadline`;
-        CREATE PROCEDURE `kelompok2_assignment_deadline`()
-        BEGIN
-        DECLARE note VARCHAR(20);
-            SELECT users.name, assignments.assigned_date, assignments.due_date;
-        IF (assignments.assigned_date <= assignment.due_date) THEN
-         SET note = 'early';
-        ELSE
-         SET note = 'late';
-        END IF;
-            SELECT note;
-        END;";
-
-        DB::unprepared($condition_procedure);
+        $if_procedure = "DROP PROCEDURE IF EXISTS `if_assignment_plans`;
+                CREATE PROCEDURE `if_assignment_plans` (IN input int)
+                BEGIN
+                IF input < 10 THEN
+        
+                SELECT * FROM assignment_plans
+                WHERE id = input;
+                END IF;
+                END;
+                ";
+            DB::unprepared($if_procedure);
+        
     }
 
     /**
