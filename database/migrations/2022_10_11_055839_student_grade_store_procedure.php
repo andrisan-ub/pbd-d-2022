@@ -57,7 +57,7 @@ return new class extends Migration
                 IN new_updated_at int),
             BEGIN
             UPDATE student_grade SET created_at = new_created_at WHERE id = id_std_grade;
-            UPDATE student_grade updated_at = new_updated_at WHERE id = id_std_grade;
+            UPDATE student_grade SET updated_at = new_updated_at WHERE id = id_std_grade;
             END;";
   
         \DB::unprepared($update_procedure);
