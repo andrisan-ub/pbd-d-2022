@@ -90,9 +90,9 @@ return new class extends Migration
             )
             BEGIN
                 REPEAT
-                    SELECT lesson_learning_outcome.id, criterion.description, criterion.max_point
-                    FROM lesson_learning_outcome, criterion
-                    WHERE lesson_learning_outcome.id = criterion.llo_id AND lesson_learning_outcome.id= i;
+                    SELECT lesson_learning_outcomes.id, criterias.description, criterias.max_point
+                    FROM lesson_learning_outcomes, criterias
+                    WHERE lesson_learning_outcomes.id = criterias.llo_id AND lesson_learning_outcome.id= i;
                     SET i= i + 1;
                 UNTIL i>= j
                 END REPEAT;
