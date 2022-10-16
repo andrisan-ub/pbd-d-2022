@@ -51,8 +51,8 @@ return new class extends Migration
 
         // LOOPING PROCEDURE - Ardhi Wahyu Hidayat - 215150707111038
         // Looping untuk menampilkan tabel grading_plan
-        $loop_procedure = "DROP PROCEDURE IF EXISTS `kelompok_5_loop_grading_plan`;
-            CREATE PROCEDURE `kelompok_5_loop_grading_plan`() 
+        $loop_procedure = "DROP PROCEDURE IF EXISTS `kelompok5_loop_grading_plan`;
+            CREATE PROCEDURE `kelompok5_loop_grading_plan`() 
 
             BEGIN
                 declare i int;
