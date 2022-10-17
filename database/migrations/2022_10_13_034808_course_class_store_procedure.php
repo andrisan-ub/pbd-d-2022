@@ -112,7 +112,7 @@ return new class extends Migration
         DECLARE i INT;
         SET i = 0;
             
-        ulang: : LOOP
+        ulang: LOOP
             IF i > batas THEN
                 LEAVE ulang;
             END IF;
@@ -121,7 +121,7 @@ return new class extends Migration
 
             SELECT name, class_code, FROM course_class
             INNER JOIN name AS creator ON user.id = creator_user_id
-            WHERE i = id.learning_plan;
+            WHERE i = learning_plan.id;
         END LOOP;
         
         END;

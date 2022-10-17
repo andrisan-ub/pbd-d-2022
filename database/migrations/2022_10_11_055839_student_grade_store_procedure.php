@@ -46,7 +46,6 @@ return new class extends Migration
             
             ";
 
-
         \DB::unprepared($create_procedure);
 
         //update procedure - Ahmad Fauzi - 215150700111037
@@ -83,7 +82,7 @@ return new class extends Migration
         DECLARE grade int;
         DECLARE mark Varchar(25);
         grade = SELECT point FROM criterion_level 
-            WHERE id.criterion_level = criterion_level_id.student_grade
+            WHERE criterion_level.id = student_grade.criterion_level_id
             AND _id = student_grade.id;
 
             IF grade < 60 THEN
@@ -116,7 +115,7 @@ return new class extends Migration
         SET i = 0;
         SET max = COUNT(id) FROM student_grade;
                 
-        ulang: : LOOP
+        ulang: LOOP
             IF i > max THEN
                 LEAVE ulang;
             END IF;

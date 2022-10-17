@@ -115,7 +115,7 @@ return new class extends Migration
         DECLARE i INT;
         SET i = 0;
                 
-        ulang: : LOOP
+        ulang: LOOP
             IF i > week_number THEN
                 LEAVE ulang;
             END IF;
