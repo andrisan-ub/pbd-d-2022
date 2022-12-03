@@ -17,13 +17,20 @@ return new class extends Migration
        DB::raw('DELIMITER $$
             CREATE FUNCTION count_answer(id_discuss INT) RETURNS INT DETERMINISTIC
             BEGIN
-                DECLARE jml_answer INT;
-                SELECT COUNT(id) AS jumlah_answer INTO jml_answer FROM answers
+                DECLARE jml_answers INT;
+                SELECT COUNT(id) AS jumlah_answers INTO jml_answers FROM answers
                 WHERE discuss_forum_id = id_discuss;
-            RETURN jml_answer;
-            END
-        
-            ');
+            RETURN jml_answers;
+            END');
+
+        DB::raw('DELIMITER $$
+            CREATE FUNCTION count_question(id_course INT) RETURNS INT DETERMINISTIC
+            BEGIN
+                DECLARE jml_questions INT;
+                SELECT COUNT(id) AS jumlah_questions INTO jml_questions FROM discuss_forumss
+                WHERE course_id = id_course;
+            RETURN jml_questions;
+            END');
 
         
     }
