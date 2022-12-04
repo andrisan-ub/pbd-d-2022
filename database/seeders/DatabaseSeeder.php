@@ -68,7 +68,7 @@ class DatabaseSeeder extends Seeder
             `Class`=>'D - PBD',
             `Waktu_Kehadiran`=>NOW(),
             `Hadir`=>7,
-            `Alpha`=3,
+            `Alpha`=>3,
             `Izin`=>1,
             `Sakit`=>3,
             `Total_Pertemuan`=>14,
