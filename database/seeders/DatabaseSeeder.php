@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
             `Izin`=>0,
             `Sakit`=>0,
             `Total_Pertemuan`=>14,
-            `Presentase`=>100
+            `Presentase`=>100,
         ]);
 
         DB::table('presensi')->insert([
@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
             `Izin`=>0,
             `Sakit`=>0,
             `Total_Pertemuan`=>14,
-            `Presentase`=>93
+            `Presentase`=>93,
         ]);
 
         DB::table('presensi')->insert([
@@ -57,7 +57,7 @@ class DatabaseSeeder extends Seeder
             `Izin`=>1,
             `Sakit`=>1,
             `Total_Pertemuan`=>14,
-            `Presentase`=>79
+            `Presentase`=>79,
         ]);
 
         DB::table('presensi')->insert([
@@ -72,7 +72,7 @@ class DatabaseSeeder extends Seeder
             `Izin`=>1,
             `Sakit`=>3,
             `Total_Pertemuan`=>14,
-            `Presentase`=>50
+            `Presentase`=>50,
         ]);
     }
 }
