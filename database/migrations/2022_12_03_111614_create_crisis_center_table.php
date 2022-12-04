@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('crisis_center', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->constrained('users');
-            $table->string('nama_lengkap')->constrained('users');
-            $table->string('nim')->constrained('student_data');
-            $table->string('program_studi')->constrained('study_programs');
+            $table->foreignId('email')->constrained('users');
+            $table->foreignId('nama_lengkap')->constrained('users');
+            $table->foreignId('nim')->constrained('student_data');
+            $table->foreignId('program_studi')->constrained('study_programs');
             $table->string('no_hp');
             $table->string('topik');
             $table->text('keluhan');
