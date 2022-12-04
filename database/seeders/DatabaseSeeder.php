@@ -16,18 +16,63 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('presensi')->insert([
-            `ID_Presensi`=>1,2,3,4,
-            `Nama_Mahasiswa`=>'Ulla Hubbard','Josephine Peterseri','Rowan Harrington', 'Lani Vang',
-            `NIM`=>'2151','2152','2153','2154',
-            `ID_Class`=>1,1,1,1,
-            `Class`=>'A - PBD','B - PBD','C - PBD','D - PBD',
-            `Waktu_Kehadiran`=>NOW(),NOW(),NOW(),NOW(),
-            `Hadir`=>14,13,11,7,
-            `Alpha`=>0,1,1,3,
-            `Izin`=>0,0,1,1,
-            `Sakit`=>0,0,1,3,
-            `Total_Pertemuan`=>14,14,14,14,
-            `Presentase`=>100,93,79,50
+            `ID_Presensi`=>1,
+            `Nama_Mahasiswa`=>'Ulla Hubbard',
+            `NIM`=>'2151',
+            `ID_Class`=>1,
+            `Class`=>'A - PBD',
+            `Waktu_Kehadiran`=>NOW(),
+            `Hadir`=>14,
+            `Alpha`=>0,
+            `Izin`=>0,
+            `Sakit`=>0,
+            `Total_Pertemuan`=>14,
+            `Presentase`=>100
+        ]);
+
+        DB::table('presensi')->insert([
+            `ID_Presensi`=>2,
+            `Nama_Mahasiswa`=>'Josephine Peterseri',
+            `NIM`=>'2152',
+            `ID_Class`=>1,
+            `Class`=>'B - PBD',
+            `Waktu_Kehadiran`=>NOW(),
+            `Hadir`=>13,
+            `Alpha`=>1,
+            `Izin`=>0,
+            `Sakit`=>0,
+            `Total_Pertemuan`=>14,
+            `Presentase`=>93
+        ]);
+
+        DB::table('presensi')->insert([
+            `ID_Presensi`=>3,
+            `Nama_Mahasiswa`=>'Rowan Harrington',
+            `NIM`=>'2153',
+            `ID_Class`=>1,
+            `Class`=>'C - PBD',
+            `Waktu_Kehadiran`=>NOW(),
+            `Hadir`=>11,
+            `Alpha`=>1,
+            `Izin`=>1,
+            `Sakit`=>1,
+            `Total_Pertemuan`=>14,
+            `Presentase`=>79
+        ]);
+
+        DB::table('presensi')->insert([
+            `ID_Presensi`=>4,
+            `Nama_Mahasiswa`=>'Lani Vang',
+            `NIM`=>'2154',
+            `ID_Class`=>1,
+            `Class`=>'D - PBD',
+            `Waktu_Kehadiran`=>NOW(),
+            `Hadir`=>7,
+            `Alpha`=3,
+            `Izin`=>1,
+            `Sakit`=>3,
+            `Total_Pertemuan`=>14,
+            `Presentase`=>50
         ]);
     }
 }
