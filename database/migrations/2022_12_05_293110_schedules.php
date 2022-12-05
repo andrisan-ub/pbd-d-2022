@@ -52,7 +52,6 @@ return new class extends Migration
             
         DB::unprepared($procedure_read);
     }
-    
 
     /**
      * Reverse the migrations.
@@ -63,4 +62,14 @@ return new class extends Migration
     {
         Schema::dropIfExists('schedules');
     }
+
+    //function
+    DB::unprepared("
+            DROP FUNCTION IF EXISTS duration;
+            CREATE FUNCTION duration(start time, end time) RETURNS INT
+            BEGIN
+                DECLARE duration INT;
+                set duration = DATEDIFF(second, start, end);
+            RETURN duration;
+            END;");
 };
