@@ -51,8 +51,7 @@ return new class extends Migration
         END;";
 
         DB::unprepared($procedure_read);
-
-<<<<<<< Updated upstream
+        
         // SP - Update Schedule
         $procedure_update = "DROP PROCEDURE IF EXISTS `update_schedule`;
         CREATE PROCEDURE `update_schedule` (
@@ -85,7 +84,7 @@ return new class extends Migration
         END;";
 
         DB::unprepared($procedure_delete);
-=======
+
         //function
         DB::unprepared("
         DROP FUNCTION IF EXISTS duration;
