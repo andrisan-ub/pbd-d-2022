@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -13,15 +14,14 @@ return new class extends Migration
      */
     public function up()
     {
-        $stored_function = "CREATE DEFINER=`root`@`localhost`
-        FUNCTION `count_notif`()
-        RETURNS int(11) DETERMINISTIC
+        $stored_function = "CREATE FUNCTION 'count_notif'()
+        RETURNS int(11)
         BEGIN
             DECLARE notif_amount INT;
             SELECT COUNT(id) AS notifs_amount INTO notif_amount FROM notifications
-            WHERE jenis_notifikasi = 'reminder';
-        RETURN notif_amount;
+            RETURN notif_amount;
         END";
+        DB::unprepared($stored_function);
     }
 
     /**
