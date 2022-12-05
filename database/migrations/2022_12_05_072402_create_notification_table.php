@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('response', function (Blueprint $table) {
+        Schema::create('notification', function (Blueprint $table) {
             $table->id();
-            $table->foreignid('crisis_center_id')->constrained('crisis_center');
-            $table->foreignid('student_user_id')->constrained('users');
+            $table->foreignId('student_user_id')->constrained('users');
+            $table->foreignId('crisis_center_id')->constrained('crisis_center');
+            $table->foreignId('response_id')->constrained('response');
+            $table->text('keluhan');
             $table->text('response');
-            $table->timestampsTz();
+            $table->timestamps();
         });
     }
 
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('response');
+        Schema::dropIfExists('notification');
     }
 };
