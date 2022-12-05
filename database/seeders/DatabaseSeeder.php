@@ -17,35 +17,35 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(FakeDataSeeder::class);
 
-        // DB::table('presensi')->insert([
-        //     `ID_Presensi`=>1,
-        //     `Nama_Mahasiswa`=>'Ulla Hubbard',
-        //     `NIM`=>'2151',
-        //     `ID_Class`=>1,
-        //     `Class`=>'A - PBD',
-        //     `Waktu_Kehadiran`=>NOW(),
-        //     `Hadir`=>14,
-        //     `Alpha`=>0,
-        //     `Izin`=>0,
-        //     `Sakit`=>0,
-        //     `Total_Pertemuan`=>14,
-        //     `Presentase`=>100
-        // ]);
+        DB::table('presensi')->insert([
+            'id'=>1,
+            'Nama_Mahasiswa'=>'Vivianne Sauer',
+            'NIM'=>2,
+            'ID_Class'=>1,
+            'Class'=>'A - PBD',
+            'Waktu_Kehadiran'=>NOW(),
+            'Hadir'=>14,
+            'Alpha'=>0,
+            'Izin'=>0,
+            'Sakit'=>0,
+            'Total_Pertemuan'=>14,
+            'Presentase'=>100
+        ]);
 
-        // DB::table('presensi')->insert([
-        //     'ID_Presensi'=>2,
-        //     'Nama_Mahasiswa'=>'',
-        //     'NIM'=>'',
-        //     'ID_Class'=>'',
-        //     'Class'=>'B - PBD',
-        //     'Waktu_Kehadiran'=>NOW(),
-        //     'Hadir'=>13,
-        //     'Alpha'=>1,
-        //     'Izin'=>0,
-        //     'Sakit'=>0,
-        //     'Total_Pertemuan'=>14,
-        //     'Presentase'=>93
-        // ]);
+        DB::table('presensi')->insert([
+            'id'=>2,
+            'Nama_Mahasiswa'=>'Eli Schamberger',
+            'NIM'=>3,
+            'ID_Class'=>2,
+            'Class'=>'B - PBD',
+            'Waktu_Kehadiran'=>NOW(),
+            'Hadir'=>13,
+            'Alpha'=>1,
+            'Izin'=>0,
+            'Sakit'=>0,
+            'Total_Pertemuan'=>14,
+            'Presentase'=>93
+        ]);
 
         // DB::table('presensi')->insert([
         //     `ID_Presensi`=>3,
