@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('presensi', function (Blueprint $table) {
-            $table->bigIncrements('ID_Presensi')->primary;
+            $table->id();
             $table->string('Nama_Mahasiswa');
-            $table->unsignedBigInteger('NIM')->nullable();
-            $table->unsignedBigInteger('ID_Class')->nullable();
+            $table->foreignId('NIM')->constrained('users');
+            $table->foreignId('ID_Class')->constrained('course_classes');
             $table->string('Class');
             $table->timestamp('Waktu_Kehadiran');
             $table->integer('Hadir');
@@ -26,9 +26,6 @@ return new class extends Migration
             $table->integer('Sakit');
             $table->integer('Total_Pertemuan');
             $table->double('Presentase');
-            $table->foreign('NIM')->references('id')->on('users');
-            $table->foreign('ID_Class')->references('id')->on('course_classes');
-
         });
     }
 
