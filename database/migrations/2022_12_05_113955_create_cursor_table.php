@@ -1,0 +1,42 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        $cursor_notification = "DROP PROCEDURE IF EXISTS `cursor_notifications`;
+        CREATE PROCEDURE `cursor_notifications`()
+        BEGIN
+        DECLARE n_id int;
+        DECLARE n_pesan text;
+        DECLARE cur_1 CURSOR FOR SELECT id, pesan_notifikasi FROM notifications;
+        OPEN cur_1;
+        FETCH FROM cur_1 INTO n_id, n_pesan;
+        IF n_id = 1 THEN
+        SELECT n_pesan;
+        END IF;
+        CLOSE cur_1;
+        END;";
+        DB::unprepared($cursor_notification);
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('cursor');
+    }
+};
