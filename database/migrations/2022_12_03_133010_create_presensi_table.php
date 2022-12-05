@@ -103,6 +103,16 @@ return new class extends Migration
             RETURN jumlah_mahasiswa;
         END";
 
+        //TRIGGER
+        // $after_courses_classes_insert= 'DROP TRIGGER IF EXIST `after_courses_classes_insert`;
+        // CREATE TRIGGER `after_courses_classes_insert` 
+        // AFTER INSERT 
+        // ON `presensi`
+        // FOR EACH ROW 
+        // BEGIN
+        //      INSERT INTO ket_presensi(Presensi_ID, Sakit) VALUES (new.id, 1);
+        // END;';
+        //DB::unprepared($after_courses_classes_insert);
         
 
 
