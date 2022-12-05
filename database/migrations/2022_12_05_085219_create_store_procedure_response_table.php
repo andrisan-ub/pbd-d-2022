@@ -79,11 +79,12 @@ return new class extends Migration
                 CREATE PROCEDURE `loop_response` ()
                 
                 BEGIN
-                DECLARE a INT;
-                WHILE a <= 10 DO
-                SELECT * FROM criterion
-                WHERE id = a;
-                set a = a * 2;
+                DECLARE n int;
+                set n = 0;
+                WHILE n <= 5 DO
+                SELECT * FROM crisis_center
+                WHERE id = n;
+                set n = n + 1;
                 END WHILE;
                 END;");
        

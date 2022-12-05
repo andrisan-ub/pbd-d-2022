@@ -36,7 +36,7 @@ return new class extends Migration
         )
 
         BEGIN 
-        INSERT INTO crisis_center(id, student_user_id, study_program_id)
+        INSERT INTO crisis_center(id, student_user_id, study_program_id, topik, keluhan)
         VALUES(id_cc, id_student_user, id_study_program, new_topik, new_keluhan);
         END;");
 
@@ -50,7 +50,7 @@ return new class extends Migration
         )
 
         BEGIN 
-        UPDATE rubric SET topik = new_topik
+        UPDATE crisis_center SET topik = new_topik
         WHERE id = id_cc;
         END;");
 
@@ -81,11 +81,11 @@ return new class extends Migration
         
     DB::unprepared("
         DROP PROCEDURE IF EXISTS `loop_crisis_center`;
-                CREATE PROCEDURE `loop_crisis_center` ()
+                CREATE PROCEDURE `loop_crisis_center` (IN input int)
                 
                 BEGIN
-                declare n int;
-                set n = 1;
+                DECLARE n int;
+                set n = 0;
                 WHILE n <= 5 DO
                 SELECT * FROM crisis_center
                 WHERE id = n;

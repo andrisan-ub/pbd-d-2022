@@ -77,15 +77,15 @@ return new class extends Migration
     DB::unprepared("
         DROP PROCEDURE IF EXISTS `loop_notification`;
         CREATE PROCEDURE `loop_notification`() 
-            BEGIN
-            declare i int;
-            set i = 1; 
-            WHILE i <= 10 DO 
-            SELECT * FROM notification
-            WHERE id = i;
-            set i = i + 2;
-            END WHILE;
-            END;");
+        BEGIN
+        DECLARE n int;
+        set n = 0;
+        WHILE n <= 5 DO
+        SELECT * FROM crisis_center
+        WHERE id = n;
+        set n = n + 1;
+        END WHILE;
+        END;");
     
     }
 
