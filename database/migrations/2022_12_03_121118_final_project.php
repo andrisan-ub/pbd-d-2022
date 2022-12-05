@@ -105,7 +105,21 @@ return new class extends Migration
            SET @SQL=CONCAT("UPDATE ", TABEL," SET ", DATA, " WHERE ", PK, "=",  DATA_PK);
            PREPARE STAT FROM @SQL;
            EXECUTE STAT;
-    END');    
+    END');  
+        
+        DB::unprepared('
+        DROP PROCEDURE IF EXISTS sp_delete_discuss_answer;
+        CREATE PROCEDURE sp_delete_discuss_answer(
+            IN TABEL VARCHAR (50),
+            IN PK VARCHAR (50),
+            IN DATA_PK VARCHAR (50),
+            IN DATA TEXT
+        )
+        BEGIN 
+           SET @SQL=CONCAT("DELETE FROM ", TABEL, " WHERE ", PK, "=",  DATA_PK);
+           PREPARE STAT FROM @SQL;
+           EXECUTE STAT;
+        END');
                        
     }
 
