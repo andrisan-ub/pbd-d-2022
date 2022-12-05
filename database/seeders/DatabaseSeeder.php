@@ -25,16 +25,28 @@ class DatabaseSeeder extends Seeder
             'question' => 'Jika saya ingin menggunakan tools localhost untuk OS Windows, aplikasi apakah yang bisa saya gunakan?'
         ]);
 
-        Answer::create([
+        DiscussForum::create([
             'creator_user_id' => 3,
+            'course_id' => 1,
+            'question' => 'Bagaimana cara membuat function dengan menggunakan migrasi Laravel?'
+        ]);
+
+        Answer::create([
+            'creator_user_id' => 4,
             'discuss_forum_id' => 1,
             'answer' => 'Bisa menggunakan aplikasi XAMPP'
         ]);
 
         Answer::create([
-            'creator_user_id' => 3,
+            'creator_user_id' => 5,
             'discuss_forum_id' => 1,
             'answer' => 'Bisa menggunakan aplikasi Laragon'
+        ]);
+
+        Answer::create([
+            'creator_user_id' => 6,
+            'discuss_forum_id' => 2,
+            'answer' => 'Bisa menggunakan DB::unprepared(write code in here)'
         ]);
     }
 }
