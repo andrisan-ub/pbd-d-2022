@@ -51,6 +51,39 @@ return new class extends Migration
         END;";
             
         DB::unprepared($procedure_read);
+
+        // SP - Update Schedule
+        $procedure_update = "DROP PROCEDURE IF EXISTS `update_schedule`;
+        CREATE PROCEDURE `update_schedule` (
+            IN id bigint(20),
+            IN course_class_id bigint(20),
+            IN rooms_id bigint(20),
+            IN teacher varchar(255),
+            IN day varchar(255),
+            IN start_time time,
+            IN end_time time
+        )
+        BEGIN
+        UPDATE schedule SET id = id_schedule WHERE id = id_schedule;
+        UPDATE schedule SET course_class_id = crs_cls_id WHERE id = id_schedule;
+        UPDATE schedule SET rooms_id = rm_id WHERE id = id_schedule;
+        UPDATE schedule SET teacher = tch WHERE id = id_schedule;
+        UPDATE schedule SET day = dy WHERE id = id_schedule;
+        UPDATE schedule SET start_time = str_time WHERE id = id_schedule;
+        UPDATE schedule SET end_time = ed_time WHERE id = id_schedule;
+        END;";
+
+        DB::unprepared($procedure_update);
+
+        // SP - Delete Schedule
+        $procedure_delete = "DROP PROCEDURE IF EXISTS `delete_Schedule`;
+        CREATE PROCEDURE `delete_Schedule` (IN d_id bigint(20))
+        BEGIN
+            DELETE FROM questions
+            WHERE id = d_id;
+        END;";
+
+        DB::unprepared($procedure_delete);
     }
 
     /**
