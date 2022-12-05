@@ -19,8 +19,8 @@ return new class extends Migration
             $table->foreignId('student_user_id')->constrained('users');
             $table->foreignId('crisis_center_id')->constrained('crisis_center');
             $table->foreignId('response_id')->constrained('response');
-            $table->text('keluhan');
-            $table->text('response');
+            $table->text('keluhan')->nullable();
+            $table->text('response')->nullable();
             $table->timestamps();
         });
     }

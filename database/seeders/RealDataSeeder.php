@@ -34,6 +34,35 @@ class RealDataSeeder extends Seeder
             'keluhan' => 'Selamat pagi, saya Jarvis dari program studi Teknologi Informasi, 
              ingin bertanya mengenai kelas saya yang bentrok dengan mata kuliah lain. Untuk informasi lebih lanjut saya harus menghubungi bagian apa?'      
         ]);
+
+        DB::table('response')->insert([
+            'id' => 1,
+            'crisis_center_id' => 1,
+            'student_user_id' => 10,
+        ]);
+
+        DB::table('response')->insert([
+            'id' => 2,
+            'crisis_center_id' => 2,
+            'student_user_id' => 41,
+        ]);
+
+        DB::table('notification')->insert([
+            'id' => 1,
+            'student_user_id' => 10,
+            'crisis_center_id' => 1,
+            'response_id' => 1,
+        ]);
+
+        DB::table('notification')->insert([
+            'id' => 2,
+            'student_user_id' => 41,
+            'crisis_center_id' => 2,
+            'response_id' => 2,
+        ]);
+        
+
+
        
 
     }
