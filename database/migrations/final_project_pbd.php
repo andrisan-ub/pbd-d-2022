@@ -13,16 +13,6 @@ return new class extends Migration
      */
     public function up()
     {
-        // Schema::create ('student_info', function (Blueprint $table){
-        //     $table->foreignId('id')->primary()->constrained('users');
-        //     $table->string('student_id_number')->nullable();
-        // });
-
-        // Schema::create('faculty', function (Blueprint $table) {
-        //     $table->id();
-        //     $table->string('name')->nullable();
-        // });
-        
         Schema::create ('questions', function (Blueprint $table){
           $table->id();
           $table->string('question');
@@ -36,11 +26,11 @@ return new class extends Migration
 
         Schema::create ('user_answers', function (Blueprint $table){
           $table->id();
-          $table->foreignId('users_id')->constrained('users');
-          $table->foreignId('course_classes_id')->constrained('course_classes');
-          $table->foreignId('questions_id')->constrained('questions');
-          $table->foreignId('satisfactions_id')->constrained('satisfactions');
-          $table->timestamp('created_at')->nullable();
+          $table->foreignId('user_id')->constrained('users');
+          $table->foreignId('course_class_id')->constrained('course_classes');
+          $table->foreignId('question_id')->constrained('questions');
+          $table->foreignId('satisfaction_id')->constrained('satisfactions');
+          $table->timestamp('submitted_at')->nullable();
         });
 
     }
@@ -55,7 +45,5 @@ return new class extends Migration
         Schema::dropIfExists('user_answers');
         Schema::dropIfExists('satisfactions');
         Schema::dropIfExists('questions');
-        // Schema::dropIfExists('faculty');
-        // Schema::dropIfExists('student_info');
     }
 };
