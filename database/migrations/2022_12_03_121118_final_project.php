@@ -14,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-       DB::raw('DELIMITER $$
+       DB::unprepared('
             CREATE FUNCTION count_answer(id_discuss INT) RETURNS INT DETERMINISTIC
             BEGIN
                 DECLARE jml_answers INT;
@@ -23,7 +23,7 @@ return new class extends Migration
             RETURN jml_answers;
             END');
 
-        DB::raw('DELIMITER $$
+        DB::unprepared('
             CREATE FUNCTION count_question(id_course INT) RETURNS INT DETERMINISTIC
             BEGIN
                 DECLARE jml_questions INT;
@@ -42,6 +42,7 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        DB::unprepared('DROP FUNCTION IF EXISTS count_answer');
+
     }
 };
