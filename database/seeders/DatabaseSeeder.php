@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(FakeDataSeeder::class);
         $this->call(rooms::class);
+        $this->call(schedule::class);
 
     }
 }
