@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('creator_user_id')->constrained('users');
             $table->foreignId('course_id')->constrained('courses');
             $table->text('question');
+            $table->boolean('is_answered')->nullable()->default(false);
             $table->timestamps();
         });
     }
