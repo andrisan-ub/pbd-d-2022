@@ -15,26 +15,26 @@ class RealDataSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('crisis_center')->insert([[
+        //
+        DB::table('crisis_center')->insert([
             'id' => 1,
             'student_user_id' => 10,
-            'student_program_id' => 1,
+            'study_program_id' => 1,
             'topik' => 'UKT',
             'keluhan' => 'Selamat pagi, saya Alayna dari program studi Teknologi Informasi, 
              ingin bertanya mengenai keringanan UKT dan bantuan beasiswa. Untuk informasi lebih lanjut saya harus menghubungi bagian apa?'
-        ],
-        [
-            'id' => 2,
-            'student_user_id' => 41,
-            'student_program_id' => 1,
-            'topik' => 'Akademik',
-            'keluhan' => 'Selamat pagi, saya Jarvis dari program studi Teknologi Informasi, 
-             ingin bertanya mengenai kelas saya yang bentrok dengan mata kuliah lain. Untuk informasi lebih lanjut saya harus menghubungi bagian apa?'
-        ]
-            
+
         ]);
 
-        
+        DB::table('crisis_center')->insert([
+            'id' => 2,
+            'student_user_id' => 41,
+            'study_program_id' => 1,
+            'topik' => 'Akademik',
+            'keluhan' => 'Selamat pagi, saya Jarvis dari program studi Teknologi Informasi, 
+             ingin bertanya mengenai kelas saya yang bentrok dengan mata kuliah lain. Untuk informasi lebih lanjut saya harus menghubungi bagian apa?'      
+        ]);
+       
 
     }
 }
