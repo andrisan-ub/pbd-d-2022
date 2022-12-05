@@ -59,8 +59,19 @@ return new class extends Migration
                     CLOSE c_answered;
                     SET total_question = counter;
                 END;");
+
+    DB::unprepared('
+        CREATE TRIGGER update_status AFTER UPDATE ON `answers` FOR EACH ROW
+        BEGIN 
+            UPDATE discuss_forums
+            INNER JOIN answers
+            ON answers.discuss_forum_id = discuss_forums.id
+                SET discuss_forums.is_answered = 1
+                WHERE answers.is_selected = 1;
+        END
+        ');
+    
                        
-                // mgiy
     }
 
     /**
