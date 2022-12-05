@@ -37,7 +37,7 @@ return new class extends Migration
         Schema::create ('user_answers', function (Blueprint $table){
           $table->id();
           $table->foreignId('users_id')->constrained('users');
-          $table->foreignId('course_classes_id')->constrained('course_class');
+          $table->foreignId('course_classes_id')->constrained('course_classes');
           $table->foreignId('questions_id')->constrained('questions');
           $table->foreignId('satisfactions_id')->constrained('satisfactions');
           $table->timestamp('created_at')->nullable();
