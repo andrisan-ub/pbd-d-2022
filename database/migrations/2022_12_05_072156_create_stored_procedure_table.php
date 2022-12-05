@@ -14,6 +14,27 @@ return new class extends Migration {
      */
     public function up()
     {
+
+        // STORED PROCEDURE - READ
+        $read_procedure = "DROP PROCEDURE IF EXISTS `sp_view_notification`;
+         CREATE PROCEDURE `sp_view_notification`()
+         BEGIN
+            SELECT n.id, n.assignments_id, n.jenis_notifikasi, n.judul_notifikasi, n.pesan_notifikasi, n.created_at, n.updated_at
+            FROM notifications n
+            JOIN assignments a
+            ON n.id = a.id;
+        END;";
+        DB::unprepared($read_procedure);
+
+        // STORED PROCEDURE - DELETE
+        $create_procedure = "DROP PROCEDURE IF EXISTS `sp_delete_notification`;
+        CREATE PROCEDURE `sp_delete_notification`()
+        BEGIN
+           DELETE FROM notifications WHERE id = new_id;
+        END;";
+        
+        DB::unprepared($create_procedure);
+
         // STORED PROCEDURE - Menampilkan jenis notifikasi 'reminder'
         $read_procedure = "DROP PROCEDURE IF EXISTS `sp_jenis_notifikasi_reminder`;
          CREATE PROCEDURE `sp_jenis_notifikasi_reminder`()
