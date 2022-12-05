@@ -34,7 +34,11 @@ return new class extends Migration
             RETURN jml_questions;
             END");
 
-        
+        DB::unprepared("DROP PROCEDURE IF EXISTS discuss_is_answered;
+                CREATE PROCEDURE discuss_is_answered ()
+                BEGIN
+                SELECT * FROM discuss_forums WHERE is_answered = true;
+                END;");
     }
 
     /**

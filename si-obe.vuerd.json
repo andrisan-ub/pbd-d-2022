@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2600,
     "height": 2600,
-    "scrollTop": -1382.3522225920142,
-    "scrollLeft": -3.2,
+    "scrollTop": -560.0000000000018,
+    "scrollLeft": -1110.4,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -229,7 +229,7 @@
           "active": false,
           "left": 57.4994,
           "top": 1997.9642,
-          "zIndex": 6,
+          "zIndex": 5,
           "widthName": 60,
           "widthComment": 60,
           "color": "#FF5722"
@@ -313,9 +313,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 59.5355,
-          "top": 1722.9442,
-          "zIndex": 4,
+          "left": 125.333,
+          "top": 1714.8334,
+          "zIndex": 19,
           "widthName": 67.76171875,
           "widthComment": 60,
           "color": "#FF5722"
@@ -654,7 +654,7 @@
           "active": false,
           "left": 28.2407,
           "top": 898.1562,
-          "zIndex": 7,
+          "zIndex": 6,
           "widthName": 60,
           "widthComment": 60,
           "color": "#FF5722"
@@ -981,7 +981,7 @@
           "active": false,
           "left": 1440.8927,
           "top": 60.2857,
-          "zIndex": 20,
+          "zIndex": 17,
           "widthName": 150.154296875,
           "widthComment": 60,
           "color": "#2196F3"
@@ -1205,7 +1205,7 @@
           "active": false,
           "left": 660.5675,
           "top": 227.4547,
-          "zIndex": 8,
+          "zIndex": 7,
           "widthName": 80.0634765625,
           "widthComment": 60,
           "color": "#2196F3"
@@ -1498,7 +1498,7 @@
           "active": false,
           "left": 632.493,
           "top": 570.4456,
-          "zIndex": 9,
+          "zIndex": 8,
           "widthName": 100.287109375,
           "widthComment": 60,
           "color": "#2196F3"
@@ -1722,7 +1722,7 @@
           "active": false,
           "left": 1205.3287,
           "top": 1460.2411,
-          "zIndex": 14,
+          "zIndex": 13,
           "widthName": 60,
           "widthComment": 60,
           "color": "#795548"
@@ -1923,7 +1923,7 @@
           "active": false,
           "left": 553.0086,
           "top": 1519.2637,
-          "zIndex": 12,
+          "zIndex": 11,
           "widthName": 77.8671875,
           "widthComment": 60,
           "color": "#009688"
@@ -1986,7 +1986,7 @@
           "active": false,
           "left": 953.729,
           "top": 1854.1418,
-          "zIndex": 13,
+          "zIndex": 12,
           "widthName": 60,
           "widthComment": 60,
           "color": "#009688"
@@ -2118,7 +2118,7 @@
           "active": false,
           "left": 1219.262,
           "top": 773.2908,
-          "zIndex": 19,
+          "zIndex": 21,
           "widthName": 60,
           "widthComment": 60,
           "color": "#2196F3"
@@ -2273,7 +2273,7 @@
           "active": false,
           "left": 1900.1617,
           "top": 523.7682,
-          "zIndex": 17,
+          "zIndex": 16,
           "widthName": 60,
           "widthComment": 60,
           "color": "#2196F3"
@@ -2405,7 +2405,7 @@
           "active": false,
           "left": 1966.2271,
           "top": 825.0082,
-          "zIndex": 16,
+          "zIndex": 15,
           "widthName": 82.20263671875,
           "widthComment": 60,
           "color": "#2196F3"
@@ -2581,9 +2581,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1591.5059,
-          "top": 1024.6752,
-          "zIndex": 18,
+          "left": 1626.2612,
+          "top": 1084.5865,
+          "zIndex": 22,
           "widthName": 85.12255859375,
           "widthComment": 60,
           "color": "#009688"
@@ -2646,7 +2646,7 @@
           "active": false,
           "left": 1897.0541,
           "top": 1341.8327,
-          "zIndex": 10,
+          "zIndex": 9,
           "widthName": 72.83349609375,
           "widthComment": 60,
           "color": "#795548"
@@ -2732,7 +2732,7 @@
           "active": false,
           "left": 1340.4822,
           "top": 288.1902,
-          "zIndex": 11,
+          "zIndex": 10,
           "widthName": 77.17529296875,
           "widthComment": 60,
           "color": "#2196F3"
@@ -2887,7 +2887,7 @@
           "active": false,
           "left": 967,
           "top": 1055.7866,
-          "zIndex": 15,
+          "zIndex": 14,
           "widthName": 68.47900390625,
           "widthComment": 60,
           "color": "#009688"
@@ -3019,7 +3019,7 @@
           "active": false,
           "left": 1216.9558,
           "top": 527.8702,
-          "zIndex": 21,
+          "zIndex": 18,
           "widthName": 131.35888671875,
           "widthComment": 60,
           "color": "#03A9F4"
@@ -3082,7 +3082,7 @@
           "active": false,
           "left": 45.3688,
           "top": 1452.7785,
-          "zIndex": 5,
+          "zIndex": 4,
           "widthName": 88.708984375,
           "widthComment": 60,
           "color": "#FF5722"
@@ -3116,8 +3116,8 @@
           "columnIds": [
             "ba38764b-3138-4a41-9146-f324a35c853d"
           ],
-          "x": 247.76450390625,
-          "y": 1853.4442,
+          "x": 313.56200390624997,
+          "y": 1845.3334,
           "direction": "bottom"
         },
         "constraintName": "fk_faculty_to_program_study",
@@ -3376,8 +3376,8 @@
           "columnIds": [
             "81ed2def-3291-4687-aa94-6830c0355d80"
           ],
-          "x": 1591.5059,
-          "y": 1184.0502,
+          "x": 1626.2612,
+          "y": 1243.9615,
           "direction": "left"
         },
         "constraintName": "fk_users_to_student_grade",
@@ -3471,18 +3471,18 @@
           "columnIds": [
             "4657d146-705d-44b2-8314-0434023ca09d"
           ],
-          "x": 2157.248340234375,
-          "y": 996.5082,
-          "direction": "bottom"
+          "x": 1966.2271,
+          "y": 910.7582,
+          "direction": "left"
         },
         "end": {
           "tableId": "b821c4aa-ee6c-441b-8347-7ec67293402e",
           "columnIds": [
             "512691cc-21ad-4502-bec1-6ef68e4dd382"
           ],
-          "x": 2056.6709390625,
-          "y": 1130.9252,
-          "direction": "right"
+          "x": 1742.552459765625,
+          "y": 1084.5865,
+          "direction": "top"
         },
         "constraintName": "fk_criterion_level_to_student_grade",
         "visible": true,
@@ -3757,8 +3757,8 @@
           "columnIds": [
             "dfd63073-244a-417a-9b2e-2a8c086338cc"
           ],
-          "x": 247.76450390625,
-          "y": 1722.9442,
+          "x": 313.56200390624997,
+          "y": 1714.8334,
           "direction": "top"
         },
         "end": {
@@ -3844,8 +3844,8 @@
           "columnIds": [
             "bfe9137d-e493-4898-85c5-361c75418f93"
           ],
-          "x": 1824.08841953125,
-          "y": 1024.6752,
+          "x": 1975.134979296875,
+          "y": 1084.5865,
           "direction": "top"
         },
         "constraintName": "fk_assignment_task_to_student_grade",
@@ -3870,8 +3870,8 @@
           "columnIds": [
             "31e1a9b2-17c9-4c05-93af-fc1703654b84"
           ],
-          "x": 1591.5059,
-          "y": 1077.8002,
+          "x": 1626.2612,
+          "y": 1137.7115,
           "direction": "left"
         },
         "constraintName": "fk_assignment_to_student_grade",
