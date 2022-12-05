@@ -150,7 +150,7 @@ class FakeDataSeeder extends Seeder
                             });
                         }); // END Syllabus
 
-                        CourseClass::factory(2)->create([
+                        CourseClass::factory(20)->create([
                             'course_id' => $course->id,
                             'creator_user_id' => $teachers->random(1)->first()->id
                         ])->each(function ($course_class) use ($course, $teachers) {
