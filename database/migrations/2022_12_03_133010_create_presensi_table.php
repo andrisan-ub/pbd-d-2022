@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignId('ID_Class')->constrained('course_classes');
             $table->string('Class');
             $table->timestamp('Waktu_Kehadiran');
+            $table->string('Keterangan')->nullable();
             $table->integer('Total_Pertemuan');
         });
 
@@ -40,6 +41,7 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('ket_presensi');
         Schema::dropIfExists('presensi');
     }
 };
