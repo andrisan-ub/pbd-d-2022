@@ -58,7 +58,13 @@ return new class extends Migration {
          SELECT * FROM notifications where pesan_notifikasi= 'H-1 deadline';
          END;";
         DB::unprepared($read_procedure);
+
+        
+
     }
+
+
+
 
     /**
      * Reverse the migrations.
