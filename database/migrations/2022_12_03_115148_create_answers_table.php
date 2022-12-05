@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('creator_user_id')->constrained('users');
             $table->foreignId('discuss_forum_id')->constrained('discuss_forums');
             $table->text('answer');
+            $table->boolean('is_selected')->nullable()->default(false);
             $table->timestamps();
         });
     }

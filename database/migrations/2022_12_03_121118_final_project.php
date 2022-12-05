@@ -14,23 +14,25 @@ return new class extends Migration
      */
     public function up()
     {
-       DB::unprepared('
+       DB::unprepared("
+            DROP FUNCTION IF EXISTS count_answer;
             CREATE FUNCTION count_answer(id_discuss INT) RETURNS INT DETERMINISTIC
             BEGIN
                 DECLARE jml_answers INT;
                 SELECT COUNT(id) AS jumlah_answers INTO jml_answers FROM answers
                 WHERE discuss_forum_id = id_discuss;
             RETURN jml_answers;
-            END');
+            END");
 
-        DB::unprepared('
+        DB::unprepared("
+            DROP FUNCTION IF EXISTS count_question;
             CREATE FUNCTION count_question(id_course INT) RETURNS INT DETERMINISTIC
             BEGIN
                 DECLARE jml_questions INT;
                 SELECT COUNT(id) AS jumlah_questions INTO jml_questions FROM discuss_forumss
                 WHERE course_id = id_course;
             RETURN jml_questions;
-            END');
+            END");
 
         
     }
