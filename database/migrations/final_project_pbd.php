@@ -33,7 +33,17 @@ return new class extends Migration
           $table->timestamp('submitted_at')->nullable();
         });
 
-        // SP - Create Question
+        Schema::create ('trash_answers', function (Blueprint $table){
+            $table->id();
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('course_class_id')->constrained('course_classes');
+            $table->foreignId('question_id')->constrained('questions');
+            $table->foreignId('satisfaction_id')->constrained('satisfactions');
+            $table->timestamp('submitted_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
+          });
+
+        // SP - Create Question (membuat pertanyaan)
         $procedure_create = "DROP PROCEDURE IF EXISTS `create_questions`;
         CREATE PROCEDURE `create_questions` (
             IN question varchar(255)
@@ -45,40 +55,77 @@ return new class extends Migration
 
         DB::unprepared($procedure_create);
 
-        // SP - Read Question
+        // SP - Read Question (menunjukkan id, nama,kelas, pertanyaan, kepuasan, waktu pengumpulan)
         $procedure_read = "DROP PROCEDURE IF EXISTS `read_questions`;
         CREATE PROCEDURE `read_questions`()
-        BEGIN
-            SELECT id, question
-            FROM questions;
+        BEGIN     
+        select ua.id, u.name as username, cl.name kelas, q.question as survey,
+        s.description as kepuasan, ua.submitted_at as waktu_pengumpulan
+        from user_answers ua
+        join users u on u.id = ua.user_id
+        join course_classes cl on cl.id = ua.course_class_id
+        join questions q on q.id = ua.question_id
+        join satisfactions s on s.id = ua.satisfaction_id
+        order by u.id;
         END;";
-            
+
         DB::unprepared($procedure_read);
 
-        // SP - Update questions
+        // SP - Update questions (update pertanyaan, dengan setting variabel untuk trigger)
         $procedure_update = "DROP PROCEDURE IF EXISTS `update_questions`;
         CREATE PROCEDURE `update_questions` (
-            IN up_id bigint(20),
-            IN up_question varchar(255)
+            IN question_id bigint(20),
+            IN question varchar(255)
         )
         BEGIN
-        UPDATE questions SET question = up_question
-        WHERE id = up_id;
+        UPDATE questions
+        SET question = question, id = (SELECT @update_id := id)
+        WHERE id = question_id LIMIT 1;
         END;";
 
         DB::unprepared($procedure_update);
 
-        // SP - Delete questions
+        // SP - Delete questions (menghapus pertanyaan)
         $procedure_delete = "DROP PROCEDURE IF EXISTS `delete_questions`;
         CREATE PROCEDURE `delete_questions` (
-            IN d_id bigint(20)
+            IN question_id bigint(20)
         )
         BEGIN
             DELETE FROM questions
-            WHERE id = d_id;
+            WHERE id = question_id;
         END;";
 
         DB::unprepared($procedure_delete);
+
+        //SP - Delete user_answers (menghapus semua jawaban user dalam COURSE_CLASS tertentu)
+        $procedure_delete = "DROP PROCEDURE IF EXISTS `delete_answers`;
+        CREATE PROCEDURE `delete_answers` (
+            IN usr_id bigint(20),
+            IN crs_cls_id bigint(20)
+        )
+        BEGIN
+            DELETE FROM user_answers
+            WHERE user_id = usr_id AND course_class_id = crs_cls_id;
+        END;";
+
+        DB::unprepared($procedure_delete);
+
+        //TRIGGER aft_update (menghapus jawaban semua user terhadap pertanyaan yang mengalami update)
+        //karena jika pertanyaan diubah, maka harus dijawab kembali oleh user
+        DB::unprepared('
+        CREATE TRIGGER `aft_update`
+        AFTER UPDATE ON `questions` FOR EACH ROW
+        DELETE FROM `user_answers`
+        WHERE question_id = @update_id;
+        ');
+        
+        //TRIGGER bef_delete (memasukkan data jawaban yang dihapus, ke tabel trash)
+        DB::unprepared('
+        CREATE TRIGGER `bef_delete`
+        BEFORE DELETE ON `user_answers` FOR EACH ROW
+        INSERT INTO `trash_answers`
+        VALUES (OLD.id,OLD.user_id,OLD.course_class_id,OLD.question_id,OLD.satisfaction_id,OLD.submitted_at,now());
+        ');
 
     }
 
@@ -89,6 +136,7 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('trash_answers');
         Schema::dropIfExists('user_answers');
         Schema::dropIfExists('satisfactions');
         Schema::dropIfExists('questions');
