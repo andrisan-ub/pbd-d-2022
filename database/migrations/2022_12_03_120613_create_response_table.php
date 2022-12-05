@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('crisis_center_id')->constrained('crisis_center');
             $table->foreignId('student_user_id')->constrained('users');
-            $table->text('response');
+            $table->text('response')->nullable();
             $table->timestampsTz();
         });
     }

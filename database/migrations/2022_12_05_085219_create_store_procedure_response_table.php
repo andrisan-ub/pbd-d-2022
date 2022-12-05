@@ -79,6 +79,7 @@ return new class extends Migration
                 CREATE PROCEDURE `loop_response` ()
                 
                 BEGIN
+                DECLARE a INT;
                 WHILE a <= 10 DO
                 SELECT * FROM criterion
                 WHERE id = a;
