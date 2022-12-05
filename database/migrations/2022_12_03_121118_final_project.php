@@ -39,6 +39,9 @@ return new class extends Migration
                 BEGIN
                 SELECT * FROM discuss_forums WHERE is_answered = true;
                 END;");
+
+
+                // mgiy
     }
 
     /**
