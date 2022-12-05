@@ -31,6 +31,16 @@ return new class () extends Migration {
                 WHERE answers.is_selected = 1;
         END
         ');
+
+        DB::unprepared('
+        CREATE TRIGGER delete_status BEFORE DELETE ON `answers` FOR EACH ROW
+        BEGIN 
+            UPDATE discuss_forums
+            INNER JOIN answers
+                SET discuss_forums.is_answered = 0
+                WHERE answers.is_selected = 1;
+        END
+        ');
     }
 
     /**
