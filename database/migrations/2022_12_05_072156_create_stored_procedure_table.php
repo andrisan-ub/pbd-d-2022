@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('stored_procedure', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        DB::unprepared("DROP PROCEDURE IF EXISTS reminder_notifs;
+        CREATE PROCEDURE reminder_notifs ()
+        BEGIN
+        SELECT * FROM notifications where jenis_notifikasi= 'reminder';
+        END");
+
     }
 
     /**
