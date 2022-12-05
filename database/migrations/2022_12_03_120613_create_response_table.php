@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('response', function (Blueprint $table) {
             $table->id();
-            $table->foreignid('crisis_center_id')->constrained('crisis_center');
-            $table->foreignid('student_user_id')->constrained('users');
+            $table->foreignId('crisis_center_id')->constrained('crisis_center');
+            $table->foreignId('student_user_id')->constrained('users');
             $table->text('response');
             $table->timestampsTz();
         });

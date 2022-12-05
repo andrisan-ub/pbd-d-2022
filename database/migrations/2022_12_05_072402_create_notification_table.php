@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('notification', function (Blueprint $table) {
+            //
             $table->id();
             $table->foreignId('student_user_id')->constrained('users');
             $table->foreignId('crisis_center_id')->constrained('crisis_center');
