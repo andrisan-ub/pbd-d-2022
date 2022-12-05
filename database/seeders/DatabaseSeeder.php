@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(FakeDataSeeder::class);
+
         // DB::table('presensi')->insert([
         //     `ID_Presensi`=>1,
         //     `Nama_Mahasiswa`=>'Ulla Hubbard',
