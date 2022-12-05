@@ -76,140 +76,160 @@ class FinalProjectSeeder extends Seeder
             'user_id'=>7,
             'course_class_id'=>1, 
             'question_id'=>1,
-            'satisfaction_id'=>1
+            'satisfaction_id'=>1,
+            'submitted_at'=>now()
         ]);
         
         DB::table('user_answers')->insert([
             'user_id'=>7,
             'course_class_id'=>1, 
             'question_id'=>2,
-            'satisfaction_id'=>2
+            'satisfaction_id'=>2,
+            'submitted_at'=>now()
         ]);
 
         DB::table('user_answers')->insert([
             'user_id'=>7,
             'course_class_id'=>1, 
             'question_id'=>3,
-            'satisfaction_id'=>3
+            'satisfaction_id'=>3,
+            'submitted_at'=>now()
         ]);
         
         DB::table('user_answers')->insert([
             'user_id'=>7,
             'course_class_id'=>1, 
             'question_id'=>4,
-            'satisfaction_id'=>4
+            'satisfaction_id'=>4,
+            'submitted_at'=>now()
         ]);
 
         DB::table('user_answers')->insert([
             'user_id'=>7,
             'course_class_id'=>1, 
             'question_id'=>5,
-            'satisfaction_id'=>5
+            'satisfaction_id'=>5,
+            'submitted_at'=>now()
         ]);
 
         DB::table('user_answers')->insert([
             'user_id'=>7,
             'course_class_id'=>2, 
             'question_id'=>1,
-            'satisfaction_id'=>2
+            'satisfaction_id'=>2,
+            'submitted_at'=>now()
         ]);
         
         DB::table('user_answers')->insert([
             'user_id'=>7,
             'course_class_id'=>2, 
             'question_id'=>2,
-            'satisfaction_id'=>3
+            'satisfaction_id'=>3,
+            'submitted_at'=>now()
         ]);
 
         DB::table('user_answers')->insert([
             'user_id'=>7,
             'course_class_id'=>2, 
             'question_id'=>3,
-            'satisfaction_id'=>5
+            'satisfaction_id'=>5,
+            'submitted_at'=>now()
         ]);
         
         DB::table('user_answers')->insert([
             'user_id'=>7,
             'course_class_id'=>2, 
             'question_id'=>4,
-            'satisfaction_id'=>4
+            'satisfaction_id'=>4,
+            'submitted_at'=>now()
         ]);
 
         DB::table('user_answers')->insert([
             'user_id'=>7,
             'course_class_id'=>2, 
             'question_id'=>5,
-            'satisfaction_id'=>5
+            'satisfaction_id'=>5,
+            'submitted_at'=>now()
         ]);
 
         DB::table('user_answers')->insert([
             'user_id'=>8,
             'course_class_id'=>1, 
             'question_id'=>1,
-            'satisfaction_id'=>4
+            'satisfaction_id'=>4,
+            'submitted_at'=>now()
         ]);
         
         DB::table('user_answers')->insert([
             'user_id'=>8,
             'course_class_id'=>1, 
             'question_id'=>2,
-            'satisfaction_id'=>3
+            'satisfaction_id'=>3,
+            'submitted_at'=>now()
         ]);
 
         DB::table('user_answers')->insert([
             'user_id'=>8,
             'course_class_id'=>1, 
             'question_id'=>3,
-            'satisfaction_id'=>5
+            'satisfaction_id'=>5,
+            'submitted_at'=>now()
         ]);
         
         DB::table('user_answers')->insert([
             'user_id'=>8,
             'course_class_id'=>1, 
             'question_id'=>4,
-            'satisfaction_id'=>4
+            'satisfaction_id'=>4,
+            'submitted_at'=>now()
         ]);
 
         DB::table('user_answers')->insert([
             'user_id'=>8,
             'course_class_id'=>1, 
             'question_id'=>5,
-            'satisfaction_id'=>3
+            'satisfaction_id'=>3,
+            'submitted_at'=>now()
         ]);
 
         DB::table('user_answers')->insert([
             'user_id'=>8,
             'course_class_id'=>2, 
             'question_id'=>1,
-            'satisfaction_id'=>4
+            'satisfaction_id'=>4,
+            'submitted_at'=>now()
         ]);
         
         DB::table('user_answers')->insert([
             'user_id'=>8,
             'course_class_id'=>2, 
             'question_id'=>2,
-            'satisfaction_id'=>3
+            'satisfaction_id'=>3,
+            'submitted_at'=>now()
         ]);
 
         DB::table('user_answers')->insert([
             'user_id'=>8,
             'course_class_id'=>2, 
             'question_id'=>3,
-            'satisfaction_id'=>5
+            'satisfaction_id'=>5,
+            'submitted_at'=>now()
         ]);
         
         DB::table('user_answers')->insert([
             'user_id'=>8,
             'course_class_id'=>2, 
             'question_id'=>4,
-            'satisfaction_id'=>4
+            'satisfaction_id'=>4,
+            'submitted_at'=>now()
         ]);
 
         DB::table('user_answers')->insert([
             'user_id'=>8,
             'course_class_id'=>2, 
             'question_id'=>5,
-            'satisfaction_id'=>2
+            'satisfaction_id'=>2,
+            'submitted_at'=>now()
         ]);
 
         // DB::table('user_answers')->insert([
