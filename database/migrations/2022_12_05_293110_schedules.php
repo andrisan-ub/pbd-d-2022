@@ -23,7 +23,7 @@ return new class extends Migration
             $table->time('start_time', $precision = 0);
             $table->time('end_time', $precision = 0);
         });
-        
+
         // SP - Create Schedule
         $procedure_create = "DROP PROCEDURE IF EXISTS `create_schedule`;
         CREATE PROCEDURE `create_schedule` (
@@ -49,9 +49,10 @@ return new class extends Migration
         BEGIN
             SELECT * FROM schedule;
         END;";
-            
+
         DB::unprepared($procedure_read);
 
+<<<<<<< Updated upstream
         // SP - Update Schedule
         $procedure_update = "DROP PROCEDURE IF EXISTS `update_schedule`;
         CREATE PROCEDURE `update_schedule` (
@@ -84,6 +85,16 @@ return new class extends Migration
         END;";
 
         DB::unprepared($procedure_delete);
+=======
+        //function
+        DB::unprepared("
+        DROP FUNCTION IF EXISTS duration;
+        CREATE FUNCTION duration(start time, end time) RETURNS INT
+        BEGIN
+            DECLARE duration INT;
+            set duration = DATEDIFF(minute, start, end);
+        RETURN duration;
+        END;");
     }
 
     /**
@@ -95,14 +106,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('schedules');
     }
-
-    //function
-    DB::unprepared("
-            DROP FUNCTION IF EXISTS duration;
-            CREATE FUNCTION duration(start time, end time) RETURNS INT
-            BEGIN
-                DECLARE duration INT;
-                set duration = DATEDIFF(second, start, end);
-            RETURN duration;
-            END;");
 };
