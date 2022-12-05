@@ -19,8 +19,8 @@ return new class extends Migration
         // AFTER INSERT
         // ON `assignments` FOR EACH ROW
         // BEGIN
-        //         INSERT INTO notifications(assignments_id)
-        //         VALUES(new.id);
+        //         INSERT INTO notifications(assignments_id, jenis_notifikasi, judul_notifikasi, pesan_notifikasi)
+        // VALUES(new.id, "announcement", "Wahh, Tugas Baruuu Nihh", new.note);
         // END;';
         // DB::unprepared($after_assignment_insert);
     }
