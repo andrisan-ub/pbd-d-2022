@@ -28,6 +28,20 @@ return new class extends Migration
         CLOSE cur_1;
         END;";
         DB::unprepared($cursor_notification);
+
+        $cursor_notification = "DROP PROCEDURE IF EXISTS `cursor_notifications_2`;
+        CREATE PROCEDURE `cursor_notifications_2`()
+        BEGIN
+        DECLARE n_id INT;
+        DECLARE n_judul, n_pesan TEXT;
+        DECLARE cur_2 CURSOR FOR SELECT id, judul_notifikasi, pesan_notifikasi FROM notifications WHERE id = in_id;
+        OPEN cur_2;
+        FETCH FROM cur_2 INTO n_id, n_judul, n_pesan;
+        SELECT n_id, n_judul, n_pesan;
+        CLOSE cur_2;
+        END;";
+
+        DB::unprepared($cursor_notification);
     }
 
     /**
