@@ -24,12 +24,11 @@ class DatabaseSeeder extends Seeder
             'ID_Class'=>1,
             'Class'=>'A - PBD',
             'Waktu_Kehadiran'=>NOW(),
-            'Hadir'=>14,
-            'Alpha'=>0,
-            'Izin'=>0,
-            'Sakit'=>0,
+            // 'Hadir'=>14,
+            // 'Alpha'=>0,
+            // 'Izin'=>0,
+            // 'Sakit'=>0,
             'Total_Pertemuan'=>14,
-            'Presentase'=>100
         ]);
 
         DB::table('presensi')->insert([
@@ -39,12 +38,11 @@ class DatabaseSeeder extends Seeder
             'ID_Class'=>2,
             'Class'=>'B - PBD',
             'Waktu_Kehadiran'=>NOW(),
-            'Hadir'=>13,
-            'Alpha'=>1,
-            'Izin'=>0,
-            'Sakit'=>0,
+            // 'Hadir'=>13,
+            // 'Alpha'=>1,
+            // 'Izin'=>0,
+            // 'Sakit'=>0,
             'Total_Pertemuan'=>14,
-            'Presentase'=>93
         ]);
 
         // DB::table('presensi')->insert([

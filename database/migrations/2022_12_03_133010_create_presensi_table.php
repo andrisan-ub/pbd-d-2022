@@ -20,12 +20,16 @@ return new class extends Migration
             $table->foreignId('ID_Class')->constrained('course_classes');
             $table->string('Class');
             $table->timestamp('Waktu_Kehadiran');
-            $table->integer('Hadir');
-            $table->integer('Alpha');
-            $table->integer('Izin');
-            $table->integer('Sakit');
             $table->integer('Total_Pertemuan');
-            $table->double('Presentase');
+        });
+
+        Schema::create('ket_presensi', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('Presensi_ID')->constrained('presensi')->nullable();
+            $table->integer('Hadir')->nullable();
+            $table->integer('Alpha')->nullable();
+            $table->integer('Izin')->nullable();
+            $table->integer('Sakit')->nullable();
         });
     }
 
