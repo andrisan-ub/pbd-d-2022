@@ -61,6 +61,7 @@ return new class extends Migration
                 END;");
 
     DB::unprepared('
+        DROP TRIGGER IF EXISTS update_status;
         CREATE TRIGGER update_status AFTER UPDATE ON `answers` FOR EACH ROW
         BEGIN 
             UPDATE discuss_forums
@@ -70,7 +71,6 @@ return new class extends Migration
                 WHERE answers.is_selected = 1;
         END
         ');
-    
                        
     }
 
