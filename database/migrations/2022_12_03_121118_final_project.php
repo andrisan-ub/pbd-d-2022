@@ -40,7 +40,26 @@ return new class extends Migration
                 SELECT * FROM discuss_forums WHERE is_answered = true;
                 END;");
 
-
+        DB::unprepared("DROP PROCEDURE IF EXISTS count_discuss_is_answered;
+                CREATE PROCEDURE count_discuss_is_answered(OUT total_question DOUBLE)
+                BEGIN
+                    DECLARE c_end INT;
+                    DECLARE answered BOOLEAN;
+                    DECLARE counter INT;
+                    DECLARE c_answered CURSOR FOR SELECT is_answered FROM discuss_forums;
+                    DECLARE CONTINUE HANDLER FOR NOT FOUND SET c_end = 1;
+                    SET answered = false, counter = 0;
+                    OPEN c_answered;
+                       WHILE c_end is null DO
+                            IF answered = true THEN
+                            SET counter = counter + 1;
+                            END IF;
+                            FETCH c_answered INTO answered;    
+                       END WHILE;
+                    CLOSE c_answered;
+                    SET total_question = counter;
+                END;");
+                       
                 // mgiy
     }
 
