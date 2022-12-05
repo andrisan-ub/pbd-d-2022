@@ -13,14 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('notification', function (Blueprint $table) {
-            //
+        Schema::create('stored_function_cek_topik_crisis_center', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('student_user_id')->constrained('users');
-            $table->foreignId('crisis_center_id')->constrained('crisis_center');
-            $table->foreignId('response_id')->constrained('response');
-            $table->text('keluhan')->nullable();
-            $table->text('response')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notification');
+        Schema::dropIfExists('stored_function_cek_topik_crisis_center');
     }
 };
