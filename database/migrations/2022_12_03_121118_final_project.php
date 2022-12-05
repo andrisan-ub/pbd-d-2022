@@ -29,7 +29,7 @@ return new class extends Migration
             CREATE FUNCTION count_question(id_course INT) RETURNS INT DETERMINISTIC
             BEGIN
                 DECLARE jml_questions INT;
-                SELECT COUNT(id) AS jumlah_questions INTO jml_questions FROM discuss_forumss
+                SELECT COUNT(id) AS jumlah_questions INTO jml_questions FROM discuss_forums
                 WHERE course_id = id_course;
             RETURN jml_questions;
             END");
