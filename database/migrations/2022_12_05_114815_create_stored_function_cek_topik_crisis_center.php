@@ -20,7 +20,7 @@ return new class extends Migration
         BEGIN
             DECLARE jawab TEXT;
                 IF topik = 'ukt' THEN
-                    SET jawab = 'Silahkan menghubungi pihak keuangan dan kemahasiswaan untuk mengajukan beasiswa';
+                    SET jawab = 'Silahkan menghubungi pihak keuangan dan kemahasiswaan untuk mengajukan beasiswa';
                 ELSEIF topik = 'akademik' THEN
                     SET jawab = 'Silahkan menunggu jawaban, terimakasih telah menghubungi crisis center';      
                 END IF;
