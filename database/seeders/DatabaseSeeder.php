@@ -16,5 +16,21 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(FakeDataSeeder::class);
+    
+        DB::table('rooms')->insert([
+        'id' => '111',
+        'building' => 'G',
+        'room_code' => 'G1.5',
+        ]);
+        DB::table('rooms')->insert([
+            'id' => '112',
+            'building' => 'F',
+            'room_code' => 'F2.7',
+        ]);
+        DB::table('rooms')->insert([
+            'id' => '113',
+            'building' => 'F',
+            'room_code' => 'F3.11',
+        ]);
     }
 }
