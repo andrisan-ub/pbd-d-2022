@@ -32,8 +32,7 @@ return new class extends Migration
             IN id_cc int, 
             IN id_response int,
             IN new_keluhan varchar(1024),
-            IN new_response varchar(1024),
-            
+            IN new_response varchar(1024)
         )
 
         BEGIN 

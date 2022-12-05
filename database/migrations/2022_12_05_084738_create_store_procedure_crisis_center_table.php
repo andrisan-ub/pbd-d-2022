@@ -15,6 +15,7 @@ return new class extends Migration
     public function up()
     {
     
+    // Membuat Store Procedure 
     DB::unprepared("
     DROP PROCEDURE IF EXISTS `get_crisis_center_by_id`;
         CREATE PROCEDURE  `get_crisis_center_by_id` (IN id_cc int)
