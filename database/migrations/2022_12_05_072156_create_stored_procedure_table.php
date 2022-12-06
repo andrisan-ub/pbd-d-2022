@@ -14,6 +14,13 @@ return new class extends Migration {
      */
     public function up()
     {
+        // STORED PROCEDURE - CREATE
+        $create_procedure = "DROP PROCEDURE IF EXISTS `sp_create_notification`;
+        CREATE PROCEDURE `sp_create_notification`()
+        BEGIN
+	        INSERT INTO notifications VALUES (cr_id, cr_assignments_id, cr_jenis_notifikasi, cr_judul_notifikasi, cr_pesan_notifikasi, cr_created, cr_updated);
+        END;";
+        DB::unprepared($create_procedure);
 
         // STORED PROCEDURE - READ
         $read_procedure = "DROP PROCEDURE IF EXISTS `sp_view_notification`;
@@ -75,5 +82,7 @@ return new class extends Migration {
     public function down()
     {
         Schema::dropIfExists('stored_procedure');
+        Schema::dropIfExists('create_procedure');
+        Schema::dropIfExists('read_procedure');
     }
 };
