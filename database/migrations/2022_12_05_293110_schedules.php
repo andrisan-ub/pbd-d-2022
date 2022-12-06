@@ -27,27 +27,29 @@ return new class extends Migration
         // SP - Create Schedule
         $procedure_create = "DROP PROCEDURE IF EXISTS `create_schedule`;
         CREATE PROCEDURE `create_schedule` (
-            id bigint(20),
-            course_class_id bigint(20),
-            rooms_id bigint(20),
-            teacher varchar(255),
-            day varchar(255),
-            start_time time,
-            end_time time)
+            id_schedule bigint(20),
+            crs_cls_id bigint(20),
+            rm_id bigint(20),
+            tch varchar(255),
+            dy varchar(255),
+            str_time time,
+            ed_time time)
 
         )
         BEGIN
-        INSERT INTO schedule
-            VALUES(id, course_class_id, rooms_id, teacher, day, start_time ,end_time);
+        INSERT INTO schedule(
+            id, course_class_id, rooms_id, teacher, day, start_time ,end_time);
+        VALUES(
+            id_schedule, crs_cls_id, rm_id, tch, dy, str_time ,ed_time);
         END;";
 
         DB::unprepared($procedure_create);
 
         // SP - Read procedure
         $procedure_read = "DROP PROCEDURE IF EXISTS `read_schedule`;
-        CREATE PROCEDURE `read_schedule`()
+        CREATE PROCEDURE `read_schedule`(IN id_schedule bigint(20))
         BEGIN
-            SELECT * FROM schedule;
+            SELECT * FROM schedule WHERE id = id_schedule;
         END;";
 
         DB::unprepared($procedure_read);
@@ -55,13 +57,13 @@ return new class extends Migration
         // SP - Update Schedule
         $procedure_update = "DROP PROCEDURE IF EXISTS `update_schedule`;
         CREATE PROCEDURE `update_schedule` (
-            IN id bigint(20),
-            IN course_class_id bigint(20),
-            IN rooms_id bigint(20),
-            IN teacher varchar(255),
-            IN day varchar(255),
-            IN start_time time,
-            IN end_time time
+            IN id_schedule bigint(20),
+            IN crs_cls_id bigint(20),
+            IN rm_id bigint(20),
+            IN tch varchar(255),
+            IN dy varchar(255),
+            IN str_time time,
+            IN ed_time time
         )
         BEGIN
         UPDATE schedule SET id = id_schedule WHERE id = id_schedule;
@@ -77,10 +79,10 @@ return new class extends Migration
 
         // SP - Delete Schedule
         $procedure_delete = "DROP PROCEDURE IF EXISTS `delete_Schedule`;
-        CREATE PROCEDURE `delete_Schedule` (IN d_id bigint(20))
+        CREATE PROCEDURE `delete_Schedule` (IN id_schedule bigint(20))
         BEGIN
-            DELETE FROM questions
-            WHERE id = d_id;
+            DELETE FROM schedule
+            WHERE id = id_schedule;
         END;";
 
         DB::unprepared($procedure_delete);
