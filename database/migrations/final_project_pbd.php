@@ -153,18 +153,18 @@ return new class extends Migration
 
 
         //Function - Menampilkan banyaknya pertanyaan yang telah terjawab oleh user
-        $stored_function = "DROP PROCEDURE IF EXISTS get_jumSubmit;
-        CREATE FUNCTION get_jumSubmit() 
-        RETURNS INT(11)
-        BEGIN 
-            DECLARE submitted INT; 
-            SELECT COUNT(id) 
-            INTO submitted 
-            FROM user_answers; 
-            RETURN submitted; 
-        END;";
+        //$stored_function = "DROP PROCEDURE IF EXISTS get_jumSubmit;
+        //CREATE FUNCTION get_jumSubmit() 
+        //RETURNS INT(11)
+        //BEGIN 
+        //    DECLARE submitted INT; 
+        //    SELECT COUNT(id) 
+        //    INTO submitted 
+        //    FROM user_answers; 
+        //    RETURN submitted; 
+        //END;";
 
-        DB::unprepared($stored_function);
+        //DB::unprepared($stored_function);
     }
 
     /**
