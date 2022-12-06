@@ -18,6 +18,7 @@ return new class extends Migration
         $count_function = "DROP FUNCTION IF EXISTS `count_notif`;
         CREATE FUNCTION `count_notif`()
         RETURNS int(11)
+        DETERMINISTIC
         BEGIN
             DECLARE notif_amount INT;
             SELECT COUNT(id) AS notifs_amount INTO notif_amount FROM notifications;
@@ -29,6 +30,7 @@ return new class extends Migration
         $max_function = "DROP FUNCTION IF EXISTS `check_notif`;
         CREATE FUNCTION `check_notif`()
         RETURNS TEXT
+        DETERMINISTIC
         BEGIN
             DECLARE last_id INT;
             DECLARE last_notif TEXT;
