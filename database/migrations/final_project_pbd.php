@@ -56,7 +56,7 @@ return new class extends Migration
 
         DB::unprepared($procedure_create);
 
-        // SP - Read Question (menunjukkan id, nama,kelas, pertanyaan, kepuasan, waktu pengumpulan)
+        // SP - Read Question (menunjukkan id, nama, kelas, pertanyaan, kepuasan, waktu pengumpulan)
         $procedure_read = "DROP PROCEDURE IF EXISTS `read_questions`;
         CREATE PROCEDURE `read_questions`()
         BEGIN     
