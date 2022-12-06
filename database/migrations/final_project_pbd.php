@@ -134,7 +134,7 @@ return new class extends Migration
                     DECLARE totalSatisfactions, totalPoint, c_satisfaction, c_course_id, c_id, c_end INT;
                     DECLARE cur_1 CURSOR FOR SELECT user_id, course_class_id, satisfaction_id FROM user_answers;
                     DECLARE CONTINUE HANDLER FOR NOT FOUND SET c_end = 1;
-                    SET totalSatisfactions = 0, totalPoint = 0, c_id = 0, c_satisfaction = 0, c_course_id = 0;
+                    SET totalSatisfactions = 0, totalPoint = 0, c_satisfaction = 0;
                     OPEN cur_1;
                     WHILE c_end is NULL DO
                     FETCH from cur_1 INTO c_id, c_course_id, c_satisfaction;
