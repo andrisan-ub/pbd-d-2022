@@ -14,6 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
+        // Menampilkan pesan notifikasi dengan id_notifikasi = 1 
         $cursor_notification = "DROP PROCEDURE IF EXISTS `cursor_notifications`;
         CREATE PROCEDURE `cursor_notifications`()
         BEGIN
@@ -29,6 +30,7 @@ return new class extends Migration
         END;";
         DB::unprepared($cursor_notification);
 
+        // Menampilkan judul notifikasi dan pesan notifikasi dengan id sesuai yang diinputkan
         $cursor_notification = "DROP PROCEDURE IF EXISTS `cursor_notifications_2`;
         CREATE PROCEDURE `cursor_notifications_2`()
         BEGIN
@@ -40,7 +42,6 @@ return new class extends Migration
         SELECT n_id, n_judul, n_pesan;
         CLOSE cur_2;
         END;";
-
         DB::unprepared($cursor_notification);
     }
 
