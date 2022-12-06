@@ -31,7 +31,7 @@ return new class extends Migration
             $table->foreignId('course_class_id')->constrained('course_classes');
             $table->foreignId('question_id')->constrained('questions');
             $table->foreignId('satisfaction_id')->constrained('satisfactions');
-            $table->timestamp('submitted_at')->nullable();
+            $table->timestamp('submitted_at');
         });
 
         Schema::create('trash_answers', function (Blueprint $table) {
