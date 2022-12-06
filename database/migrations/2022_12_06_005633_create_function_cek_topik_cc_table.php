@@ -2,8 +2,8 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
@@ -14,9 +14,9 @@ return new class extends Migration
      */
     public function up()
     {
-        //
         DB::unprepared("
-        CREATE FUNCTION cek_topik(topik TEXT) RETURNS TEXT DETERMINISTIC
+        DROP FUNCTION IF EXISTS function_cek_topik_cc;
+        CREATE FUNCTION function_cek_topik_cc (topik TEXT) RETURNS TEXT DETERMINISTIC
         BEGIN
             DECLARE jawab TEXT;
                 IF topik = 'ukt' THEN
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stored_function_cek_topik_crisis_center');
+        Schema::dropIfExists('function_cek_topik_cc');
     }
 };

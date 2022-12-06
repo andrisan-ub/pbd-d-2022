@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('crisis_center', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('student_user_id')->constrained('users');
-            $table->foreignId('study_program_id')->constrained('study_programs');
+            $table->foreignId('student_user_id')->constrained('users')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('study_program_id')->constrained('study_programs')->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('topik');
             $table->text('keluhan');
             $table->timestampsTz();

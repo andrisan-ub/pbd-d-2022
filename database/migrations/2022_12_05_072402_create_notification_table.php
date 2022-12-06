@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('notification', function (Blueprint $table) {
             //
             $table->id();
-            $table->foreignId('student_user_id')->constrained('users');
-            $table->foreignId('crisis_center_id')->constrained('crisis_center');
-            $table->foreignId('response_id')->constrained('response');
+            $table->foreignId('student_user_id')->constrained('users')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('crisis_center_id')->constrained('crisis_center')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('response_id')->constrained('response')->cascadeOnUpdate()->cascadeOnDelete();
             $table->text('keluhan')->nullable();
             $table->text('response')->nullable();
             $table->timestamps();
