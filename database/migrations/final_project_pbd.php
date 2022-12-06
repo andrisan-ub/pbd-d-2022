@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+//use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -13,27 +14,27 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create ('questions', function (Blueprint $table){
-          $table->id();
-          $table->string('question');
+        Schema::create('questions', function (Blueprint $table) {
+            $table->id();
+            $table->string('question');
         });
 
-        Schema::create ('satisfactions', function (Blueprint $table){
-          $table->id();
-          $table->integer('point')->nullable();
-          $table->string('description')->nullable();
+        Schema::create('satisfactions', function (Blueprint $table) {
+            $table->id();
+            $table->integer('point')->nullable();
+            $table->string('description')->nullable();
         });
 
-        Schema::create ('user_answers', function (Blueprint $table){
-          $table->id();
-          $table->foreignId('user_id')->constrained('users');
-          $table->foreignId('course_class_id')->constrained('course_classes');
-          $table->foreignId('question_id')->constrained('questions');
-          $table->foreignId('satisfaction_id')->constrained('satisfactions');
-          $table->timestamp('submitted_at')->nullable();
+        Schema::create('user_answers', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('course_class_id')->constrained('course_classes');
+            $table->foreignId('question_id')->constrained('questions');
+            $table->foreignId('satisfaction_id')->constrained('satisfactions');
+            $table->timestamp('submitted_at')->nullable();
         });
 
-        Schema::create ('trash_answers', function (Blueprint $table){
+        Schema::create('trash_answers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('course_class_id')->constrained('course_classes');
@@ -41,7 +42,7 @@ return new class extends Migration
             $table->foreignId('satisfaction_id')->constrained('satisfactions');
             $table->timestamp('submitted_at')->nullable();
             $table->timestamp('deleted_at')->nullable();
-          });
+        });
 
         // SP - Create Question (membuat pertanyaan)
         $procedure_create = "DROP PROCEDURE IF EXISTS `create_questions`;
@@ -118,7 +119,7 @@ return new class extends Migration
         DELETE FROM `user_answers`
         WHERE question_id = @update_id;
         ');
-        
+
         //TRIGGER bef_delete (memasukkan data jawaban yang dihapus, ke tabel trash)
         DB::unprepared('
         CREATE TRIGGER `bef_delete`
@@ -149,8 +150,21 @@ return new class extends Migration
                         Set total_satisfactions = totalSatisfactions + totalPoint;       
                 END;";
         DB::unprepared($cursor_user_answers);
-        
 
+
+        //Function - Menampilkan banyak/jumlah jawaban survei dari user
+        $stored_function = "DROP FUNCTION IF EXIST 'get_jumSubmit';
+        CREATE FUNCTION 'get_jumSubmit'()
+        RETURNS int(11)
+        BEGIN
+            DECLARE submitted INT;
+            SELECT COUNT(id)
+            INTO submitted
+            FROM user_answers;
+	        RETURN submitted;
+        END ";
+
+        DB::unprepared($stored_function);
     }
 
     /**
