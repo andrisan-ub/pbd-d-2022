@@ -15,8 +15,8 @@ return new class extends Migration
     public function up()
     {
         DB::unprepared('
-        DROP PROCEDURE IF EXISTS `ds_update_crisis_center`;
-        CREATE PROCEDURE `ds_update_crisis_center`(
+        DROP PROCEDURE IF EXISTS `ds_update_table`;
+        CREATE PROCEDURE `ds_update_table`(
             IN TABEL VARCHAR (50),
             IN PK VARCHAR (50),
             IN DATA_PK VARCHAR (50),
@@ -30,8 +30,8 @@ return new class extends Migration
         END');
 
         DB::unprepared('
-        DROP PROCEDURE IF EXISTS `ds_delete_crisis_center`;
-        CREATE PROCEDURE `ds_delete_crisis_center`(
+        DROP PROCEDURE IF EXISTS `ds_delete_table`;
+        CREATE PROCEDURE `ds_delete_table`(
             IN TABEL VARCHAR (50),
             IN PK VARCHAR (50),
             IN DATA_PK VARCHAR (50)
@@ -44,8 +44,8 @@ return new class extends Migration
         END');
 
         DB::unprepared('
-        DROP PROCEDURE IF EXISTS `ds_insert_crisis_center`;
-        CREATE PROCEDURE `ds_insert_crisis_center`(
+        DROP PROCEDURE IF EXISTS `ds_insert_table`;
+        CREATE PROCEDURE `ds_insert_table`(
             IN TABEL VARCHAR (50),
             IN DATA TEXT
         
