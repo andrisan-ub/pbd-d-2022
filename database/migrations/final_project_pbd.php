@@ -21,8 +21,8 @@ return new class extends Migration
 
         Schema::create('satisfactions', function (Blueprint $table) {
             $table->id();
-            $table->integer('point')->nullable();
-            $table->string('description')->nullable();
+            $table->integer('point');
+            $table->string('description');
         });
 
         Schema::create('user_answers', function (Blueprint $table) {
