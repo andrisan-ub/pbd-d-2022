@@ -127,6 +127,30 @@ return new class extends Migration
         VALUES (OLD.id,OLD.user_id,OLD.course_class_id,OLD.question_id,OLD.satisfaction_id,OLD.submitted_at,now());
         ');
 
+        //Cursor untuk menghitung nilai total pada satisfaction_id berdasarkan user_id dan course_class_id pada tabel user_answer
+        $cursor_user_answers = "DROP PROCEDURE IF EXISTS satisfactions_from_user_answer;
+                CREATE PROCEDURE satisfactions_from_user_answer(OUT total_satisfactions INT)
+                BEGIN
+                    DECLARE totalSatisfactions, totalPoint, c_satisfaction, c_course_id, c_id, c_end INT;
+                    DECLARE cur_1 CURSOR FOR SELECT user_id, course_class_id, satisfaction_id FROM user_answers;
+                    DECLARE CONTINUE HANDLER FOR NOT FOUND SET c_end = 1;
+                    SET totalSatisfactions = 0, totalPoint = 0, c_id = 0, c_satisfaction = 0, c_course_id = 0;
+                    OPEN cur_1;
+                    WHILE c_end is NULL DO
+                    FETCH from cur_1 INTO c_id, c_course_id, c_satisfaction;
+                        IF c_id = 7 THEN
+                            IF c_course_id = 2 THEN
+                                    SET totalSatisfactions = totalSatisfactions + totalPoint;
+                                    SET totalPoint = c_satisfaction;
+                            END IF;
+                       END IF;
+                     END WHILE;
+                    CLOSE cur_1;
+                        Set total_satisfactions = totalSatisfactions + totalPoint;       
+                END;";
+        DB::unprepared($cursor_user_answers);
+        
+
     }
 
     /**
