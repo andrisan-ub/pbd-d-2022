@@ -164,6 +164,36 @@ return new class extends Migration
         END;";
 
         //DB::unprepared($stored_function);
+
+
+        /* dynamic sql untuk insert ke table x*/
+        $dynamic_sql = 'DROP PROCEDURE IF EXISTS `SP_insert_table`;
+        CREATE PROCEDURE `SP_insert_table` (
+            IN TBL VARCHAR(50),
+            IN VAL TEXT
+            )
+            BEGIN 
+            SET @SQL = CONCAT ("INSERT INTO ", TBL, " VALUES (", VAL,"); ");
+            PREPARE STAT FROM @SQL;
+            EXECUTE STAT; 
+            END;';
+            
+            /*DB::unprepared($dynamic_sql);
+
+
+            /* dynamic sql untuk update ke table x*/
+            $dynamic_sql = 'DROP PROCEDURE IF EXISTS `SP_update_table`;
+            CREATE PROCEDURE SP_update_table (
+                IN TBL VARCHAR(50),
+                IN COL_PK VARCHAR(50),
+                IN VAL_PK VARCHAR(50),
+                IN COL_DAT TEXT
+                )
+                BEGIN 
+                SET @SQL = CONCAT("UPDATE ", TBL, " SET ", COL_DAT, " WHERE ", COL_PK, "=",VAL_PK);
+                PREPARE STAT FROM @SQL;
+                EXECUTE STAT; 
+                END;';
     }
 
     /**
