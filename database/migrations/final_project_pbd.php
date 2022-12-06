@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-//use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -152,7 +152,7 @@ return new class extends Migration
         DB::unprepared($cursor_user_answers);
 
 
-        //Function - Menampilkan banyak/jumlah jawaban survei dari user
+        //Function - Menampilkan banyaknya pertanyaan yang telah terjawab oleh user
         $stored_function = "DROP PROCEDURE IF EXISTS get_jumSubmit;
         CREATE FUNCTION `get_jumSubmit`() 
         RETURNS INT(11)
