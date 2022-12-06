@@ -14,11 +14,12 @@ return new class extends Migration
      */
     public function up()
     {
-        $stored_function = "CREATE FUNCTION 'count_notif'()
+        $stored_function = "DROP FUNCTION IF EXISTS `function_count_notif`;
+        CREATE FUNCTION `function_count_notif`()
         RETURNS int(11)
         BEGIN
             DECLARE notif_amount INT;
-            SELECT COUNT(id) AS notifs_amount INTO notif_amount FROM notifications
+            SELECT COUNT(id) AS notifs_amount INTO notif_amount FROM notifications;
             RETURN notif_amount;
         END";
         DB::unprepared($stored_function);
