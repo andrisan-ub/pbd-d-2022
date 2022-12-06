@@ -19,10 +19,10 @@ return new class extends Migration
         DROP PROCEDURE IF EXISTS `get_notification_by_id`;
         CREATE PROCEDURE  `get_notification_by_id` (IN id_notif int)
         
-        BEGIN
-        SELECT * FROM notification
-        where id = id_notif;
-        END;");
+        SELECT notification.id, notification.student_user_id, notification.crisis_center_id, notification.response_id, notification.response, users.name, users.email, crisis_center.study_program_id, crisis_center.keluhan
+        FROM notification
+        INNER JOIN users ON notification.id = users.id
+        INNER JOIN crisis_center ON crisis_center.id = notification.id;");
         
     DB::unprepared("   
         DROP PROCEDURE IF EXISTS `create_notification_by_id`;
