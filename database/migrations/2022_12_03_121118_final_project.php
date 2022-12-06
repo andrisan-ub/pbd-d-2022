@@ -120,6 +120,18 @@ return new class extends Migration
            PREPARE STAT FROM @SQL;
            EXECUTE STAT;
         END');
+
+        DB::unprepared('
+        DROP PROCEDURE IF EXISTS sp_insert_discuss_answer;
+        CREATE PROCEDURE sp_insert_discuss_answer(
+            IN TABEL VARCHAR(50),
+            IN DATA TEXT
+        )
+        BEGIN
+            SET @SQL=CONCAT("INSERT INTO ", TABEL, " VALUES (",DATA,");");
+            PREPARE STAT FROM @SQL;
+            EXECUTE STAT;
+        END');
                        
     }
 
